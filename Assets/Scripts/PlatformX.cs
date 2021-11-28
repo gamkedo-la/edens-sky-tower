@@ -4,22 +4,20 @@ using UnityEngine;
 
 public class PlatformX : MonoBehaviour
 {
-    float originalPosY;
-    float originalPosX;
-    float originalPosZ;
+    public Transform target;
+    public float t;
 
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Script started for: " + gameObject.name);
-        originalPosY = transform.position.y;
-        originalPosX = transform.position.x;
-        originalPosZ = transform.position.z;
+        //Debug.Log("Script started for: " + gameObject.name);
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position += transform.up * Time.deltaTime * -3.0f;
+     Vector3 a = transform.position;
+     Vector3 b = target.position;
+     transform.position = Vector3.Lerp(a,b, t);   
     }
 }
