@@ -7,6 +7,14 @@ public class Ring02 : MonoBehaviour
     public Transform target;
     public float t;
     bool triggerRing = false;
+    bool triggerRings;
+    
+    GameObject obj;
+
+    void Awake() 
+    {
+        obj = GameObject.FindGameObjectWithTag ("TowerSegmentC");
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -17,7 +25,11 @@ public class Ring02 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        triggerRings = obj.GetComponent<TowerC>().segmentCEngaged;
+
+       
+       // if (Input.GetKeyDown(KeyCode.Alpha2))
+       if(triggerRings)
         {
             //Debug.Log("Space key was pressed.");
             triggerRing = true;

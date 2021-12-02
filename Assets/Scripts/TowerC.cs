@@ -52,7 +52,7 @@ public class TowerC : MonoBehaviour
     }
 
     void OnCollisionEnter (Collision collision) {
-        // Debug.Log(gameObject.name + " Tower Segment Engaged");
+        Debug.Log(gameObject.name + " Tower Segment Engaged");
         segmentCEngaged = true;
         startDescent = false;
     }
