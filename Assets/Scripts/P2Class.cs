@@ -26,7 +26,7 @@ public class P2Class : MonoBehaviour
         //transform.position += transform.forward * Time.deltaTime * 3.0f * Input.GetAxis("Vertical");
         Vector3 velWithGravity = rb.velocity;
         float saveYV = velWithGravity.y;
-        velWithGravity = transform.forward * 3.0f * Input.GetAxis("Vertical");
+        velWithGravity = transform.forward * 4.0f * Input.GetAxis("Vertical");
         velWithGravity.y = saveYV;
         rb.velocity = velWithGravity;
 

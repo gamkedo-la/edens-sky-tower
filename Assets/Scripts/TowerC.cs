@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class TowerC : MonoBehaviour
 {
-    bool segmentEngaged = false;
+    public bool segmentCEngaged = false;
+    public bool keyHoleBActivated = false;
     bool startDescent = false;
     bool startAscent = false;
     float originalPos;
@@ -21,24 +22,30 @@ public class TowerC : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Keypad2)) {
+
+        Debug.Log (keyHoleBActivated);
+
+
+        //if(Input.GetKeyDown(KeyCode.Keypad2)) {
+        
+        if(keyHoleBActivated) {
             Debug.Log(gameObject.name + " Tower Segment to Descend!");
             startDescent = true; 
             startAscent = false; 
         }
 
-        if(!segmentEngaged && startDescent) {
+        if(!segmentCEngaged && startDescent) {
             transform.position += transform.up * Time.deltaTime * -3.0f;
             }
 
         if(Input.GetKeyDown(KeyCode.Keypad0)) {
             Debug.Log("Tower to original Pos: " + gameObject.name);
             startAscent = true; 
-            segmentEngaged = false;
+            segmentCEngaged = false;
             startDescent = false;
         }
 
-        if(startAscent && !segmentEngaged && transform.position.y < originalPos) {
+        if(startAscent && !segmentCEngaged && transform.position.y < originalPos) {
             transform.position += transform.up * Time.deltaTime * 3.0f;
         }
         
@@ -46,7 +53,7 @@ public class TowerC : MonoBehaviour
 
     void OnCollisionEnter (Collision collision) {
         // Debug.Log(gameObject.name + " Tower Segment Engaged");
-        segmentEngaged = true;
+        segmentCEngaged = true;
         startDescent = false;
     }
 }

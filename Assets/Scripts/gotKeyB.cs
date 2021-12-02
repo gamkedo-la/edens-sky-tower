@@ -2,18 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class gotKey : MonoBehaviour
+public class gotKeyB : MonoBehaviour
 {
     public Transform playerTransform;
     public Transform keyHoleATransform;
     bool snapToPlayer = false;
     bool snapToKeyHole = false;
 
-    GameObject keyholeA;  
+    GameObject keyholeB;  
     
 
     void Awake() {
-        keyholeA = GameObject.Find("Tower/TowerSegmentB");
+        keyholeB = GameObject.Find("Tower/TowerSegmentC");
     }
 
 
@@ -33,7 +33,7 @@ public class gotKey : MonoBehaviour
 
         if (snapToKeyHole) {
             gameObject.transform.position = keyHoleATransform.position;
-            keyholeA.GetComponent<TowerB>().keyHoleAActivated = true;
+            keyholeB.GetComponent<TowerC>().keyHoleBActivated = true;
 
             snapToPlayer = false;
             snapToKeyHole = false;
@@ -41,14 +41,15 @@ public class gotKey : MonoBehaviour
     }
 
     void OnCollisionEnter (Collision collision) {
-        Debug.Log("collision registered!");
+        // Debug.Log("collision registered!");
 
         if (collision.gameObject.CompareTag ("Player")) {
             Debug.Log("Got Key!");
             snapToPlayer = true;
         }
 
-        if (collision.gameObject.CompareTag ("KeyHoleA")) {
+        if (collision.gameObject.CompareTag ("KeyHoleB")) {
+            Debug.Log("collision registered!");
             Debug.Log("Key Inserted!");
             snapToPlayer = false;
             snapToKeyHole = true;
