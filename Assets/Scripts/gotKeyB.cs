@@ -5,7 +5,7 @@ using UnityEngine;
 public class gotKeyB : MonoBehaviour
 {
     public Transform playerTransform;
-    public Transform keyHoleATransform;
+    public Transform keyHoleBTransform;
     bool snapToPlayer = false;
     bool snapToKeyHole = false;
 
@@ -13,7 +13,8 @@ public class gotKeyB : MonoBehaviour
     
 
     void Awake() {
-        keyholeB = GameObject.Find("Tower/TowerSegmentC");
+        //keyholeB = GameObject.Find("Tower/TowerSegmentC");
+        keyholeB = GameObject.Find("TowerShards/Shard2");
     }
 
 
@@ -32,8 +33,8 @@ public class gotKeyB : MonoBehaviour
         }
 
         if (snapToKeyHole) {
-            gameObject.transform.position = keyHoleATransform.position;
-            keyholeB.GetComponent<TowerC>().keyHoleBActivated = true;
+            gameObject.transform.position = keyHoleBTransform.position;
+            keyholeB.GetComponent<ShardB>().keyHoleBActivated = true;
 
             snapToPlayer = false;
             snapToKeyHole = false;
