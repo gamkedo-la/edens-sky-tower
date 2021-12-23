@@ -24,7 +24,7 @@ public class ThirdPersonCameraController : MonoBehaviour
     void CamControl(){
         mouseX += Input.GetAxis("Mouse X") * RotationSpeed;
         mouseY += Input.GetAxis("Mouse Y") * RotationSpeed;
-       mouseY = Mathf.Clamp(mouseY, -80, 180);
+        mouseY = Mathf.Clamp(mouseY, -35, 180);
 
         transform.LookAt(Target);
 

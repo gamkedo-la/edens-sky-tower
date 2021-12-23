@@ -10,10 +10,12 @@ public class gotKeyA : MonoBehaviour
     bool snapToKeyHole = false;
 
     GameObject keyholeA;  
+    GameObject Player;
     
 
     void Awake() {
         keyholeA = GameObject.Find("Tower/TowerSegmentB");
+        Player = GameObject.Find("PLAYER");
     }
 
 
@@ -34,6 +36,8 @@ public class gotKeyA : MonoBehaviour
         if (snapToKeyHole) {
             gameObject.transform.position = keyHoleATransform.position;
             keyholeA.GetComponent<TowerB>().keyHoleAActivated = true;
+            Debug.Log("Player Transport");
+            Player.GetComponent<P2Class>().PlayerTransferShard1 = true;
 
             snapToPlayer = false;
             snapToKeyHole = false;
