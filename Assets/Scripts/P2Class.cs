@@ -6,7 +6,11 @@ public class P2Class : MonoBehaviour
 {
     Rigidbody rb;
     public Transform ToShardOne;
+    public Transform ToShardTwo;
+    public Transform ToShardThree;
     public bool PlayerTransferShard1 = false;
+    public bool PlayerTransferShard2 = false;
+    public bool PlayerTransferShard3 = false;
    
    
     // Start is called before the first frame update
@@ -38,6 +42,16 @@ public class P2Class : MonoBehaviour
         if(PlayerTransferShard1) {
             gameObject.transform.position = ToShardOne.position;
             PlayerTransferShard1 = false;
+        }
+
+        if(PlayerTransferShard2) {
+            gameObject.transform.position = ToShardTwo.position;
+            PlayerTransferShard2 = false;
+        }
+
+        if(PlayerTransferShard3) {
+            gameObject.transform.position = ToShardThree.position;
+            PlayerTransferShard3 = false;
         }
 
             } // end of Update

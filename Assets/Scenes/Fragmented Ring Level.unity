@@ -1460,7 +1460,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 940260997}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.5, y: 2.81142, z: 0.23052578}
+  m_LocalPosition: {x: -0.5, y: 6.81, z: 0.23052578}
   m_LocalScale: {x: 0.10526315, y: 1, z: 0.10526315}
   m_Children: []
   m_Father: {fileID: 4865064392749063899}
@@ -3489,7 +3489,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 281855663758830563}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.86, z: 0}
+  m_LocalPosition: {x: 0, y: 0.885, z: 0}
   m_LocalScale: {x: 0.9500001, y: 0.04, z: 0.9500001}
   m_Children:
   - {fileID: 1267926673}
@@ -3665,7 +3665,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7623545439690359755}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 122.97018, z: 0}
+  m_LocalPosition: {x: -0, y: 127.4, z: 0}
   m_LocalScale: {x: 9.999999, y: 25, z: 9.999999}
   m_Children:
   - {fileID: 1398618389453644460}
@@ -3680,7 +3680,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7178114114042995228}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.96, z: 0}
+  m_LocalPosition: {x: 0, y: 0.888, z: 0}
   m_LocalScale: {x: 0.95, y: 0.04, z: 0.95}
   m_Children: []
   m_Father: {fileID: 5949365509660456153}
@@ -3864,6 +3864,8 @@ GameObject:
   - component: {fileID: 7416691523133957767}
   - component: {fileID: 7623545439690359756}
   - component: {fileID: 7623545439690359757}
+  - component: {fileID: 7623545439690359758}
+  - component: {fileID: 7623545439690359759}
   m_Layer: 0
   m_Name: Shard2
   m_TagString: Untagged
@@ -3899,6 +3901,35 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2212009239438826721, guid: 3edd466429ab845468352df09634aee9, type: 3}
+--- !u!54 &7623545439690359758
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7623545439690359755}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!65 &7623545439690359759
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7623545439690359755}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9999998, y: 2, z: 1.9999998}
+  m_Center: {x: 0, y: 0.00000014901161, z: 0}
 --- !u!23 &8102382927294083215
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3963,7 +3994,7 @@ GameObject:
   - component: {fileID: 8416272007180103378}
   m_Layer: 0
   m_Name: Shard1
-  m_TagString: Untagged
+  m_TagString: Shard1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

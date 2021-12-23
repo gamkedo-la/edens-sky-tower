@@ -19,14 +19,12 @@ public class gotKeyA : MonoBehaviour
     }
 
 
-    // Start is called before the first frame update
     void Start()
     {
-        //Debug.Log("Key Script");
+
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (snapToPlayer) {
@@ -35,8 +33,7 @@ public class gotKeyA : MonoBehaviour
 
         if (snapToKeyHole) {
             gameObject.transform.position = keyHoleATransform.position;
-            keyholeA.GetComponent<TowerB>().keyHoleAActivated = true;
-            Debug.Log("Player Transport");
+            keyholeA.GetComponent<TowerB>().keyHoleAActivated = true; // makes rings move
             Player.GetComponent<P2Class>().PlayerTransferShard1 = true;
 
             snapToPlayer = false;

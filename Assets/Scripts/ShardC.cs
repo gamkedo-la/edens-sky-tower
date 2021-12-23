@@ -2,18 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShardB : MonoBehaviour
+public class ShardC : MonoBehaviour
 {
-    public bool shardBEngaged = false;
-    public bool keyHoleBActivated = false;
+    public bool shardCEngaged = false;
+    public bool keyHoleCActivated = false;
     bool startDescent = false;
     float originalPos;
-
-    GameObject Player;
-
-    void Awake() {
-        Player = GameObject.Find("PLAYER");
-    }
 
     void Start()
     {
@@ -23,20 +17,20 @@ public class ShardB : MonoBehaviour
 
     void Update()
     {
-        if(keyHoleBActivated) {
+        if(keyHoleCActivated) {
             startDescent = true; 
         }
 
-        if(!shardBEngaged && startDescent) {
+        if(!shardCEngaged && startDescent) {
             transform.position += transform.up * Time.deltaTime * -3.0f;
             }
     }
 
     void OnCollisionEnter (Collision collision) {
-        if(collision.gameObject.CompareTag ("Shard1")) {
-            shardBEngaged = true;
+        if(collision.gameObject.CompareTag ("Shard2")) {
+            Debug.Log(gameObject.name + " ENGAGED!");
+            shardCEngaged = true;
             startDescent = false;
-            Player.GetComponent<P2Class>().PlayerTransferShard2 = true;
         }
     }
 }

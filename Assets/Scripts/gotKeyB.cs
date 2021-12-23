@@ -10,22 +10,19 @@ public class gotKeyB : MonoBehaviour
     bool snapToKeyHole = false;
 
     GameObject keyholeB;  
+    GameObject Player;
     
 
     void Awake() {
-        //keyholeB = GameObject.Find("Tower/TowerSegmentC");
         keyholeB = GameObject.Find("TowerShards/Shard2");
+        Player = GameObject.Find("PLAYER");
     }
 
-
-    // Start is called before the first frame update
     void Start()
     {
-        //Debug.Log("Key Script");
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (snapToPlayer) {
@@ -35,6 +32,7 @@ public class gotKeyB : MonoBehaviour
         if (snapToKeyHole) {
             gameObject.transform.position = keyHoleBTransform.position;
             keyholeB.GetComponent<ShardB>().keyHoleBActivated = true;
+            
 
             snapToPlayer = false;
             snapToKeyHole = false;
@@ -42,16 +40,12 @@ public class gotKeyB : MonoBehaviour
     }
 
     void OnCollisionEnter (Collision collision) {
-        // Debug.Log("collision registered!");
 
         if (collision.gameObject.CompareTag ("Player")) {
-            Debug.Log("Got Key!");
             snapToPlayer = true;
         }
 
         if (collision.gameObject.CompareTag ("KeyHoleB")) {
-            Debug.Log("collision registered!");
-            Debug.Log("Key Inserted!");
             snapToPlayer = false;
             snapToKeyHole = true;
             
