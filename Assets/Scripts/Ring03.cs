@@ -9,11 +9,11 @@ public class Ring03 : MonoBehaviour
     bool triggerRing = false;
     bool triggerRings;
 
-    GameObject obj;
+    GameObject Player;
 
     void Awake() 
     {
-        obj = GameObject.FindGameObjectWithTag ("TowerShards/Shard3");
+        Player = GameObject.Find("PLAYER");
     }
 
     // Start is called before the first frame update
@@ -25,7 +25,7 @@ public class Ring03 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        triggerRings = obj.GetComponent<ShardC>().shardCEngaged;
+        triggerRings = Player.GetComponent<P2Class>().TriggerRingsThree;
 
        
        // if (Input.GetKeyDown(KeyCode.Alpha2))

@@ -1864,6 +1864,8 @@ MonoBehaviour:
   PlayerTransferShard2: 0
   PlayerTransferShard3: 0
   TriggerRingsOne: 0
+  TriggerRingsTwo: 0
+  TriggerRingsThree: 0
 --- !u!1 &1183179783
 GameObject:
   m_ObjectHideFlags: 0
@@ -3174,7 +3176,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7623545439690359755}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 127.4, z: 0}
+  m_LocalPosition: {x: -0, y: 112.8, z: 0}
   m_LocalScale: {x: 9.999999, y: 25, z: 9.999999}
   m_Children:
   - {fileID: 1398618389453644460}
@@ -3278,7 +3280,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9014776603697597607}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 185.92345, z: 0}
+  m_LocalPosition: {x: 0, y: 177.1, z: 0}
   m_LocalScale: {x: 10, y: 25, z: 10}
   m_Children:
   - {fileID: 4418473097331538548}
@@ -3601,6 +3603,8 @@ GameObject:
   - component: {fileID: 8102382927294083215}
   - component: {fileID: 9014776603697597608}
   - component: {fileID: 9014776603697597609}
+  - component: {fileID: 9014776603697597610}
+  - component: {fileID: 9014776603697597611}
   m_Layer: 0
   m_Name: Shard3
   m_TagString: Untagged
@@ -3638,3 +3642,30 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!64 &9014776603697597610
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9014776603697597607}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3329902420748629119, guid: 3edd466429ab845468352df09634aee9, type: 3}
+--- !u!65 &9014776603697597611
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9014776603697597607}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9999998, y: 2, z: 1.9999998}
+  m_Center: {x: 0, y: 0.00000062584877, z: 0}

@@ -33,6 +33,7 @@ public class ShardC : MonoBehaviour
     }
 
     void OnCollisionEnter (Collision collision) {
+        Debug.Log ("Shard C Colliding!");
         if(collision.gameObject.CompareTag ("Shard2")) {
             shardCEngaged = true;
             startDescent = false;

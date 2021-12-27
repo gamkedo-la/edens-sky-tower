@@ -14,6 +14,7 @@ public class P2Class : MonoBehaviour
 
     public bool TriggerRingsOne = false;
     public bool TriggerRingsTwo = false;
+    public bool TriggerRingsThree = false;
    
     void Start()
     {
@@ -51,6 +52,7 @@ public class P2Class : MonoBehaviour
 
         if(PlayerTransferShard3) {
             gameObject.transform.position = ToShardThree.position;
+            TriggerRingsThree = true;
             PlayerTransferShard3 = false;
         }
 
