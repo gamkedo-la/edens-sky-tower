@@ -9,6 +9,12 @@ public class ShardC : MonoBehaviour
     bool startDescent = false;
     float originalPos;
 
+    GameObject Player;
+
+    void Awake() {
+        Player = GameObject.Find("PLAYER");
+    }
+
     void Start()
     {
         //Debug.Log("ShardB Script!");
@@ -28,9 +34,9 @@ public class ShardC : MonoBehaviour
 
     void OnCollisionEnter (Collision collision) {
         if(collision.gameObject.CompareTag ("Shard2")) {
-            Debug.Log(gameObject.name + " ENGAGED!");
             shardCEngaged = true;
             startDescent = false;
+            Player.GetComponent<P2Class>().PlayerTransferShard3 = true;
         }
     }
 }

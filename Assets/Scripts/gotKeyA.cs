@@ -14,7 +14,8 @@ public class gotKeyA : MonoBehaviour
     
 
     void Awake() {
-        keyholeA = GameObject.Find("Tower/TowerSegmentB");
+        // keyholeA = GameObject.Find("Tower/TowerSegmentB");
+        keyholeA = GameObject.Find("TowerShards/Shard1");
         Player = GameObject.Find("PLAYER");
     }
 
@@ -33,8 +34,8 @@ public class gotKeyA : MonoBehaviour
 
         if (snapToKeyHole) {
             gameObject.transform.position = keyHoleATransform.position;
-            keyholeA.GetComponent<TowerB>().keyHoleAActivated = true; // makes rings move
             Player.GetComponent<P2Class>().PlayerTransferShard1 = true;
+            //keyholeA.GetComponent<TowerB>().keyHoleAActivated = true; // makes rings move
 
             snapToPlayer = false;
             snapToKeyHole = false;

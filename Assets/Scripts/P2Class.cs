@@ -11,19 +11,17 @@ public class P2Class : MonoBehaviour
     public bool PlayerTransferShard1 = false;
     public bool PlayerTransferShard2 = false;
     public bool PlayerTransferShard3 = false;
+
+    public bool TriggerRingsOne = false;
+    public bool TriggerRingsTwo = false;
    
-   
-    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        Debug.Log("Script online for: " + gameObject.name);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        //transform.position += transform.forward * Time.deltaTime * 3.0f * Input.GetAxis("Vertical");
         Vector3 velWithGravity = rb.velocity;
         float saveYV = velWithGravity.y;
         velWithGravity = transform.forward * 6.0f * Input.GetAxis("Vertical");
@@ -41,11 +39,13 @@ public class P2Class : MonoBehaviour
 
         if(PlayerTransferShard1) {
             gameObject.transform.position = ToShardOne.position;
+            TriggerRingsOne = true;
             PlayerTransferShard1 = false;
         }
 
         if(PlayerTransferShard2) {
             gameObject.transform.position = ToShardTwo.position;
+            TriggerRingsTwo = true;
             PlayerTransferShard2 = false;
         }
 

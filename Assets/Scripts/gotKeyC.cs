@@ -32,7 +32,6 @@ public class gotKeyC : MonoBehaviour
         if (snapToKeyHole) {
             gameObject.transform.position = keyHoleCTransform.position;
             keyholeC.GetComponent<ShardC>().keyHoleCActivated = true;
-            Player.GetComponent<P2Class>().PlayerTransferShard3 = true;
 
             snapToPlayer = false;
             snapToKeyHole = false;
