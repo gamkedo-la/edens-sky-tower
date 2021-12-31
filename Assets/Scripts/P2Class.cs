@@ -15,9 +15,11 @@ public class P2Class : MonoBehaviour
     public bool TriggerRingsOne = false;
     public bool TriggerRingsTwo = false;
     public bool TriggerRingsThree = false;
+    public LayerMask jumpFrom;
    
     void Start()
     {
+        jumpFrom = ~jumpFrom;
         rb = GetComponent<Rigidbody>();
     }
 
@@ -32,8 +34,15 @@ public class P2Class : MonoBehaviour
         transform.Rotate(Vector3.up, 30.0f * Time.deltaTime * Input.GetAxis("Horizontal")); 
         
         // player jump
-        if(Input.GetKeyDown (KeyCode.Space)) {
-            if (transform.position.y <=1.05f) {
+        
+        RaycastHit rhInfo;
+        if (Physics.Raycast (transform.position, Vector3.down, out rhInfo, 1.5f, jumpFrom)) {
+            Debug.Log (rb.velocity.y);
+            if(rb.velocity.y < 0.0f) {
+                rb.velocity = Vector3.zero;
+            }
+            transform.SetParent (rhInfo.collider.transform);
+            if(Input.GetKeyDown (KeyCode.Space)) {
                 GetComponent<Rigidbody> ().AddForce (Vector3.up * 500);
             } 
         }
@@ -48,6 +57,7 @@ public class P2Class : MonoBehaviour
             gameObject.transform.position = ToShardTwo.position;
             TriggerRingsTwo = true;
             PlayerTransferShard2 = false;
+            Debug.Log ("Shard2, once?");
         }
 
         if(PlayerTransferShard3) {

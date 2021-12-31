@@ -8,11 +8,13 @@ public class ShardB : MonoBehaviour
     public bool keyHoleBActivated = false;
     bool startDescent = false;
     float originalPos;
+    Rigidbody rb;
 
     GameObject Player;
 
     void Awake() {
         Player = GameObject.Find("PLAYER");
+        rb = GetComponent<Rigidbody>();
     }
 
     void Start()
@@ -29,7 +31,10 @@ public class ShardB : MonoBehaviour
 
         if(!shardBEngaged && startDescent) {
             transform.position += transform.up * Time.deltaTime * -3.0f;
-            }
+            //rb.velocity = transform.up * 3.0f;
+        } else {
+            //rb.velocity = Vector3.zero;
+        }
     }
 
     void OnCollisionEnter (Collision collision) {

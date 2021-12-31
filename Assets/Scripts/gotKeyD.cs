@@ -9,6 +9,8 @@ public class gotKeyD : MonoBehaviour
     bool snapToPlayer = false;
     bool snapToKeyHole = false;
 
+    public bool towerKey = false;
+
     GameObject Player;
     
     void Awake() {
@@ -23,6 +25,10 @@ public class gotKeyD : MonoBehaviour
 
         if (snapToKeyHole) {
             gameObject.transform.position = keyHoleDTransform.position;
+
+            Debug.Log("TowerKey");
+            towerKey = true;
+
            
             snapToPlayer = false;
             snapToKeyHole = false;
