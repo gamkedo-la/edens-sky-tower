@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    Rigidbody rb;
     public Transform ToShardOne;
     public Transform ToShardTwo;
     public Transform ToShardThree;
@@ -17,11 +16,23 @@ public class Player : MonoBehaviour
     public bool TriggerRingsThree = false;
     public LayerMask jumpFrom;
     public Transform TeleportDebugLocation;
+    public GameObject GliderModel;
+
+    private Rigidbody rb;
+    private bool holdingGlide = false;
    
     void Start()
     {
         jumpFrom = ~jumpFrom;
         rb = GetComponent<Rigidbody>();
+        GliderModel.SetActive(false);
+    }
+
+    void ShowGlider(bool turnOn) {
+        if(holdingGlide != turnOn) {
+            holdingGlide = turnOn;
+            GliderModel.SetActive(holdingGlide);
+        }
     }
 
     void Update()
@@ -29,24 +40,38 @@ public class Player : MonoBehaviour
         Vector3 velWithGravity = rb.velocity;
         float saveYV = velWithGravity.y;
         velWithGravity = transform.forward * 6.0f * Input.GetAxis("Vertical");
-        velWithGravity.y = saveYV;
+        if(holdingGlide) {
+            velWithGravity.y = -2.5f; 
+        } else {
+            velWithGravity.y = saveYV; 
+        }
         rb.velocity = velWithGravity;
 
-        transform.Rotate(Vector3.up, 30.0f * Time.deltaTime * Input.GetAxis("Horizontal")); 
+        transform.Rotate(Vector3.up, 60.0f * Time.deltaTime * Input.GetAxis("Horizontal")); 
         
         // player jump
         
         RaycastHit rhInfo;
+        //ground beneath us?
         if (Physics.Raycast (transform.position, Vector3.down, out rhInfo, 1.5f, jumpFrom)) {
-            Debug.Log (rb.velocity.y);
             if(rb.velocity.y < 0.0f) {
                 rb.velocity = Vector3.zero;
             }
             transform.SetParent (rhInfo.collider.transform);
             if(Input.GetKeyDown (KeyCode.Space)) {
-                GetComponent<Rigidbody> ().AddForce (Vector3.up * 500);
+                rb.AddForce (Vector3.up * 500);
             } 
+
+            ShowGlider(false);
+        } else {
+            if(Input.GetKeyDown (KeyCode.Space)) {
+                ShowGlider(true);
+            }
+            if(Input.GetKeyUp(KeyCode.Space)) {
+                ShowGlider(false);
+            }
         }
+        
 
         if(PlayerTransferShard1) {
             gameObject.transform.position = ToShardOne.position;
