@@ -34,7 +34,7 @@ public class gotKeyA : MonoBehaviour
 
         if (snapToKeyHole) {
             gameObject.transform.position = keyHoleATransform.position;
-            Player.GetComponent<P2Class>().PlayerTransferShard1 = true;
+            Player.GetComponent<Player>().PlayerTransferShard1 = true;
             //keyholeA.GetComponent<TowerB>().keyHoleAActivated = true; // makes rings move
 
             snapToPlayer = false;

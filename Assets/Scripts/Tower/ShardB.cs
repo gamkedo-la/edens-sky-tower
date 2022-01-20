@@ -2,17 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShardC : MonoBehaviour
+public class ShardB : MonoBehaviour
 {
-    public bool shardCEngaged = false;
-    public bool keyHoleCActivated = false;
+    public bool shardBEngaged = false;
+    public bool keyHoleBActivated = false;
     bool startDescent = false;
     float originalPos;
+    Rigidbody rb;
 
     GameObject Player;
 
     void Awake() {
         Player = GameObject.Find("PLAYER");
+        rb = GetComponent<Rigidbody>();
     }
 
     void Start()
@@ -23,21 +25,23 @@ public class ShardC : MonoBehaviour
 
     void Update()
     {
-        if(keyHoleCActivated) {
+        if(keyHoleBActivated) {
             startDescent = true; 
         }
 
-        if(!shardCEngaged && startDescent) {
+        if(!shardBEngaged && startDescent) {
             transform.position += transform.up * Time.deltaTime * -3.0f;
-            }
+            //rb.velocity = transform.up * 3.0f;
+        } else {
+            //rb.velocity = Vector3.zero;
+        }
     }
 
     void OnCollisionEnter (Collision collision) {
-        Debug.Log ("Shard C Colliding!");
-        if(collision.gameObject.CompareTag ("Shard2")) {
-            shardCEngaged = true;
+        if(collision.gameObject.CompareTag ("Shard1")) {
+            shardBEngaged = true;
             startDescent = false;
-            Player.GetComponent<P2Class>().PlayerTransferShard3 = true;
+            Player.GetComponent<Player>().PlayerTransferShard2 = true;
         }
     }
 }

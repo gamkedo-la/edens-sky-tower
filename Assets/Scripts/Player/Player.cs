@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class P2Class : MonoBehaviour
+public class Player : MonoBehaviour
 {
     Rigidbody rb;
     public Transform ToShardOne;
@@ -16,6 +16,7 @@ public class P2Class : MonoBehaviour
     public bool TriggerRingsTwo = false;
     public bool TriggerRingsThree = false;
     public LayerMask jumpFrom;
+    public Transform TeleportDebugLocation;
    
     void Start()
     {
@@ -66,5 +67,11 @@ public class P2Class : MonoBehaviour
             PlayerTransferShard3 = false;
         }
 
-            } // end of Update
+        //debug
+        if (Input.GetKeyDown(KeyCode.T)) {
+            transform.position = TeleportDebugLocation.position;
+            Debug.Log ("teleproting Debug");
+        }
+
+    } // end of Update
 } // end of class

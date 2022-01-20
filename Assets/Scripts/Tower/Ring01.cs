@@ -17,7 +17,7 @@ public class Ring01 : MonoBehaviour
 
     void Update()
     {
-        triggerRings = Player.GetComponent<P2Class>().TriggerRingsOne;
+        triggerRings = Player.GetComponent<Player>().TriggerRingsOne;
 
         if(triggerRings)
         {

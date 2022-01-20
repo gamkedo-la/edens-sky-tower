@@ -25,7 +25,7 @@ public class Ring03 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        triggerRings = Player.GetComponent<P2Class>().TriggerRingsThree;
+        triggerRings = Player.GetComponent<Player>().TriggerRingsThree;
 
        
        // if (Input.GetKeyDown(KeyCode.Alpha2))
