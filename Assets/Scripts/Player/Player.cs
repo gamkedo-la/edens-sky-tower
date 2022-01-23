@@ -39,7 +39,7 @@ public class Player : MonoBehaviour
     {
         Vector3 velWithGravity = rb.velocity;
         float saveYV = velWithGravity.y;
-        velWithGravity = transform.forward * 6.0f * Input.GetAxis("Vertical");
+        velWithGravity = transform.forward * 10.0f * Input.GetAxis("Vertical");
         if(holdingGlide) {
             velWithGravity.y = -2.5f; 
         } else {
