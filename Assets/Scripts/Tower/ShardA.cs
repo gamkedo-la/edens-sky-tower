@@ -23,7 +23,6 @@ public class ShardA : MonoBehaviour
     void Update()
     {
         activeTowerKey = TowerKey.GetComponent<gotKeyD>().towerKey;
-        Debug.Log(activeTowerKey);
 
         if(activeTowerKey) {
             if(towerToMoveDown) {
@@ -33,7 +32,6 @@ public class ShardA : MonoBehaviour
     }
 
     void OnCollisionEnter (Collision col) {
-        Debug.Log("tower to stop descent");
         // if(col.gameObject.CompareTag ("Ring0")) {
              
              towerToMoveDown = false;
