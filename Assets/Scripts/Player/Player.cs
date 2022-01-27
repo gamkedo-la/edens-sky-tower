@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
     public bool TriggerRingsThree = false;
     public LayerMask jumpFrom;
     public Transform TeleportDebugLocation;
-    public GameObject GliderModel;
+    public Transform TiltGlideModel;
 
     private Rigidbody rb;
     private bool holdingGlide = false;
@@ -25,13 +25,18 @@ public class Player : MonoBehaviour
     {
         jumpFrom = ~jumpFrom;
         rb = GetComponent<Rigidbody>();
-        GliderModel.SetActive(false);
+        TiltGlideModel.localRotation = Quaternion.identity;
     }
 
     void ShowGlider(bool turnOn) {
         if(holdingGlide != turnOn) {
             holdingGlide = turnOn;
-            GliderModel.SetActive(holdingGlide);
+            if(holdingGlide) {
+                TiltGlideModel.localRotation = Quaternion.AngleAxis(50.0f, Vector3.right);
+            }else{
+                TiltGlideModel.localRotation = Quaternion.identity;
+            }
+            
         }
     }
 
