@@ -46,7 +46,7 @@ public class Player : MonoBehaviour
         float saveYV = velWithGravity.y;
         velWithGravity = transform.forward * 10.0f * Input.GetAxis("Vertical");
         if(holdingGlide) {
-            velWithGravity.y = -4.5f; 
+            velWithGravity.y = -3.5f; 
         } else {
             velWithGravity.y = saveYV; 
         }
