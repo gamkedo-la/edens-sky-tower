@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
     private Rigidbody rb;
     private bool holdingGlide = false;
 
-    public bool isRunning = false;
+    private bool isRunning = false;
    
     void Start()
     {
