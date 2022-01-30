@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Player : MonoBehaviour
 {
@@ -18,8 +16,13 @@ public class Player : MonoBehaviour
     public Transform TeleportDebugLocation;
     public Transform TiltGlideModel;
 
+    [Range(1.0f, 4.0f)]
+    public float runningSpeedMultiplier = 2.0f;
+
     private Rigidbody rb;
     private bool holdingGlide = false;
+
+    public bool isRunning = false;
    
     void Start()
     {
@@ -45,6 +48,10 @@ public class Player : MonoBehaviour
         Vector3 velWithGravity = rb.velocity;
         float saveYV = velWithGravity.y;
         velWithGravity = transform.forward * 10.0f * Input.GetAxis("Vertical");
+
+        checkIfChangingToRunningOrWalkingMode();
+        if (isRunning && !holdingGlide) velWithGravity *= runningSpeedMultiplier;
+
         if(holdingGlide) {
             velWithGravity.y = -3.5f; 
         } else {
@@ -104,4 +111,16 @@ public class Player : MonoBehaviour
         }
 
     } // end of Update
+
+    private void checkIfChangingToRunningOrWalkingMode()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            isRunning = true;
+        }
+        else if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            isRunning = false;
+        }
+    }
 } // end of class
