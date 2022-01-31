@@ -5,9 +5,11 @@ public class Player : MonoBehaviour
     public Transform ToShardOne;
     public Transform ToShardTwo;
     public Transform ToShardThree;
+    public Transform PlayerFallRespawnPoint;
     public bool PlayerTransferShard1 = false;
     public bool PlayerTransferShard2 = false;
     public bool PlayerTransferShard3 = false;
+    
 
     public bool TriggerRingsOne = false;
     public bool TriggerRingsTwo = false;
@@ -39,7 +41,6 @@ public class Player : MonoBehaviour
             }else{
                 TiltGlideModel.localRotation = Quaternion.identity;
             }
-            
         }
     }
 
@@ -102,6 +103,11 @@ public class Player : MonoBehaviour
             gameObject.transform.position = ToShardThree.position;
             TriggerRingsThree = true;
             PlayerTransferShard3 = false;
+        }
+
+        //player respawns when falling
+        if(transform.position.y < -5.0f) {
+            gameObject.transform.position = PlayerFallRespawnPoint.position;
         }
 
         //debug
