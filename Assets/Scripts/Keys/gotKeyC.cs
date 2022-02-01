@@ -14,7 +14,7 @@ public class gotKeyC : MonoBehaviour
     
 
     void Awake() {
-        keyholeC = GameObject.Find("TowerShards/Shard3");
+        keyholeC = GameObject.Find("Environment/TowerShards/TowerModelShardC");
         Player = GameObject.Find("PLAYER");
     }
 
@@ -31,7 +31,8 @@ public class gotKeyC : MonoBehaviour
 
         if (snapToKeyHole) {
             gameObject.transform.position = keyHoleCTransform.position;
-            keyholeC.GetComponent<ShardC>().keyHoleCActivated = true;
+            keyholeC.GetComponent<ShardC>().shardCActivated = true;
+            Player.GetComponent<Player>().PlayerTransferShard3 = true;
 
             snapToPlayer = false;
             snapToKeyHole = false;
