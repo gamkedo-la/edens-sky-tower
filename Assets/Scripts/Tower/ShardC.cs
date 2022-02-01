@@ -36,7 +36,6 @@ public class ShardC : MonoBehaviour
         if(collision.gameObject.CompareTag ("Shard2")) {
             shardCEngaged = true;
             startDescent = false;
-            Player.GetComponent<Player>().PlayerTransferShard3 = true;
         }
     }
 }

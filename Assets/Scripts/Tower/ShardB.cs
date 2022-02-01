@@ -19,7 +19,6 @@ public class ShardB : MonoBehaviour
 
     void Start()
     {
-        //Debug.Log("ShardB Script!");
         originalPos = transform.position.y;
     }
 
@@ -41,7 +40,6 @@ public class ShardB : MonoBehaviour
         if(collision.gameObject.CompareTag ("Shard1")) {
             shardBEngaged = true;
             startDescent = false;
-            Player.GetComponent<Player>().PlayerTransferShard2 = true;
         }
     }
 }

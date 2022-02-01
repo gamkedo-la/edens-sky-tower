@@ -31,7 +31,8 @@ public class gotKeyB : MonoBehaviour
 
         if (snapToKeyHole) {
             gameObject.transform.position = keyHoleBTransform.position;
-            keyholeB.GetComponent<ShardB>().keyHoleBActivated = true;
+            //keyholeB.GetComponent<ShardB>().keyHoleBActivated = true;
+            Player.GetComponent<Player>().PlayerTransferShard2 = true;
             
 
             snapToPlayer = false;
