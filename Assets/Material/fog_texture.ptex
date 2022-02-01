@@ -1,0 +1,321 @@
+{
+	"connections": [
+		{
+			"from": "fbm2",
+			"from_port": 0,
+			"to": "warp_dilation2_2",
+			"to_port": 1
+		},
+		{
+			"from": "fbm2",
+			"from_port": 0,
+			"to": "multi_warp",
+			"to_port": 1
+		},
+		{
+			"from": "fbm2",
+			"from_port": 0,
+			"to": "warp",
+			"to_port": 1
+		},
+		{
+			"from": "shape",
+			"from_port": 0,
+			"to": "warp",
+			"to_port": 0
+		},
+		{
+			"from": "warp",
+			"from_port": 0,
+			"to": "multi_warp",
+			"to_port": 0
+		},
+		{
+			"from": "warp",
+			"from_port": 0,
+			"to": "warp_dilation2_2",
+			"to_port": 0
+		},
+		{
+			"from": "fbm2_2",
+			"from_port": 0,
+			"to": "warp_2",
+			"to_port": 1
+		},
+		{
+			"from": "reroute",
+			"from_port": 0,
+			"to": "Material",
+			"to_port": 0
+		},
+		{
+			"from": "reroute",
+			"from_port": 0,
+			"to": "Material",
+			"to_port": 7
+		},
+		{
+			"from": "warp_2",
+			"from_port": 0,
+			"to": "tones",
+			"to_port": 0
+		},
+		{
+			"from": "tones",
+			"from_port": 0,
+			"to": "reroute",
+			"to_port": 0
+		},
+		{
+			"from": "shape",
+			"from_port": 0,
+			"to": "gaussian_blur",
+			"to_port": 0
+		},
+		{
+			"from": "gaussian_blur",
+			"from_port": 0,
+			"to": "warp_2",
+			"to_port": 0
+		}
+	],
+	"label": "Graph",
+	"longdesc": "",
+	"name": "@@3979",
+	"node_position": {
+		"x": 0,
+		"y": 0
+	},
+	"nodes": [
+		{
+			"export_paths": {
+				"Unity - 3D": "C:/Users/tfunk/code/unity/edens-sky-tower/Assets/Textures/fog_texture"
+			},
+			"name": "Material",
+			"node_position": {
+				"x": 0,
+				"y": 0
+			},
+			"parameters": {
+				"albedo_color": {
+					"a": 1,
+					"b": 1,
+					"g": 1,
+					"r": 1,
+					"type": "Color"
+				},
+				"ao": 1,
+				"depth_scale": 0.5,
+				"emission_energy": 1,
+				"flags_transparent": true,
+				"metallic": 0,
+				"normal": 1,
+				"roughness": 1,
+				"size": 11,
+				"sss": 0
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "material"
+		},
+		{
+			"name": "shape",
+			"node_position": {
+				"x": -1379.542114,
+				"y": 216.694305
+			},
+			"parameters": {
+				"edge": 1,
+				"radius": 0.64,
+				"shape": 1,
+				"sides": 6
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "shape"
+		},
+		{
+			"name": "warp_dilation2_2",
+			"node_position": {
+				"x": -618.762817,
+				"y": 137.590927
+			},
+			"parameters": {
+				"a": 1,
+				"angle": -25.9,
+				"d": 0.22,
+				"param0": 1,
+				"s": 9
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "warp_dilation2"
+		},
+		{
+			"name": "fbm2",
+			"node_position": {
+				"x": -963.488831,
+				"y": -146.70224
+			},
+			"parameters": {
+				"folds": 3,
+				"iterations": 3,
+				"noise": 9,
+				"offset": 0.07,
+				"persistence": 1.66,
+				"scale_x": 2,
+				"scale_y": 2
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "fbm2"
+		},
+		{
+			"name": "multi_warp",
+			"node_position": {
+				"x": -580.367737,
+				"y": -35.224617
+			},
+			"parameters": {
+				"param0": 10,
+				"param1": 16,
+				"param2": 2,
+				"param3": 1
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "multi_warp"
+		},
+		{
+			"name": "warp",
+			"node_position": {
+				"x": -583.382568,
+				"y": -190.454208
+			},
+			"parameters": {
+				"amount": 0.155,
+				"eps": 0.005,
+				"mode": 0
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "warp"
+		},
+		{
+			"name": "fbm2_2",
+			"node_position": {
+				"x": -543.868652,
+				"y": -476.665619
+			},
+			"parameters": {
+				"folds": 0,
+				"iterations": 3,
+				"noise": 1,
+				"offset": 0.07,
+				"persistence": 0.26,
+				"scale_x": 4,
+				"scale_y": 4
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "fbm2"
+		},
+		{
+			"name": "warp_2",
+			"node_position": {
+				"x": -246.650406,
+				"y": -244.061859
+			},
+			"parameters": {
+				"amount": 0.395,
+				"eps": 0.385,
+				"mode": 0
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "warp"
+		},
+		{
+			"name": "reroute",
+			"node_position": {
+				"x": -118.779999,
+				"y": 79.96434
+			},
+			"parameters": {
+
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "reroute"
+		},
+		{
+			"name": "tones",
+			"node_position": {
+				"x": -238.733688,
+				"y": -122.895203
+			},
+			"parameters": {
+				"in_max": {
+					"a": 1,
+					"b": 1,
+					"g": 1,
+					"r": 1,
+					"type": "Color"
+				},
+				"in_mid": {
+					"a": 0.5,
+					"b": 0.65788,
+					"g": 0.65788,
+					"r": 0.65788,
+					"type": "Color"
+				},
+				"in_min": {
+					"a": 0,
+					"b": 0.15,
+					"g": 0.15,
+					"r": 0.15,
+					"type": "Color"
+				},
+				"out_max": {
+					"a": 1,
+					"b": 1,
+					"g": 1,
+					"r": 1,
+					"type": "Color"
+				},
+				"out_min": {
+					"a": 0,
+					"b": 0,
+					"g": 0,
+					"r": 0,
+					"type": "Color"
+				}
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "tones"
+		},
+		{
+			"name": "gaussian_blur",
+			"node_position": {
+				"x": -1175,
+				"y": 252.952942
+			},
+			"parameters": {
+				"param0": 9,
+				"param1": 50,
+				"param2": 0
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "gaussian_blur"
+		}
+	],
+	"parameters": {
+
+	},
+	"seed": 0,
+	"seed_locked": false,
+	"shortdesc": "",
+	"type": "graph"
+}
