@@ -6,11 +6,6 @@ public class ShardB : MonoBehaviour
 {
     public bool shardBActivated = false;
     public Transform ShardBEngagement;
-
-    public bool shardBEngaged = false;
-    public bool keyHoleBActivated = false;
-    bool startDescent = false;
-    float originalPos;
     Rigidbody rb;
 
     void Awake() {
@@ -19,7 +14,7 @@ public class ShardB : MonoBehaviour
 
     void Start()
     {
-        originalPos = transform.position.y;
+
     }
 
     void Update()

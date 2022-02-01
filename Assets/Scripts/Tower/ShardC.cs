@@ -4,38 +4,24 @@ using UnityEngine;
 
 public class ShardC : MonoBehaviour
 {
-    public bool shardCEngaged = false;
-    public bool keyHoleCActivated = false;
-    bool startDescent = false;
-    float originalPos;
-
-    GameObject Player;
+    public bool shardCActivated = false;
+    public Transform ShardCEngagement;
+    Rigidbody rb;
 
     void Awake() {
-        Player = GameObject.Find("PLAYER");
+        rb = GetComponent<Rigidbody>();
     }
 
     void Start()
     {
-        originalPos = transform.position.y;
+
     }
 
     void Update()
     {
-        if(keyHoleCActivated) {
-            startDescent = true; 
-        }
-
-        if(!shardCEngaged && startDescent) {
-            transform.position += transform.up * Time.deltaTime * -3.0f;
-            }
+        if(shardCActivated) {
+            gameObject.transform.position = ShardCEngagement.position;
+        }      
     }
 
-    void OnCollisionEnter (Collision collision) {
-        Debug.Log ("Shard C Colliding!");
-        if(collision.gameObject.CompareTag ("Shard2")) {
-            shardCEngaged = true;
-            startDescent = false;
-        }
-    }
 }
