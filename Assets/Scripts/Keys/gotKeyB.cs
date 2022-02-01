@@ -14,7 +14,7 @@ public class gotKeyB : MonoBehaviour
     
 
     void Awake() {
-        keyholeB = GameObject.Find("TowerShards/Shard2");
+        keyholeB = GameObject.Find("Environment/TowerShards/TowerModelShardB");
         Player = GameObject.Find("PLAYER");
     }
 
@@ -31,7 +31,7 @@ public class gotKeyB : MonoBehaviour
 
         if (snapToKeyHole) {
             gameObject.transform.position = keyHoleBTransform.position;
-            //keyholeB.GetComponent<ShardB>().keyHoleBActivated = true;
+            keyholeB.GetComponent<ShardB>().shardBActivated = true;
             Player.GetComponent<Player>().PlayerTransferShard2 = true;
             
 

@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class ShardB : MonoBehaviour
 {
+    public bool shardBActivated = false;
+    public Transform ShardBEngagement;
+
     public bool shardBEngaged = false;
     public bool keyHoleBActivated = false;
     bool startDescent = false;
     float originalPos;
     Rigidbody rb;
 
-    GameObject Player;
-
     void Awake() {
-        Player = GameObject.Find("PLAYER");
         rb = GetComponent<Rigidbody>();
     }
 
@@ -24,22 +24,9 @@ public class ShardB : MonoBehaviour
 
     void Update()
     {
-        if(keyHoleBActivated) {
-            startDescent = true; 
-        }
-
-        if(!shardBEngaged && startDescent) {
-            transform.position += transform.up * Time.deltaTime * -3.0f;
-            //rb.velocity = transform.up * 3.0f;
-        } else {
-            //rb.velocity = Vector3.zero;
-        }
+        if(shardBActivated) {
+            gameObject.transform.position = ShardBEngagement.position;
+        }      
     }
 
-    void OnCollisionEnter (Collision collision) {
-        if(collision.gameObject.CompareTag ("Shard1")) {
-            shardBEngaged = true;
-            startDescent = false;
-        }
-    }
 }
