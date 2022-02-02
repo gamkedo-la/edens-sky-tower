@@ -6,12 +6,12 @@ public class Player : MonoBehaviour
     public Transform ToShardTwo;
     public Transform ToShardThree;
     public Transform PlayerFallRespawnPoint;
+    public Transform LevBase1;
     public Transform LevBase2;
+    public Transform LevBase3;
     public bool PlayerTransferShard1 = false;
     public bool PlayerTransferShard2 = false;
     public bool PlayerTransferShard3 = false;
-    
-    
 
     public bool TriggerRingsOne = false;
     public bool TriggerRingsTwo = false;
@@ -135,8 +135,17 @@ public class Player : MonoBehaviour
     void OnCollisionEnter (Collision collision) {
 
          if (collision.gameObject.CompareTag ("LevitatingBase1")) {
+             transform.position = LevBase1.position;
+             Debug.Log ("LevBase 1 collision");
+         }
+
+         if (collision.gameObject.CompareTag ("LevitatingBase2")) {
+             Debug.Log ("LevBase 2 collision");
              transform.position = LevBase2.position;
-             Debug.Log("levitating platform!");
+         }
+         
+         if (collision.gameObject.CompareTag ("LevitatingBase3")) {
+             transform.position = LevBase3.position;
          }
     }
 } // end of class
