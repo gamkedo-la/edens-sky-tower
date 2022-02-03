@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneChangeToPuzzle04 : MonoBehaviour
+public class SceneChangeToPuzzle : MonoBehaviour
 {
+    public string sceneToLoad;  
+
     void OnTriggerEnter (Collider other) {
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(sceneToLoad);
     }
 }

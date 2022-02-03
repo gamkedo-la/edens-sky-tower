@@ -669,9 +669,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 243225150}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1374f8438af91d41b14fc684d8edd3f, type: 3}
+  m_Script: {fileID: 11500000, guid: 11b76df612b02e845bf9381009497a80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneToLoad: Puzzle Scene 03 - lightbeam
 --- !u!65 &243225152
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -778,9 +779,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 263978558}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e540736f54147e24caad62d0e68fbe84, type: 3}
+  m_Script: {fileID: 11500000, guid: 11b76df612b02e845bf9381009497a80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneToLoad: Puzzle Scene 04 - story
 --- !u!65 &263978560
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1838,9 +1840,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 723581636}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05dc6bcba8bdaf548b4884d552159226, type: 3}
+  m_Script: {fileID: 11500000, guid: 11b76df612b02e845bf9381009497a80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneToLoad: Puzzle Scene 01 - push-pull objects
 --- !u!65 &723581638
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5517,9 +5520,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1998022823}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecd1e3144ca0a13449da9fa2e289741e, type: 3}
+  m_Script: {fileID: 11500000, guid: 11b76df612b02e845bf9381009497a80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneToLoad: Puzzle Scene 02 - navigational
 --- !u!65 &1998022825
 BoxCollider:
   m_ObjectHideFlags: 0
