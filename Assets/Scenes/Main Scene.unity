@@ -237,68 +237,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 80995830}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &417774384
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 417774387}
-  - component: {fileID: 417774386}
-  - component: {fileID: 417774385}
-  m_Layer: 0
-  m_Name: Post-process Volume
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &417774385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 417774384}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 11400000, guid: 25cf443ecea00d94496fff5a9899237d, type: 2}
-  isGlobal: 1
-  blendDistance: 0
-  weight: 1
-  priority: 0
---- !u!65 &417774386
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 417774384}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!4 &417774387
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 417774384}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.7298765, y: 0.71109176, z: 4.354059}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &513740262
 GameObject:
   m_ObjectHideFlags: 0
@@ -2754,8 +2692,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc96e57375135164c9c3d148bdf13fe4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shardBEngaged: 0
-  keyHoleBActivated: 0
+  shardBActivated: 0
+  ShardBEngagement: {fileID: 0}
 --- !u!64 &7623545439690359757
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3164,8 +3102,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 053cd4c09873b8e49b85431423a4b629, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shardCEngaged: 0
-  keyHoleCActivated: 0
+  shardCActivated: 0
+  ShardCEngagement: {fileID: 0}
 --- !u!54 &9014776603697597609
 Rigidbody:
   m_ObjectHideFlags: 0
