@@ -6,11 +6,6 @@ public class ShardB : MonoBehaviour
 {
     public bool shardBActivated = false;
     public Transform ShardBEngagement;
-    Rigidbody rb;
-
-    void Awake() {
-        rb = GetComponent<Rigidbody>();
-    }
 
     void Start()
     {

@@ -133,7 +133,7 @@ public class Player : MonoBehaviour
     }
 
     void OnCollisionEnter (Collision collision) {
-
+        Debug.Log (collision.gameObject.tag + " " + collision.gameObject.name);
          if (collision.gameObject.CompareTag ("LevitatingBase1")) {
              transform.position = LevBase1.position;
              Debug.Log ("LevBase 1 collision");
