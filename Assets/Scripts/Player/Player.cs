@@ -118,6 +118,34 @@ public class Player : MonoBehaviour
             Debug.Log ("teleproting Debug");
         }
 
+        if(Input.GetKeyDown(KeyCode.Alpha1)) {
+            PlayerPrefs.SetInt("usedKey1", 1);
+            Debug.Log("used Key One");
+        }
+
+        if(Input.GetKeyDown(KeyCode.Alpha2)) {
+            PlayerPrefs.SetInt("usedKey2", 1);
+            Debug.Log("used Key Two");
+        }
+
+        if(Input.GetKeyDown(KeyCode.Alpha3)) {
+            PlayerPrefs.SetInt("usedKey3", 1);
+            Debug.Log("used Key Three");
+        }
+
+        if(Input.GetKeyDown(KeyCode.Alpha4)) {
+            PlayerPrefs.SetInt("usedKey4", 1);
+            Debug.Log("used Key Four");
+        }
+
+        if(Input.GetKeyDown(KeyCode.Alpha5)) {
+            PlayerPrefs.SetInt("usedKey1", 0);
+            PlayerPrefs.SetInt("usedKey2", 0);
+            PlayerPrefs.SetInt("usedKey3", 0);
+            PlayerPrefs.SetInt("usedKey4", 0);
+            Debug.Log("unuse all keys");
+        }
+
     } // end of Update
 
     private void checkIfChangingToRunningOrWalkingMode()
