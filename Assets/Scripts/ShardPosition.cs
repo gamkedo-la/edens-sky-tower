@@ -7,10 +7,11 @@ public class ShardPosition : MonoBehaviour
     public string keyNumber;
     private bool shardActivated = false;
     public Transform ShardEngagementDestination;
+    private Vector3 startLocalPosition;
 
     void Start()
     {
-
+        startLocalPosition = transform.localPosition;
     }
 
     void Update()
@@ -19,7 +20,9 @@ public class ShardPosition : MonoBehaviour
 
         if(shardActivated) {
             gameObject.transform.position = ShardEngagementDestination.position;
-        }      
+        } else {
+            gameObject.transform.localPosition = startLocalPosition;
+        }  
     }
 
 }
