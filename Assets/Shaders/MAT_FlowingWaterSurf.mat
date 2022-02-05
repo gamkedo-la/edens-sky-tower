@@ -18,15 +18,36 @@ Material:
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
-    m_TexEnvs: []
+    m_TexEnvs:
+    - _SideNoiseTex:
+        m_Texture: {fileID: 2800000, guid: dac89d054d570ef4abd95871570d2ffc, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TopNoiseTex:
+        m_Texture: {fileID: 2800000, guid: febf8a8ed21743468e1d7686a4321c02, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Brightness: 1.251
-    - _DepthOffset: 0
+    - _Brightness: 1.091
+    - _Depth: 9.6
+    - _DepthOffset: 0.29
+    - _EdgeFoamWidth: 2.5
+    - _FoamSoftness: 0.087
+    - _FoamWidth: 0.139
     - _Glossiness: 0.514
+    - _HSpeed: 0
     - _Metallic: 0.488
-    - _Stretch: 2
+    - _SideNoiseScale: 0.026
+    - _Stretch: 0.41
+    - _TopFoamSpread: -0.98
+    - _TopScale: 0.236
+    - _VSpeed: 24
+    - _WaveAmount: 0
+    - _WaveHeight: 0
+    - _WaveSpeed: 1.89
     m_Colors:
-    - _Color: {r: 0.305, g: 1, b: 1, a: 0.49019608}
-    - _DeepColor: {r: 0, g: 0.21751645, b: 0.433, a: 0.62352943}
+    - _Color: {r: 0.305, g: 1, b: 1, a: 0.7176471}
+    - _DeepColor: {r: 0, g: 0.415, b: 0.83, a: 0.4392157}
+    - _FoamColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
