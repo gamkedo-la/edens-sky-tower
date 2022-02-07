@@ -17,8 +17,10 @@ Shader "Custom/FlowingWaterSurf"
         _TopNoiseTex ("Top water texture", 2D) = "white" {}
         _HSpeed ("Horizontal flow speed", Range(0, 4)) = 0.14
         _VSpeed ("Vertical flow speed", Range(0, 60)) = 10
-        _TopScale ("Top noise scale", Range(0, 1)) = 0.4
+        _TopNoiseScale ("Top noise scale", Range(0, 1)) = 0.4
+        _SideNoiseStretch ("Side noise stretch", Range(0, 20)) = 10
         _SideNoiseScale ("Side noise scale", Range(0, 1)) = 0.04
+        _TopNoiseNormalStrength ("Top noise normal strength", Range(0, 2)) = 0.5
         
         [Header(Vertex Movement)]
         _WaveAmount ("Wave amount", Range(0, 10)) = 0.6
@@ -35,7 +37,7 @@ Shader "Custom/FlowingWaterSurf"
     SubShader
     {
         Tags {
-            "RenderType"="Transparent"
+            "RenderType"="Opaque"
             "Queue"="Transparent"
         }
         LOD 200
@@ -48,9 +50,9 @@ Shader "Custom/FlowingWaterSurf"
         
         CGPROGRAM
         // Physically based Standard lighting model, and enable shadows on all light types
-        #pragma surface surf Standard fullforwardshadows keepalpha vertex:vert
+        #pragma surface surf Standard addshadow fullforwardshadows keepalpha vertex:vert
 
-        // Use shader model 3.0 target, to get nicer looking lighting
+        // 3.5 = OpenGL ES 3.0
         #pragma target 3.5
         #pragma shader_feature VERTEX
 
@@ -69,7 +71,7 @@ Shader "Custom/FlowingWaterSurf"
         sampler2D _GrabTex;
         
         sampler2D _SideNoiseTex, _TopNoiseTex;
-        float _SideNoiseScale, _TopNoiseScale, _HSpeed, _VSpeed, _WaveAmount, _WaveSpeed, _WaveHeight;
+        float _SideNoiseStretch, _SideNoiseScale, _TopNoiseScale, _HSpeed, _VSpeed, _WaveAmount, _WaveSpeed, _WaveHeight;
 
         float _EdgeFoamWidth, _TopFoamSpread, _FoamSoftness, _FoamWidth;
         fixed4 _FoamColor;
@@ -95,9 +97,13 @@ Shader "Custom/FlowingWaterSurf"
             float3 worldPos = mul(unity_ObjectToWorld, v.vertex).xyz;
 
             half3 tex = tex2Dlod(_SideNoiseTex, float4(worldPos.xz * _TopNoiseScale * 1, 1, 1));
-            float3 movement = sin(_Time.z * _WaveSpeed + (v.vertex.x * v.vertex.z * _WaveAmount)) * _WaveHeight * (1 - worldNormal.y);
+            float3 movement = sin(
+                _Time.z * _WaveSpeed +
+                (v.vertex.x * v.vertex.z * _WaveAmount * tex)) * _WaveHeight * (1 - worldNormal.y);
 
+            // unity_Scale
             // v.vertex.xyz += movement;
+            // v.vertex.
 
             half3 worldSpaceVertex = mul(unity_ObjectToWorld, (v.vertex)).xyz;
             o.viewInterpolator.xyz = worldSpaceVertex - _WorldSpaceCameraPos;
@@ -122,10 +128,10 @@ Shader "Custom/FlowingWaterSurf"
             // Noise textures
             float3 topFoamNoise = lerp(topTex1, topTex2, timingLerp); // @TODO: ripples
 
-            float3 sideFoamNoiseZ = tex2D(_SideNoiseTex, float2(IN.worldPos.z * 10, IN.worldPos.y + vertFlow) * _SideNoiseScale);
-            float3 sideFoamNoiseX = tex2D(_SideNoiseTex, float2(IN.worldPos.x * 10, IN.worldPos.y + vertFlow) * _SideNoiseScale);
-            float3 sideFoamNoiseZE = tex2D(_SideNoiseTex, float2(IN.worldPos.z * 10, IN.worldPos.y + vertFlow) * _SideNoiseScale * 0.4);
-            float3 sideFoamNoiseXE = tex2D(_SideNoiseTex, float2(IN.worldPos.x * 10, IN.worldPos.y + vertFlow) * _SideNoiseScale * 0.4);
+            float3 sideFoamNoiseZ = tex2D(_SideNoiseTex, float2(IN.worldPos.z * _SideNoiseStretch, IN.worldPos.y + vertFlow) * _SideNoiseScale);
+            float3 sideFoamNoiseX = tex2D(_SideNoiseTex, float2(IN.worldPos.x * _SideNoiseStretch, IN.worldPos.y + vertFlow) * _SideNoiseScale);
+            float3 sideFoamNoiseZE = tex2D(_SideNoiseTex, float2(IN.worldPos.z * _SideNoiseStretch, IN.worldPos.y + vertFlow) * _SideNoiseScale * 0.4);
+            float3 sideFoamNoiseXE = tex2D(_SideNoiseTex, float2(IN.worldPos.x * _SideNoiseStretch, IN.worldPos.y + vertFlow) * _SideNoiseScale * 0.4);
 
             float3 noiseTexture = (sideFoamNoiseX + sideFoamNoiseXE) * 0.5;
             noiseTexture = lerp(noiseTexture, (sideFoamNoiseZ + sideFoamNoiseZE) * 0.5, blendNormal.x);
@@ -135,7 +141,7 @@ Shader "Custom/FlowingWaterSurf"
             float worldNormalDotNoise = dot(o.Normal, worldNormal.y + 0.3) * noiseTexture;
 
             // Add noise to normal
-            o.Normal = worldNormal + noiseTexture;
+            // o.Normal = worldNormal + noiseTexture;
             // o.Normal = o.Normal + ripples;
 
             // Side foam
@@ -143,14 +149,21 @@ Shader "Custom/FlowingWaterSurf"
                 smoothstep(_TopFoamSpread, _TopFoamSpread + _FoamSoftness, worldNormalDotNoise) *
                 smoothstep(worldNormalDotNoise, worldNormalDotNoise + _FoamSoftness, _TopFoamSpread + _FoamWidth);
 
+            // no foam on top of water
+            sideFoam *= saturate(1 - worldNormal.y);
+            sideFoam *= 4;
+
             float4 depthUV = IN.screenPos;
             half depth = LinearEyeDepth(SAMPLE_DEPTH_TEXTURE_PROJ(_CameraDepthTexture, depthUV));
 
             // Edge foam calculation
             float foamLineS = 1 - saturate(_EdgeFoamWidth * float4(noiseTexture, 1) * (depth - IN.screenPos.w));
+            // float foamLineS = 1 - saturate(_Foam * float4(noisetexture,1) * (depth - IN.screenPos.w));// foam line by comparing depth and screenposition
             float foamLine = smoothstep(0.6, 0.8, foamLineS) * 3;
 
-            float3 combinedFoam = (sideFoam + topFoamNoise + foamLine) * _FoamColor;
+            // float3 combinedFoam = (sideFoam + topFoamNoise + foamLine) * _FoamColor;
+            // float3 combinedFoam = (sideFoam + topFoamNoise) * _FoamColor;
+            float3 combinedFoam = (sideFoam + foamLine) * _FoamColor;
 
             // Depth color lerp
             float saturation = saturate((depth - IN.screenPos.w)/_Depth * _Stretch);
@@ -164,6 +177,8 @@ Shader "Custom/FlowingWaterSurf"
 
             // Add foam color
             o.Albedo += combinedFoam;
+
+            // half4 rtReflections = tex2Dproj(_Refle)
             
             // Metallic and smoothness come from slider variables
             o.Metallic = _Metallic;
