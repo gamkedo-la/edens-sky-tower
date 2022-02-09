@@ -168,5 +168,6 @@ public class Player : MonoBehaviour
          if (collision.gameObject.CompareTag ("LevitatingBase3")) {
              transform.position = LevBase3.position;
          }
+         
     }
 } // end of class
