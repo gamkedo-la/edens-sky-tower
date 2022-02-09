@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class Player : MonoBehaviour
 {
@@ -13,9 +13,6 @@ public class Player : MonoBehaviour
     public bool PlayerTransferShard2 = false;
     public bool PlayerTransferShard3 = false;
 
-    public bool TriggerRingsOne = false;
-    public bool TriggerRingsTwo = false;
-    public bool TriggerRingsThree = false;
     public LayerMask jumpFrom;
     public Transform TeleportDebugLocation;
     public Transform TiltGlideModel;
@@ -91,19 +88,16 @@ public class Player : MonoBehaviour
 
         if(PlayerTransferShard1) {
             gameObject.transform.position = ToShardOne.position;
-            TriggerRingsOne = true;
             PlayerTransferShard1 = false;
         }
 
         if(PlayerTransferShard2) {
             gameObject.transform.position = ToShardTwo.position;
-            TriggerRingsTwo = true;
             PlayerTransferShard2 = false;
         }
 
         if(PlayerTransferShard3) {
             gameObject.transform.position = ToShardThree.position;
-            TriggerRingsThree = true;
             PlayerTransferShard3 = false;
         }
 
