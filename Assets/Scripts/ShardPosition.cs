@@ -8,7 +8,8 @@ public class ShardPosition : MonoBehaviour
     private bool shardActivated = false;
     public Transform ShardEngagementDestination;
     private Vector3 startLocalPosition;
-    public bool ControllingShardA = false;
+
+    
 
     void Start()
     {
@@ -24,21 +25,6 @@ public class ShardPosition : MonoBehaviour
         } else {
             gameObject.transform.localPosition = startLocalPosition;
         }  
-    }
-
-    void OnCollisionEnter (Collision collision) {
-
-        Debug.Log ("Colliding with console!");
-
-        //checking collision to control shards
-
-        if(collision.gameObject.CompareTag ("Player")) {
-             ControllingShardA = true;
-         } else {
-             ControllingShardA = false;
-         }
-
-         Debug.Log ("Colliding with Console A " + ControllingShardA);
 
     }
 

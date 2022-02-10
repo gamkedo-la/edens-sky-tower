@@ -5,7 +5,6 @@ public class Player : MonoBehaviour
     public Transform ToShardOne;
     public Transform ToShardTwo;
     public Transform ToShardThree;
-    public Transform PlayerFallRespawnPoint;
     public Transform LevBase1;
     public Transform LevBase2;
     public Transform LevBase3;
@@ -99,11 +98,6 @@ public class Player : MonoBehaviour
         if(PlayerTransferShard3) {
             gameObject.transform.position = ToShardThree.position;
             PlayerTransferShard3 = false;
-        }
-
-        //player respawns when falling
-        if(transform.position.y < -5.0f) {
-            gameObject.transform.position = PlayerFallRespawnPoint.position;
         }
 
         //debug
