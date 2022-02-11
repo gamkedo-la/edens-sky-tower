@@ -8,7 +8,8 @@ public class TowerElevator : MonoBehaviour
     private Player playerScript;
     bool inMotion = false;
     float progress = 0.0f;
-    float progressPace = 0.5f;
+    float progressPace = 0.2f;
+    int goToWayPoint;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +26,7 @@ public class TowerElevator : MonoBehaviour
                 inMotion = false;
                 playerScript.enabled = true;
             } else {
-                playerScript.transform.position = Vector3.Lerp(wayPointList[0].position, wayPointList[1].position, progress);
+                playerScript.transform.position = Vector3.Lerp(wayPointList[0].position, wayPointList[goToWayPoint].position, progress);
             }
         }
         
@@ -33,12 +34,22 @@ public class TowerElevator : MonoBehaviour
 
     void OnCollisionEnter (Collision collision) {
         //checking collision to control objects
-
-        if(collision.gameObject.CompareTag ("Player")) {
+        bool firstKey = PlayerPrefs.GetInt("usedKey1", 0) == 1;
+        if(firstKey && collision.gameObject.CompareTag ("Player")) {
             playerScript = collision.gameObject.GetComponent<Player>();
             playerScript.enabled = false;
             inMotion = true;
             progress = 0.0f;
+            bool secondKey = PlayerPrefs.GetInt("usedKey2", 0) == 1;
+            bool thirdKey = PlayerPrefs.GetInt("usedKey3", 0) == 1;
+
+            if(thirdKey) {
+                goToWayPoint = 3;
+            } else if (secondKey) {
+                goToWayPoint = 2;
+            } else {
+                goToWayPoint = 1;
+            } 
         }
     }
 }
