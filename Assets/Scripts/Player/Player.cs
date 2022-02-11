@@ -147,7 +147,7 @@ public class Player : MonoBehaviour
             isRunning = false;
         }
     }
-
+/*
     void OnCollisionEnter (Collision collision) {
          if (collision.gameObject.CompareTag ("LevitatingBase1")) {
              transform.position = LevBase1.position;
@@ -164,4 +164,5 @@ public class Player : MonoBehaviour
          }
          
     }
+*/
 } // end of class
