@@ -29,6 +29,7 @@ public class Collectible : MonoBehaviour
             collision.gameObject.GetComponent<Inventory>().PickUpItem(CollectibleType);
 
             //do something here with the object. Maybe destroy or put it somewhere else, depending on the needs of the rest of the game
+            Destroy(gameObject);
         }
 
     }
