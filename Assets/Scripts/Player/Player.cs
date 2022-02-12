@@ -24,7 +24,8 @@ public class Player : MonoBehaviour
     private bool holdingGlide = false;
 
     private bool isRunning = false;
-   
+    public bool isAffectedByWind = false;
+
     void Start()
     {
         jumpFrom = ~jumpFrom;
@@ -45,6 +46,10 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if (isAffectedByWind) // if affected by wind, don't allow the player to move
+        {
+            return; 
+        }
         Vector3 velWithGravity = rb.velocity;
         float saveYV = velWithGravity.y;
         velWithGravity = transform.forward * 10.0f * Input.GetAxis("Vertical");
@@ -66,7 +71,7 @@ public class Player : MonoBehaviour
         RaycastHit rhInfo;
         //ground beneath us?
         if (Physics.Raycast (transform.position, Vector3.down, out rhInfo, 1.5f, jumpFrom)) {
-            if(rb.velocity.y < 0.0f) {
+            if(rb.velocity.y < -15.0f) { // temporary change, raycast detects wind trigger otherwise (WIP)
                 rb.velocity = Vector3.zero;
             }
             transform.SetParent (rhInfo.collider.transform);
