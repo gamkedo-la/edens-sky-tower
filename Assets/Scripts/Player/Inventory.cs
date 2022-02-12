@@ -14,10 +14,12 @@ public class Inventory : MonoBehaviour
     [SerializeField]
     private int[] Items;
 
+    public InventoryUI myInventoryUI;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        myInventoryUI.UpdateUI(Items);
     }
 
     // Update is called once per frame
@@ -29,17 +31,19 @@ public class Inventory : MonoBehaviour
     public void PickUpItem(int itemIndex)
     {
         Items[itemIndex]++;
+        myInventoryUI.UpdateUI(Items);
     }
 
-    public bool UseItem(int itemIndex, bool drop)
+    public bool UseItem(int itemIndex, bool drop, int numberRequired)
     {
-        if(Items[itemIndex] > 0)
+        if(Items[itemIndex] >= numberRequired)
         {
 
             if (drop == true)
             {
                 Items[itemIndex]--;
             }
+            myInventoryUI.UpdateUI(Items);
             return true;
         }
         else
