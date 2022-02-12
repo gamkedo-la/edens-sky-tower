@@ -7,6 +7,9 @@ public class Inventory : MonoBehaviour
     //array to hold the number of each item in the player's inventory
     //each item type has an index which we can use to hold the number of them the player has
     //
+    //index 0: magnifying glass
+    //
+    //assign other indexes as needed
 
     [SerializeField]
     private int[] Items;
