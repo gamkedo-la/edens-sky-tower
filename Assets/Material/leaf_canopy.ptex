@@ -1,0 +1,490 @@
+{
+	"connections": [
+		{
+			"from": "tonality",
+			"from_port": 0,
+			"to": "blend",
+			"to_port": 1
+		},
+		{
+			"from": "gradient",
+			"from_port": 0,
+			"to": "blend",
+			"to_port": 0
+		},
+		{
+			"from": "blend",
+			"from_port": 0,
+			"to": "tones_step",
+			"to_port": 0
+		},
+		{
+			"from": "tones_step",
+			"from_port": 0,
+			"to": "transform2",
+			"to_port": 0
+		},
+		{
+			"from": "transform2",
+			"from_port": 0,
+			"to": "transform2_2",
+			"to_port": 0
+		},
+		{
+			"from": "transform2_2",
+			"from_port": 0,
+			"to": "mirror_2",
+			"to_port": 0
+		},
+		{
+			"from": "mirror_2",
+			"from_port": 0,
+			"to": "tiler",
+			"to_port": 0
+		},
+		{
+			"from": "tiler",
+			"from_port": 0,
+			"to": "transform2_3",
+			"to_port": 0
+		},
+		{
+			"from": "transform2_3",
+			"from_port": 0,
+			"to": "blend_2",
+			"to_port": 0
+		},
+		{
+			"from": "shape",
+			"from_port": 0,
+			"to": "transform2_4",
+			"to_port": 0
+		},
+		{
+			"from": "transform2_4",
+			"from_port": 0,
+			"to": "blend_2",
+			"to_port": 1
+		},
+		{
+			"from": "gradient_2",
+			"from_port": 0,
+			"to": "colorize",
+			"to_port": 0
+		},
+		{
+			"from": "colorize",
+			"from_port": 0,
+			"to": "blend_3",
+			"to_port": 0
+		},
+		{
+			"from": "blend_2",
+			"from_port": 0,
+			"to": "blend_3",
+			"to_port": 1
+		},
+		{
+			"from": "blend_2",
+			"from_port": 0,
+			"to": "blend_3",
+			"to_port": 2
+		},
+		{
+			"from": "blend_3",
+			"from_port": 0,
+			"to": "Material",
+			"to_port": 0
+		},
+		{
+			"from": "blend_2",
+			"from_port": 0,
+			"to": "Material",
+			"to_port": 7
+		}
+	],
+	"label": "Graph",
+	"longdesc": "",
+	"name": "@@6645",
+	"node_position": {
+		"x": 0,
+		"y": 0
+	},
+	"nodes": [
+		{
+			"export_paths": {
+				"Unity - 3D": "C:/Users/tfunk/code/unity/edens-sky-tower/Assets/Textures/leaf_canopy"
+			},
+			"name": "Material",
+			"node_position": {
+				"x": 0,
+				"y": 0
+			},
+			"parameters": {
+				"albedo_color": {
+					"a": 1,
+					"b": 1,
+					"g": 1,
+					"r": 1,
+					"type": "Color"
+				},
+				"ao": 1,
+				"depth_scale": 0.5,
+				"emission_energy": 1,
+				"flags_transparent": true,
+				"metallic": 0,
+				"normal": 1,
+				"roughness": 1,
+				"size": 11,
+				"sss": 0
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "material"
+		},
+		{
+			"name": "gradient",
+			"node_position": {
+				"x": -3076.032227,
+				"y": -172.439407
+			},
+			"parameters": {
+				"gradient": {
+					"interpolation": 1,
+					"points": [
+						{
+							"a": 1,
+							"b": 0,
+							"g": 0,
+							"pos": 0,
+							"r": 0
+						},
+						{
+							"a": 1,
+							"b": 1,
+							"g": 1,
+							"pos": 1,
+							"r": 1
+						}
+					],
+					"type": "Gradient"
+				},
+				"repeat": 1,
+				"rotate": -90
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "gradient"
+		},
+		{
+			"name": "blend",
+			"node_position": {
+				"x": -2752.108154,
+				"y": -229.43721
+			},
+			"parameters": {
+				"amount": 1,
+				"blend_type": 11
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "blend"
+		},
+		{
+			"name": "tonality",
+			"node_position": {
+				"x": -3060.891113,
+				"y": -20.97584
+			},
+			"parameters": {
+				"curve": {
+					"points": [
+						{
+							"ls": 0,
+							"rs": 0.163457,
+							"x": 0,
+							"y": 0
+						},
+						{
+							"ls": 1.497193,
+							"rs": 1.167153,
+							"x": 0.16385,
+							"y": 0.06269
+						},
+						{
+							"ls": 0.658205,
+							"rs": 0.670172,
+							"x": 0.27761,
+							"y": 0.226491
+						},
+						{
+							"ls": -0.670172,
+							"rs": -0.705444,
+							"x": 0.683162,
+							"y": 0.17088
+						},
+						{
+							"ls": -0.594507,
+							"rs": -0,
+							"x": 1,
+							"y": 0
+						}
+					],
+					"type": "Curve"
+				}
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "tonality"
+		},
+		{
+			"name": "tones_step",
+			"node_position": {
+				"x": -2489.999512,
+				"y": -233.11499
+			},
+			"parameters": {
+				"invert": false,
+				"value": 0.08,
+				"width": 0
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "tones_step"
+		},
+		{
+			"name": "transform2",
+			"node_position": {
+				"x": -2242.156738,
+				"y": -236.00853
+			},
+			"parameters": {
+				"mode": 0,
+				"rotate": 0,
+				"scale_x": 1,
+				"scale_y": 1,
+				"translate_x": 0,
+				"translate_y": -0.5
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "transform2"
+		},
+		{
+			"name": "transform2_2",
+			"node_position": {
+				"x": -2006.867188,
+				"y": -232.505478
+			},
+			"parameters": {
+				"mode": 0,
+				"rotate": -90,
+				"scale_x": 1,
+				"scale_y": -1,
+				"translate_x": 0,
+				"translate_y": 0
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "transform2"
+		},
+		{
+			"name": "mirror_2",
+			"node_position": {
+				"x": -1742.110229,
+				"y": -208.151672
+			},
+			"parameters": {
+				"direction": 0,
+				"offset": 0
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "mirror"
+		},
+		{
+			"name": "tiler",
+			"node_position": {
+				"x": -1484.340454,
+				"y": -205.482544
+			},
+			"parameters": {
+				"fixed_offset": 0,
+				"offset": 0,
+				"overlap": 2,
+				"rotate": 29.5,
+				"scale": 0.4,
+				"scale_x": 0.3,
+				"scale_y": 0.3,
+				"select_inputs": 0,
+				"tx": 10,
+				"ty": 1,
+				"value": 0,
+				"variations": false
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "tiler"
+		},
+		{
+			"name": "transform2_3",
+			"node_position": {
+				"x": -1128.012695,
+				"y": -209.219849
+			},
+			"parameters": {
+				"mode": 1,
+				"rotate": 0,
+				"scale_x": 1,
+				"scale_y": 1,
+				"translate_x": 0,
+				"translate_y": -0.33
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "transform2"
+		},
+		{
+			"name": "blend_2",
+			"node_position": {
+				"x": -736.355286,
+				"y": -116.785461
+			},
+			"parameters": {
+				"amount": 1,
+				"blend_type": 9
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "blend"
+		},
+		{
+			"name": "shape",
+			"node_position": {
+				"x": -1196.915283,
+				"y": 192.714539
+			},
+			"parameters": {
+				"edge": 0,
+				"radius": 0.8,
+				"shape": 1,
+				"sides": 4
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "shape"
+		},
+		{
+			"name": "transform2_4",
+			"node_position": {
+				"x": -977.915283,
+				"y": 191.714539
+			},
+			"parameters": {
+				"mode": 0,
+				"rotate": 0,
+				"scale_x": 7.84,
+				"scale_y": 1,
+				"translate_x": 0,
+				"translate_y": 0.1
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "transform2"
+		},
+		{
+			"name": "colorize",
+			"node_position": {
+				"x": -481.496338,
+				"y": -246.828873
+			},
+			"parameters": {
+				"gradient": {
+					"interpolation": 1,
+					"points": [
+						{
+							"a": 1,
+							"b": 0,
+							"g": 0.519562,
+							"pos": 0,
+							"r": 0.886719
+						},
+						{
+							"a": 1,
+							"b": 0.453346,
+							"g": 0.862336,
+							"pos": 0.865453,
+							"r": 0.938074
+						},
+						{
+							"a": 1,
+							"b": 1,
+							"g": 1,
+							"pos": 1,
+							"r": 1
+						}
+					],
+					"type": "Gradient"
+				}
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "colorize"
+		},
+		{
+			"name": "gradient_2",
+			"node_position": {
+				"x": -738.6521,
+				"y": -315.797791
+			},
+			"parameters": {
+				"gradient": {
+					"interpolation": 1,
+					"points": [
+						{
+							"a": 1,
+							"b": 0,
+							"g": 0,
+							"pos": 0,
+							"r": 0
+						},
+						{
+							"a": 1,
+							"b": 1,
+							"g": 1,
+							"pos": 1,
+							"r": 1
+						}
+					],
+					"type": "Gradient"
+				},
+				"repeat": 1,
+				"rotate": -90
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "gradient"
+		},
+		{
+			"name": "blend_3",
+			"node_position": {
+				"x": -275.121277,
+				"y": -191.277359
+			},
+			"parameters": {
+				"amount": 1,
+				"blend_type": 0
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "blend"
+		}
+	],
+	"parameters": {
+
+	},
+	"seed": 0,
+	"seed_locked": false,
+	"shortdesc": "",
+	"type": "graph"
+}

@@ -77,11 +77,17 @@
 			"from_port": 0,
 			"to": "reroute",
 			"to_port": 0
+		},
+		{
+			"from": "normal_map2",
+			"from_port": 0,
+			"to": "normal_map_convert_2",
+			"to_port": 0
 		}
 	],
 	"label": "Graph",
 	"longdesc": "",
-	"name": "@@309",
+	"name": "309",
 	"node_position": {
 		"x": 0,
 		"y": 0
@@ -535,6 +541,38 @@
 			"seed": 0,
 			"seed_locked": false,
 			"type": "slope_blur"
+		},
+		{
+			"name": "normal_map_convert_2",
+			"node_position": {
+				"x": -28.455322,
+				"y": 559.157715
+			},
+			"parameters": {
+				"op": 0
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "normal_map_convert"
+		},
+		{
+			"name": "wavelet_noise",
+			"node_position": {
+				"x": -1042.186646,
+				"y": 1230.866577
+			},
+			"parameters": {
+				"frequency": 1.26,
+				"iterations": 2,
+				"offset": 1,
+				"persistence": 0.55,
+				"scale_x": 1,
+				"scale_y": 6,
+				"type": 3
+			},
+			"seed": 0.039562,
+			"seed_locked": false,
+			"type": "wavelet_noise"
 		}
 	],
 	"parameters": {

@@ -1,0 +1,1128 @@
+{
+	"connections": [
+		{
+			"from": "shape",
+			"from_port": 0,
+			"to": "transform2",
+			"to_port": 0
+		},
+		{
+			"from": "transform2",
+			"from_port": 0,
+			"to": "tiler_advanced",
+			"to_port": 0
+		},
+		{
+			"from": "fbm2",
+			"from_port": 0,
+			"to": "warp",
+			"to_port": 1
+		},
+		{
+			"from": "tiler_advanced",
+			"from_port": 0,
+			"to": "warp",
+			"to_port": 0
+		},
+		{
+			"from": "warp",
+			"from_port": 0,
+			"to": "blend",
+			"to_port": 0
+		},
+		{
+			"from": "fbm2_2",
+			"from_port": 0,
+			"to": "blend",
+			"to_port": 1
+		},
+		{
+			"from": "fbm2_3",
+			"from_port": 0,
+			"to": "warp_2",
+			"to_port": 0
+		},
+		{
+			"from": "fbm2_3",
+			"from_port": 0,
+			"to": "warp_2",
+			"to_port": 1
+		},
+		{
+			"from": "warp_2",
+			"from_port": 0,
+			"to": "tones_step",
+			"to_port": 0
+		},
+		{
+			"from": "blend",
+			"from_port": 0,
+			"to": "blend_2",
+			"to_port": 1
+		},
+		{
+			"from": "tones_step",
+			"from_port": 0,
+			"to": "blend_2",
+			"to_port": 0
+		},
+		{
+			"from": "fbm2_4",
+			"from_port": 0,
+			"to": "warp_3",
+			"to_port": 1
+		},
+		{
+			"from": "fbm2_5",
+			"from_port": 0,
+			"to": "tones_step_3",
+			"to_port": 0
+		},
+		{
+			"from": "tones_step_3",
+			"from_port": 0,
+			"to": "warp_3",
+			"to_port": 0
+		},
+		{
+			"from": "warp_3",
+			"from_port": 0,
+			"to": "warp_4",
+			"to_port": 0
+		},
+		{
+			"from": "warp_3",
+			"from_port": 0,
+			"to": "warp_4",
+			"to_port": 1
+		},
+		{
+			"from": "warp_4",
+			"from_port": 0,
+			"to": "tones_map",
+			"to_port": 0
+		},
+		{
+			"from": "blend_2",
+			"from_port": 0,
+			"to": "blend_3",
+			"to_port": 0
+		},
+		{
+			"from": "tones_map",
+			"from_port": 0,
+			"to": "blend_3",
+			"to_port": 1
+		},
+		{
+			"from": "normal_map2",
+			"from_port": 0,
+			"to": "Material",
+			"to_port": 4
+		},
+		{
+			"from": "graph_6",
+			"from_port": 0,
+			"to": "Material",
+			"to_port": 5
+		},
+		{
+			"from": "blend_3",
+			"from_port": 0,
+			"to": "tones_map_2",
+			"to_port": 0
+		},
+		{
+			"from": "tones_map_2",
+			"from_port": 0,
+			"to": "normal_map2",
+			"to_port": 0
+		},
+		{
+			"from": "tones_map_2",
+			"from_port": 0,
+			"to": "graph_6",
+			"to_port": 0
+		},
+		{
+			"from": "blend_3",
+			"from_port": 0,
+			"to": "blend_4",
+			"to_port": 0
+		},
+		{
+			"from": "uniform_2",
+			"from_port": 0,
+			"to": "blend_4",
+			"to_port": 1
+		},
+		{
+			"from": "blend_4",
+			"from_port": 0,
+			"to": "blend_5",
+			"to_port": 0
+		},
+		{
+			"from": "blend_5",
+			"from_port": 0,
+			"to": "blend_6",
+			"to_port": 0
+		},
+		{
+			"from": "uniform_3",
+			"from_port": 0,
+			"to": "blend_5",
+			"to_port": 1
+		},
+		{
+			"from": "uniform",
+			"from_port": 0,
+			"to": "blend_6",
+			"to_port": 1
+		},
+		{
+			"from": "tones_map",
+			"from_port": 0,
+			"to": "blend_6",
+			"to_port": 2
+		},
+		{
+			"from": "tones_step",
+			"from_port": 0,
+			"to": "blend_5",
+			"to_port": 2
+		},
+		{
+			"from": "blend",
+			"from_port": 0,
+			"to": "blend_4",
+			"to_port": 2
+		},
+		{
+			"from": "blend_6",
+			"from_port": 0,
+			"to": "Material",
+			"to_port": 0
+		}
+	],
+	"label": "Graph",
+	"longdesc": "",
+	"name": "@@8675",
+	"node_position": {
+		"x": 0,
+		"y": 0
+	},
+	"nodes": [
+		{
+			"export_paths": {
+
+			},
+			"name": "Material",
+			"node_position": {
+				"x": 1659.052979,
+				"y": 194.342438
+			},
+			"parameters": {
+				"albedo_color": {
+					"a": 1,
+					"b": 1,
+					"g": 1,
+					"r": 1,
+					"type": "Color"
+				},
+				"ao": 1,
+				"depth_scale": 0.5,
+				"emission_energy": 1,
+				"flags_transparent": true,
+				"metallic": 0,
+				"normal": 1,
+				"roughness": 1,
+				"size": 11,
+				"sss": 0
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "material"
+		},
+		{
+			"name": "shape",
+			"node_position": {
+				"x": -2216.620117,
+				"y": 180.87999
+			},
+			"parameters": {
+				"edge": 0,
+				"radius": 0.01,
+				"shape": 1,
+				"sides": 4
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "shape"
+		},
+		{
+			"name": "transform2",
+			"node_position": {
+				"x": -2042.619995,
+				"y": 173.880005
+			},
+			"parameters": {
+				"mode": 1,
+				"rotate": 0,
+				"scale_x": 1,
+				"scale_y": 100,
+				"translate_x": 0,
+				"translate_y": 0
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "transform2"
+		},
+		{
+			"name": "tiler_advanced",
+			"node_position": {
+				"x": -1756.620117,
+				"y": 175.880005
+			},
+			"parameters": {
+				"overlap": 1,
+				"rotate": 0,
+				"scale_x": 1,
+				"scale_y": 1,
+				"select_inputs": 0,
+				"translate_x": 0,
+				"translate_y": 0,
+				"tx": 53,
+				"ty": 4,
+				"variations": false
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "tiler_advanced"
+		},
+		{
+			"name": "fbm2",
+			"node_position": {
+				"x": -1679.060059,
+				"y": -92.040001
+			},
+			"parameters": {
+				"folds": 0,
+				"iterations": 10,
+				"noise": 0,
+				"offset": 0,
+				"persistence": 0.5,
+				"scale_x": 30,
+				"scale_y": 6
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "fbm2"
+		},
+		{
+			"name": "warp",
+			"node_position": {
+				"x": -1396.980103,
+				"y": 157.520004
+			},
+			"parameters": {
+				"amount": 0.06,
+				"eps": 0.025,
+				"mode": 0
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "warp"
+		},
+		{
+			"name": "fbm2_2",
+			"node_position": {
+				"x": -1447.580078,
+				"y": 315.799957
+			},
+			"parameters": {
+				"folds": 0,
+				"iterations": 10,
+				"noise": 0,
+				"offset": 0,
+				"persistence": 0.97,
+				"scale_x": 31,
+				"scale_y": 6
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "fbm2"
+		},
+		{
+			"name": "blend",
+			"node_position": {
+				"x": -1154.848877,
+				"y": 164.879974
+			},
+			"parameters": {
+				"amount": 0.08,
+				"blend_type": 3
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "blend"
+		},
+		{
+			"name": "fbm2_3",
+			"node_position": {
+				"x": -1015.379883,
+				"y": 425.379913
+			},
+			"parameters": {
+				"folds": 0,
+				"iterations": 5,
+				"noise": 0,
+				"offset": 0,
+				"persistence": 0.5,
+				"scale_x": 32,
+				"scale_y": 4
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "fbm2"
+		},
+		{
+			"name": "warp_2",
+			"node_position": {
+				"x": -750.340027,
+				"y": 423.939911
+			},
+			"parameters": {
+				"amount": 0.105,
+				"eps": 0.125,
+				"mode": 0
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "warp"
+		},
+		{
+			"name": "tones_step",
+			"node_position": {
+				"x": -579.633484,
+				"y": 424.61377
+			},
+			"parameters": {
+				"invert": false,
+				"value": 0.43,
+				"width": 0.55
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "tones_step"
+		},
+		{
+			"name": "uniform",
+			"node_position": {
+				"x": 751.108032,
+				"y": -101.083496
+			},
+			"parameters": {
+				"color": {
+					"a": 1,
+					"b": 0.0324,
+					"g": 0.04206,
+					"r": 0.06,
+					"type": "Color"
+				}
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "uniform"
+		},
+		{
+			"name": "blend_2",
+			"node_position": {
+				"x": -359.291779,
+				"y": 152.961975
+			},
+			"parameters": {
+				"amount": 0.27,
+				"blend_type": 0
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "blend"
+		},
+		{
+			"name": "warp_3",
+			"node_position": {
+				"x": -97.569603,
+				"y": 687.600037
+			},
+			"parameters": {
+				"amount": 0.155,
+				"eps": 0.125,
+				"mode": 0
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "warp"
+		},
+		{
+			"name": "fbm2_4",
+			"node_position": {
+				"x": -379.44278,
+				"y": 898.123413
+			},
+			"parameters": {
+				"folds": 0,
+				"iterations": 10,
+				"noise": 0,
+				"offset": 0,
+				"persistence": 0.61,
+				"scale_x": 18,
+				"scale_y": 9
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "fbm2"
+		},
+		{
+			"name": "fbm2_5",
+			"node_position": {
+				"x": -628.957336,
+				"y": 675.664185
+			},
+			"parameters": {
+				"folds": 0,
+				"iterations": 5,
+				"noise": 0,
+				"offset": 0,
+				"persistence": 0.61,
+				"scale_x": 18,
+				"scale_y": 16
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "fbm2"
+		},
+		{
+			"name": "tones_step_3",
+			"node_position": {
+				"x": -353.957336,
+				"y": 681.664185
+			},
+			"parameters": {
+				"invert": false,
+				"value": 0.43,
+				"width": 0.55
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "tones_step"
+		},
+		{
+			"name": "warp_4",
+			"node_position": {
+				"x": 100.959328,
+				"y": 685.428162
+			},
+			"parameters": {
+				"amount": 0.035,
+				"eps": 0.055,
+				"mode": 0
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "warp"
+		},
+		{
+			"name": "tones_map",
+			"node_position": {
+				"x": 367.348267,
+				"y": 606.28479
+			},
+			"parameters": {
+				"in_max": 1,
+				"in_min": 0,
+				"out_max": 1,
+				"out_min": 0.38
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "tones_map"
+		},
+		{
+			"name": "blend_3",
+			"node_position": {
+				"x": 618.471436,
+				"y": 159.704071
+			},
+			"parameters": {
+				"amount": 0.93,
+				"blend_type": 2
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "blend"
+		},
+		{
+			"name": "uniform_2",
+			"node_position": {
+				"x": 762.378235,
+				"y": -320.043488
+			},
+			"parameters": {
+				"color": {
+					"a": 1,
+					"b": 0,
+					"g": 0.322998,
+					"r": 0.492188,
+					"type": "Color"
+				}
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "uniform"
+		},
+		{
+			"name": "uniform_3",
+			"node_position": {
+				"x": 740.95813,
+				"y": -191.763489
+			},
+			"parameters": {
+				"color": {
+					"a": 1,
+					"b": 0.0126,
+					"g": 0.07119,
+					"r": 0.18,
+					"type": "Color"
+				}
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "uniform"
+		},
+		{
+			"name": "normal_map2",
+			"node_position": {
+				"x": 1301.018066,
+				"y": 306.356506
+			},
+			"parameters": {
+				"buffer": 1,
+				"param2": 0,
+				"size": 10,
+				"strength": 0.04
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "normal_map2"
+		},
+		{
+			"connections": [
+				{
+					"from": "voronoi_3",
+					"from_port": 0,
+					"to": "buffer_5",
+					"to_port": 0
+				},
+				{
+					"from": "voronoi_2",
+					"from_port": 0,
+					"to": "buffer_7",
+					"to_port": 0
+				},
+				{
+					"from": "buffer_7",
+					"from_port": 0,
+					"to": "gen_outputs",
+					"to_port": 0
+				},
+				{
+					"from": "gen_inputs",
+					"from_port": 0,
+					"to": "buffer_2",
+					"to_port": 0
+				},
+				{
+					"from": "buffer_2",
+					"from_port": 0,
+					"to": "voronoi_3",
+					"to_port": 0
+				},
+				{
+					"from": "buffer_5",
+					"from_port": 0,
+					"to": "voronoi_2",
+					"to_port": 0
+				}
+			],
+			"label": "HBAO",
+			"longdesc": "",
+			"name": "graph_6",
+			"node_position": {
+				"x": 1277.978149,
+				"y": 528.116577
+			},
+			"nodes": [
+				{
+					"name": "voronoi_3",
+					"node_position": {
+						"x": -600.80072,
+						"y": -894.601807
+					},
+					"parameters": {
+						"angleBiasDeg": 15,
+						"depth_scale": 0.08,
+						"intensity": 1,
+						"quality": 4,
+						"radius": 0.1
+					},
+					"seed": 49449,
+					"seed_locked": false,
+					"shader_model": {
+						"code": "",
+						"global": "",
+						"inputs": [
+							{
+								"default": "0.0",
+								"function": true,
+								"label": "",
+								"name": "in",
+								"type": "f"
+							}
+						],
+						"instance": "//inspired by:\n//http://developer.download.nvidia.com/presentations/2008/SIGGRAPH/HBAO_SIG08b.pdf\n//https://gist.github.com/dotModded/981206ae1f4e760b7348\n//https://github.com/scanberg/hbao/blob/master/resources/shaders/hbao_full_frag.glsl\n//radius - radius of influence in screen space\n//angleBiasDeg - ~minimum angle for AO\n//intensity - increase strength of caclulated AO\n//noiseScale - for randomization values\nfloat $(name)_hbao(vec2 uv, float radius, float angleBiasDeg, float intensity, vec2 noiseScale) {\n  int samplig_directions = 8;\n  int steps = int($quality);\n\n  float angleBias = 0.0174532925 * angleBiasDeg;\n\n  vec3 c_point = vec3(uv*2.0 - 1.0, $in(uv)*$depth_scale);\n  //fun with dfdx & dfdy - https://community.khronos.org/t/getting-the-normal-with-dfdx-and-dfdy/70177\n  vec3 c_normal = normalize(cross(dFdx(c_point), dFdy(c_point)));\n\n\n  float cosMaxRot = cos(6.28318530718 / float(samplig_directions));\n  float sinMaxROt = sin(6.28318530718 / float(samplig_directions));\n  \n  // it should be faster than standard rotation in each iteartion\n  mat2 deltaRotationMatrix = mat2(\n    vec2(cosMaxRot, -sinMaxROt),\n    vec2(sinMaxROt, cosMaxRot)\n  );\n  \n  // calculate starting offset, as the smallest step\n  vec2 offset_uv = vec2(1.0, 0.0) * (radius /float(steps));\n\n  //randomize angle\n  vec3 sampleNoise    = rand3(uv * noiseScale);\n  sampleNoise.xy      = sampleNoise.xy * 2.0 - vec2(1.0);\n  mat2 rotationMatrix = mat2(vec2(sampleNoise.x, -sampleNoise.y), \n                             vec2(sampleNoise.y,  sampleNoise.x));\n  \n  // apply a random rotation to the base step vector\n  offset_uv = rotationMatrix * offset_uv;\n  \n  float jitter = sampleNoise.z;\n  float occlusion = 0.0;\n  \n  for (int i = 0; i < samplig_directions; ++i) {\n    // incrementally rotate sample direction\n    offset_uv = deltaRotationMatrix * offset_uv;\n    float oldAngle   = angleBias;\n    for (int j = 0; j < steps; ++j) {\n      //add jitter & distance to offset UV\n      vec2 sample_uv     = uv + (jitter + float(j)) * offset_uv;\n      vec3 s_point     = vec3(sample_uv*2.0 - 1.0, $in(sample_uv)*$depth_scale);\n      vec3 sample_tan  = (s_point - c_point); //not sure if correct, but looks ok\n      // 90 deg - (angle between normal from current point &  sampled tangent)\n      //https://math.stackexchange.com/questions/654315/how-to-convert-a-dot-product-of-two-vectors-to-the-angle-between-the-vectors\n      float gamma = 1.57079632679 - acos(dot(c_normal, normalize(sample_tan)));\n      \n      if (gamma > oldAngle) {\n        float value = sin(gamma) - sin(oldAngle);\n        float attenuation = clamp(1.0 - pow(length(sample_tan.xy)/radius, 2.0), 0.0, 1.0);\n        occlusion += attenuation * value;\n\t\t//occlusion += value;\n        oldAngle = gamma;\n      }\n    }\n  }\n  \n  occlusion = 1.0 - occlusion / float(samplig_directions);\n  return clamp(pow(occlusion, 1.0 + intensity), 0.0, 1.0);\n}",
+						"longdesc": "A node that generates several images from a tileable voronoi noise",
+						"name": "HBAO",
+						"outputs": [
+							{
+								"f": "$(name)_hbao($uv,$radius, $angleBiasDeg, $intensity, vec2(16.0,16.0))",
+								"longdesc": "A color pattern that assigns a random color to each cell",
+								"shortdesc": "Random color",
+								"type": "f"
+							}
+						],
+						"parameters": [
+							{
+								"control": "None",
+								"default": 0.01,
+								"label": "Radius",
+								"longdesc": "The scale along the X axis",
+								"max": 1,
+								"min": 0,
+								"name": "radius",
+								"shortdesc": "Scale.x",
+								"step": 0.01,
+								"type": "float"
+							},
+							{
+								"control": "None",
+								"default": 30,
+								"label": "Angle Bias",
+								"longdesc": "Angle bias for AO",
+								"max": 90,
+								"min": 0,
+								"name": "angleBiasDeg",
+								"shortdesc": "Angle Bias",
+								"step": 1,
+								"type": "float"
+							},
+							{
+								"control": "None",
+								"default": 0.2,
+								"label": "Intensity",
+								"longdesc": "Change intensity of AO",
+								"max": 5,
+								"min": 0,
+								"name": "intensity",
+								"shortdesc": "Intensity",
+								"step": 0.01,
+								"type": "float"
+							},
+							{
+								"control": "None",
+								"default": 1,
+								"label": "Depth Scale",
+								"longdesc": "Lineary scales depth values afecting  cacluated normals & tangents",
+								"max": 1,
+								"min": 0,
+								"name": "depth_scale",
+								"shortdesc": "Depth Scale",
+								"step": 0.01,
+								"type": "float"
+							},
+							{
+								"control": "None",
+								"default": 4,
+								"label": "Steps",
+								"longdesc": "Steps in given direction per ray",
+								"max": 12,
+								"min": 1,
+								"name": "quality",
+								"shortdesc": "Quality",
+								"step": 1,
+								"type": "float"
+							}
+						],
+						"shortdesc": "Voronoi Noise"
+					},
+					"type": "shader"
+				},
+				{
+					"name": "gen_inputs",
+					"node_position": {
+						"x": -1338.030762,
+						"y": -788.080872
+					},
+					"parameters": {
+
+					},
+					"ports": [
+						{
+							"group_size": 0,
+							"longdesc": "Greyscale heightmap",
+							"name": "input",
+							"shortdesc": "Input",
+							"type": "f"
+						}
+					],
+					"seed": 43798,
+					"seed_locked": false,
+					"type": "ios"
+				},
+				{
+					"name": "gen_outputs",
+					"node_position": {
+						"x": -902.684204,
+						"y": -327.282288
+					},
+					"parameters": {
+
+					},
+					"ports": [
+						{
+							"group_size": 0,
+							"longdesc": "",
+							"name": "port0",
+							"shortdesc": "AO",
+							"type": "f"
+						}
+					],
+					"seed": 42623,
+					"seed_locked": false,
+					"type": "ios"
+				},
+				{
+					"name": "gen_parameters",
+					"node_position": {
+						"x": -1488.979004,
+						"y": -561.71167
+					},
+					"parameters": {
+						"param0": 10,
+						"param1": 0.1,
+						"param2": 15,
+						"param3": 0.08,
+						"param4": 4,
+						"param5": 1
+					},
+					"seed": 58911,
+					"seed_locked": false,
+					"type": "remote",
+					"widgets": [
+						{
+							"label": "Size",
+							"linked_widgets": [
+								{
+									"node": "voronoi_2",
+									"widget": "size"
+								},
+								{
+									"node": "buffer_2",
+									"widget": "size"
+								},
+								{
+									"node": "buffer_5",
+									"widget": "size"
+								},
+								{
+									"node": "buffer_7",
+									"widget": "size"
+								}
+							],
+							"name": "param0",
+							"shortdesc": "Size",
+							"type": "linked_control"
+						},
+						{
+							"label": "Radius",
+							"linked_widgets": [
+								{
+									"node": "voronoi_3",
+									"widget": "radius"
+								}
+							],
+							"longdesc": "Affected radius of point in UV size",
+							"name": "param1",
+							"shortdesc": "Radius",
+							"type": "linked_control"
+						},
+						{
+							"label": "Angle Bias",
+							"linked_widgets": [
+								{
+									"node": "voronoi_3",
+									"widget": "angleBiasDeg"
+								}
+							],
+							"longdesc": "Minimum angle on heightmap for AO to occur. Angle is calculated in UV space, where depth (grayscale input) is scaled by \"Depth Scale\" parameter",
+							"name": "param2",
+							"shortdesc": "Angle bias",
+							"type": "linked_control"
+						},
+						{
+							"label": "Depth Scale",
+							"linked_widgets": [
+								{
+									"node": "voronoi_3",
+									"widget": "depth_scale"
+								}
+							],
+							"longdesc": "Lineary scales depth values afecting  cacluated normals & tangents",
+							"name": "param3",
+							"shortdesc": "Depth Scale",
+							"type": "linked_control"
+						},
+						{
+							"label": "Quality",
+							"linked_widgets": [
+								{
+									"node": "voronoi_3",
+									"widget": "quality"
+								}
+							],
+							"longdesc": "Number of steps per direction sampling",
+							"name": "param4",
+							"shortdesc": "Quality",
+							"type": "linked_control"
+						},
+						{
+							"label": "Intensity",
+							"linked_widgets": [
+								{
+									"node": "voronoi_3",
+									"widget": "intensity"
+								}
+							],
+							"longdesc": "Change intensity of calculated AO",
+							"name": "param5",
+							"shortdesc": "Intensity",
+							"type": "linked_control"
+						}
+					]
+				},
+				{
+					"name": "voronoi_2",
+					"node_position": {
+						"x": -710.111145,
+						"y": -596.459534
+					},
+					"parameters": {
+						"ksigma": 4,
+						"sigma": 3,
+						"size": 10,
+						"threshold": 0.7
+					},
+					"seed": 38722,
+					"seed_locked": false,
+					"shader_model": {
+						"code": "",
+						"global": "",
+						"inputs": [
+							{
+								"default": "0.0",
+								"function": true,
+								"label": "",
+								"name": "in",
+								"type": "rgba"
+							}
+						],
+						"instance": "//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n//  Copyright (c) 2018-2019 Michele Morrone\n//  All rights reserved.\n//\n//  https://michelemorrone.eu - https://BrutPitt.com\n//\n//  me@michelemorrone.eu - brutpitt@gmail.com\n//  twitter: @BrutPitt - github: BrutPitt\n//  \n//  https://github.com/BrutPitt/glslSmartDeNoise/\n//\n//  This software is distributed under the terms of the BSD 2-Clause license\n//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n//  smartDeNoise - parameters\n//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n//\n//  sampler2D tex     - sampler image / texture\n//  vec2 uv           - actual fragment coord\n//  float sigma  >  0 - sigma Standard Deviation\n//  float kSigma >= 0 - sigma coefficient \n//      kSigma * sigma  -->  radius of the circular kernel\n//  float threshold   - edge sharpening threshold \nvec4 $(name)_smartDeNoise(vec2 uv, float sigma, float kSigma, float threshold)\n{\n\tfloat INV_SQRT_OF_2PI = 0.39894228040143267793994605993439; // 1.0/SQRT_OF_2PI\n\tfloat INV_PI = 0.31830988618379067153776752674503;\n    float radius = round(kSigma*sigma);\n    float radQ = radius * radius;\n\n    float invSigmaQx2 = .5 / (sigma * sigma);      // 1.0 / (sigma^2 * 2.0)\n    float invSigmaQx2PI = INV_PI * invSigmaQx2;    // 1/(2 * PI * sigma^2)\n\n    float invThresholdSqx2 = .5 / (threshold * threshold);     // 1.0 / (sigma^2 * 2.0)\n    float invThresholdSqrt2PI = INV_SQRT_OF_2PI / threshold;   // 1.0 / (sqrt(2*PI) * sigma^2)\n\n    vec4 centrPx = $in(uv); \n\n    float zBuff = 0.0;\n    vec4 aBuff = vec4(0.0);\n    vec2 size = vec2($size, $size);\n\n    vec2 d;\n    for (d.x=-radius; d.x <= radius; d.x++) {\n        float pt = sqrt(radQ-d.x*d.x);       // pt = yRadius: have circular trend\n        for (d.y=-pt; d.y <= pt; d.y++) {\n            float blurFactor = exp( -dot(d , d) * invSigmaQx2 ) * invSigmaQx2PI;\n\n            vec4 walkPx =  $in(uv+d/size);\n            vec4 dC = walkPx-centrPx;\n            float deltaFactor = exp( -dot(dC, dC) * invThresholdSqx2) * invThresholdSqrt2PI * blurFactor;\n\n            zBuff += deltaFactor;\n            aBuff += deltaFactor*walkPx;\n        }\n    }\n    return aBuff/zBuff;\n}",
+						"longdesc": "A node that generates several images from a tileable voronoi noise",
+						"name": "Denoiser",
+						"outputs": [
+							{
+								"longdesc": "A color pattern that assigns a random color to each cell",
+								"rgba": "$(name)_smartDeNoise($uv, $sigma, $ksigma, $threshold)",
+								"shortdesc": "Random color",
+								"type": "rgba"
+							}
+						],
+						"parameters": [
+							{
+								"default": 10,
+								"first": 0,
+								"label": "size",
+								"last": 12,
+								"longdesc": "The scale along the X axis",
+								"name": "size",
+								"shortdesc": "Scale.x",
+								"type": "size"
+							},
+							{
+								"control": "None",
+								"default": 0.5,
+								"label": "Sigma",
+								"max": 1,
+								"min": 0.005,
+								"name": "sigma",
+								"step": 0.1,
+								"type": "float"
+							},
+							{
+								"control": "None",
+								"default": 0.5,
+								"label": "kSigma",
+								"max": 1,
+								"min": 0,
+								"name": "ksigma",
+								"step": 0.1,
+								"type": "float"
+							},
+							{
+								"control": "None",
+								"default": 0.5,
+								"label": "threshold",
+								"max": 1,
+								"min": 0,
+								"name": "threshold",
+								"step": 0.1,
+								"type": "float"
+							}
+						],
+						"shortdesc": "Voronoi Noise"
+					},
+					"type": "shader"
+				},
+				{
+					"name": "buffer_5",
+					"node_position": {
+						"x": -931.449646,
+						"y": -724.330017
+					},
+					"parameters": {
+						"size": 10
+					},
+					"seed": 6771,
+					"seed_locked": false,
+					"type": "buffer",
+					"version": 1
+				},
+				{
+					"name": "buffer_7",
+					"node_position": {
+						"x": -948.36377,
+						"y": -449.796295
+					},
+					"parameters": {
+						"size": 10
+					},
+					"seed": 16139,
+					"seed_locked": false,
+					"type": "buffer",
+					"version": 1
+				},
+				{
+					"name": "buffer_2",
+					"node_position": {
+						"x": -976.009644,
+						"y": -975.5
+					},
+					"parameters": {
+						"size": 10
+					},
+					"seed": 42465,
+					"seed_locked": false,
+					"type": "buffer",
+					"version": 1
+				}
+			],
+			"parameters": {
+				"param0": 10,
+				"param1": 0.1,
+				"param2": 15,
+				"param3": 0.08,
+				"param4": 4,
+				"param5": 1
+			},
+			"seed": 6741,
+			"seed_locked": false,
+			"shortdesc": "",
+			"type": "graph"
+		},
+		{
+			"name": "tones_map_2",
+			"node_position": {
+				"x": 951.098083,
+				"y": 453.236542
+			},
+			"parameters": {
+				"in_max": 1,
+				"in_min": 0,
+				"out_max": 1,
+				"out_min": 0.76
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "tones_map"
+		},
+		{
+			"name": "blend_4",
+			"node_position": {
+				"x": 949.658081,
+				"y": -348.843536
+			},
+			"parameters": {
+				"amount": 1,
+				"blend_type": 0
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "blend"
+		},
+		{
+			"name": "blend_5",
+			"node_position": {
+				"x": 946.778076,
+				"y": -219.24353
+			},
+			"parameters": {
+				"amount": 1,
+				"blend_type": 0
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "blend"
+		},
+		{
+			"name": "blend_6",
+			"node_position": {
+				"x": 955.842468,
+				"y": -94.989113
+			},
+			"parameters": {
+				"amount": 1,
+				"blend_type": 0
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "blend"
+		}
+	],
+	"parameters": {
+
+	},
+	"seed": 0,
+	"seed_locked": false,
+	"shortdesc": "",
+	"type": "graph"
+}
