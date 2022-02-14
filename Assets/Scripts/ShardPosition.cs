@@ -9,6 +9,8 @@ public class ShardPosition : MonoBehaviour
     public Transform ShardEngagementDestination;
     private Vector3 startLocalPosition;
 
+    
+
     void Start()
     {
         startLocalPosition = transform.localPosition;
@@ -23,6 +25,7 @@ public class ShardPosition : MonoBehaviour
         } else {
             gameObject.transform.localPosition = startLocalPosition;
         }  
+
     }
 
 }

@@ -1,11 +1,10 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class Player : MonoBehaviour
 {
     public Transform ToShardOne;
     public Transform ToShardTwo;
     public Transform ToShardThree;
-    public Transform PlayerFallRespawnPoint;
     public Transform LevBase1;
     public Transform LevBase2;
     public Transform LevBase3;
@@ -13,9 +12,6 @@ public class Player : MonoBehaviour
     public bool PlayerTransferShard2 = false;
     public bool PlayerTransferShard3 = false;
 
-    public bool TriggerRingsOne = false;
-    public bool TriggerRingsTwo = false;
-    public bool TriggerRingsThree = false;
     public LayerMask jumpFrom;
     public Transform TeleportDebugLocation;
     public Transform TiltGlideModel;
@@ -28,7 +24,8 @@ public class Player : MonoBehaviour
     private bool holdingGlide = false;
 
     private bool isRunning = false;
-   
+    public bool isAffectedByWind = false;
+
     void Start()
     {
         jumpFrom = ~jumpFrom;
@@ -49,6 +46,10 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if (isAffectedByWind) // if affected by wind, don't allow the player to move
+        {
+            return; 
+        }
         Vector3 velWithGravity = rb.velocity;
         float saveYV = velWithGravity.y;
         velWithGravity = transform.forward * 10.0f * Input.GetAxis("Vertical");
@@ -70,7 +71,7 @@ public class Player : MonoBehaviour
         RaycastHit rhInfo;
         //ground beneath us?
         if (Physics.Raycast (transform.position, Vector3.down, out rhInfo, 1.5f, jumpFrom)) {
-            if(rb.velocity.y < 0.0f) {
+            if(rb.velocity.y < -15.0f) { // temporary change, raycast detects wind trigger otherwise (WIP)
                 rb.velocity = Vector3.zero;
             }
             transform.SetParent (rhInfo.collider.transform);
@@ -91,25 +92,17 @@ public class Player : MonoBehaviour
 
         if(PlayerTransferShard1) {
             gameObject.transform.position = ToShardOne.position;
-            TriggerRingsOne = true;
             PlayerTransferShard1 = false;
         }
 
         if(PlayerTransferShard2) {
             gameObject.transform.position = ToShardTwo.position;
-            TriggerRingsTwo = true;
             PlayerTransferShard2 = false;
         }
 
         if(PlayerTransferShard3) {
             gameObject.transform.position = ToShardThree.position;
-            TriggerRingsThree = true;
             PlayerTransferShard3 = false;
-        }
-
-        //player respawns when falling
-        if(transform.position.y < -5.0f) {
-            gameObject.transform.position = PlayerFallRespawnPoint.position;
         }
 
         //debug
@@ -159,7 +152,7 @@ public class Player : MonoBehaviour
             isRunning = false;
         }
     }
-
+/*
     void OnCollisionEnter (Collision collision) {
          if (collision.gameObject.CompareTag ("LevitatingBase1")) {
              transform.position = LevBase1.position;
@@ -174,5 +167,7 @@ public class Player : MonoBehaviour
          if (collision.gameObject.CompareTag ("LevitatingBase3")) {
              transform.position = LevBase3.position;
          }
+         
     }
+*/
 } // end of class
