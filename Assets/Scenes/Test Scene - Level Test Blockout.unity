@@ -147,6 +147,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grass Patch (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1899640998178845122, guid: 742508b3a606a9742928f3bbb9ab087f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1899640998178845123, guid: 742508b3a606a9742928f3bbb9ab087f,
         type: 3}
       propertyPath: m_RootOrder
@@ -220,6 +225,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Grass Patch (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1899640998178845122, guid: 742508b3a606a9742928f3bbb9ab087f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1899640998178845123, guid: 742508b3a606a9742928f3bbb9ab087f,
         type: 3}
@@ -375,9 +385,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1440099543}
     m_Modifications:
+    - target: {fileID: 460421797, guid: 21cfe29b9475b994b93ad88d1be9f2b8, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 460421798, guid: 21cfe29b9475b994b93ad88d1be9f2b8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 13.308
+      objectReference: {fileID: 0}
     - target: {fileID: 1233623349380183413, guid: 21cfe29b9475b994b93ad88d1be9f2b8,
         type: 3}
       propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1233623349380183413, guid: 21cfe29b9475b994b93ad88d1be9f2b8,
+        type: 3}
+      propertyPath: m_LocalScale.y
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1233623349380183413, guid: 21cfe29b9475b994b93ad88d1be9f2b8,
@@ -388,7 +411,7 @@ PrefabInstance:
     - target: {fileID: 1233623349380183413, guid: 21cfe29b9475b994b93ad88d1be9f2b8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3
+      value: -6
       objectReference: {fileID: 0}
     - target: {fileID: 1233623349380183413, guid: 21cfe29b9475b994b93ad88d1be9f2b8,
         type: 3}
@@ -435,6 +458,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ring 0 Wind Trigger
       objectReference: {fileID: 0}
+    - target: {fileID: 1233623349380183414, guid: 21cfe29b9475b994b93ad88d1be9f2b8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1233623349380183415, guid: 21cfe29b9475b994b93ad88d1be9f2b8,
+        type: 3}
+      propertyPath: windDuration
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1233623349380183415, guid: 21cfe29b9475b994b93ad88d1be9f2b8,
+        type: 3}
+      propertyPath: windMagnitude
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1233623349380183415, guid: 21cfe29b9475b994b93ad88d1be9f2b8,
+        type: 3}
+      propertyPath: durationWindAffectsPlayer
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1233623349380183415, guid: 21cfe29b9475b994b93ad88d1be9f2b8,
+        type: 3}
+      propertyPath: durationPlayerLosesControl
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21cfe29b9475b994b93ad88d1be9f2b8, type: 3}
 --- !u!4 &1140177446 stripped
@@ -466,6 +514,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Grass Patch (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1899640998178845122, guid: 742508b3a606a9742928f3bbb9ab087f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1899640998178845123, guid: 742508b3a606a9742928f3bbb9ab087f,
         type: 3}
@@ -779,6 +832,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Grass Patch
+      objectReference: {fileID: 0}
+    - target: {fileID: 1899640998178845122, guid: 742508b3a606a9742928f3bbb9ab087f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1899640998178845123, guid: 742508b3a606a9742928f3bbb9ab087f,
         type: 3}

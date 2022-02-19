@@ -5,72 +5,141 @@ using UnityEngine;
 
 public class WindBurst : MonoBehaviour
 {
-    [SerializeField] private float windBurstPowerUp = 100.0f;
-    [SerializeField] private float windBurstPowerBack = 250.0f;
+    [SerializeField] private float windMagnitude = 0.7f;
     [SerializeField] private float durationPlayerLosesControl = 5.0f;
+    [SerializeField] private float durationWindAffectsPlayer = 0.2f;
     [SerializeField] private Transform originTransform;
 
-    private GameObject target;
     private Rigidbody rbTarget;
+
+    private Quaternion originalRotation;
+    private Quaternion targetRotation;
+
     private Player player;
-    private Vector3 windForce;
-    private Vector3 windForceUp;
-    private Vector3 windForceBack;
-    private Vector3 directionVector;
+    private Vector3 direction;
 
-    private void ApplyWindUp()
-    {
-        rbTarget.AddForce(windForceUp * windBurstPowerUp, ForceMode.VelocityChange);
-    }
+    private bool affectedByWind = false;
+    private bool windCameraSpeedOn = false;
 
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            ApplyWindUp();
-        }
-    }
+    private float rotationPerSecond;  
+    private float rotationAmount;
+    private float amountRotated;  
+    private bool isRotating;  
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Player")
         {
-            target = other.gameObject;
             rbTarget = other.GetComponent<Rigidbody>();
             player = other.GetComponent<Player>();
 
-            directionVector = (originTransform.position - other.transform.position);
-            directionVector = directionVector.normalized;
-            windForce = directionVector;
+            direction = (originTransform.position - other.transform.position).normalized;
+            originalRotation = rbTarget.transform.rotation;
+            targetRotation = Quaternion.LookRotation(-transform.forward, Vector3.up);
 
-            windForceUp = new Vector3(0.0f, windForce.y, 0.0f);
-            windForceBack = new Vector3(windForce.x, 0.0f, windForce.z);
-
+            rotationAmount = UnityEngine.Random.Range(180 - 45, 180 + 45);
+            rotationPerSecond = rotationAmount / 2;
             player.isAffectedByWind = true;
+            affectedByWind = true;
         }
         
     }
 
-    private void OnTriggerExit(Collider other)
+    private void FixedUpdate()
     {
-        StartCoroutine(ApplyWindBack());
-        StartCoroutine(ReEnableMovementInDuration());
-    }
-
-    private IEnumerator ApplyWindBack()
-    {
-        float timePassed = 0;
-        while (timePassed < 0.15f)
+        if (affectedByWind)
         {
-            rbTarget.AddForce(windForceBack * windBurstPowerBack, ForceMode.VelocityChange);
-            timePassed += Time.deltaTime;
-            yield return null;
+            float smoothRate = 0.005f;
+            rbTarget.AddForce(direction * windMagnitude, ForceMode.VelocityChange);
+            rbTarget.transform.rotation = Quaternion.Lerp(rbTarget.transform.rotation, targetRotation, smoothRate * Time.deltaTime);
         }
     }
 
-    private IEnumerator ReEnableMovementInDuration()
+    private void LateUpdate()
+    {
+        if (windCameraSpeedOn)
+        {
+            if(isGrounded()) // when the player touches the ground, give back control
+            {
+                windCameraSpeedOn = false;
+                player.isAffectedByWind = false;
+            }
+
+            float followSharpness = 0.0005f;
+            Vector3 offSet = Camera.main.transform.position - rbTarget.transform.position;
+            float blend = 1f - Mathf.Pow(1f - followSharpness, Time.deltaTime * 30f);
+
+            Camera.main.transform.position = Vector3.Lerp(
+                   Camera.main.transform.position,
+                   rbTarget.transform.position + offSet,
+                   blend);
+
+            Camera.main.transform.rotation = Quaternion.Slerp(
+                    Camera.main.transform.rotation,
+                    rbTarget.transform.rotation,
+                    blend);
+            
+            if (rbTarget.position.y < transform.position.y) // if the player somehow falls past the wind barrier, reset their position
+            {
+                rbTarget.transform.position = new Vector3(0.0f, 0.0f, 0.0f);
+            }
+            if( rbTarget.position.y < 0.0f && rbTarget.position.y < 1.0f) // if player is stuck on the side, push them up
+            {
+                if(rbTarget.velocity.y < 1.0f)
+                {
+                    rbTarget.AddForce(Vector3.up * 10);
+                }
+            }
+        }
+        
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        StartCoroutine(RotateBackAround());
+        StartCoroutine(ReEnablePlayerMovementAfterDuration());
+        StartCoroutine(CameraFollowPlayerForDuration());
+        StartCoroutine(DisableWindAfterDuration());
+    }
+
+    private IEnumerator RotateBackAround()
+    {
+        if(isRotating) // if already rotating, quit
+        {
+            yield return null;
+        }
+        float amountRotated = 0f;
+        while (amountRotated < rotationAmount)
+        {
+            float frameRotation = rotationPerSecond * Time.deltaTime;  // Amount to rotate this frame
+            rbTarget.transform.Rotate(0, frameRotation, 0);  // Apply the rotation
+            amountRotated += frameRotation;  // Also keep track of the amount rotated so far
+            yield return new WaitForEndOfFrame();  // We want to rotate every frame until we reach the target
+        }
+        isRotating = false;
+    }
+
+    private IEnumerator CameraFollowPlayerForDuration()
+    {
+        windCameraSpeedOn = true;
+        yield return new WaitForSeconds(durationPlayerLosesControl);
+        windCameraSpeedOn = false;
+    }
+
+    private IEnumerator ReEnablePlayerMovementAfterDuration()
     {
         yield return new WaitForSeconds(durationPlayerLosesControl);
         player.isAffectedByWind = false;
+    }
+
+    private IEnumerator DisableWindAfterDuration()
+    {
+        yield return new WaitForSeconds(durationWindAffectsPlayer);
+        affectedByWind = false;
+    }
+    
+    private bool isGrounded()
+    {
+        RaycastHit rhInfo;
+        return Physics.Raycast(rbTarget.transform.position, Vector3.down, out rhInfo, 1.5f, player.jumpFrom, QueryTriggerInteraction.Ignore);
     }
 }
