@@ -8,8 +8,10 @@ public class Inventory : MonoBehaviour
     //each item type has an index which we can use to hold the number of them the player has
     //
     //index 0: magnifying glass
-    //
-    //assign other indexes as needed
+    //1: necklaces
+    //2: ocarinas
+    //3: books
+    //4: spoons
 
     [SerializeField]
     private int[] Items;
@@ -30,6 +32,12 @@ public class Inventory : MonoBehaviour
 
     public void PickUpItem(int itemIndex)
     {
+        if(itemIndex >= Items.Length)
+        {
+            Debug.Log("error, invalid item id");
+            return;
+        }
+
         Items[itemIndex]++;
         myInventoryUI.UpdateUI(Items);
     }

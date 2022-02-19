@@ -61,7 +61,14 @@ public class InventoryUI : MonoBehaviour
             B = OpenPos;
             GM.PauseGame();
         }
-        T = 0;
+        if (T < 1)
+        {
+            T = 1 - T;
+        }
+        else
+        {
+            T = 0;
+        }
         open = !open;
     }
 }

@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class Collectible : MonoBehaviour
 {
+
+    //0: magnifying glass
+    //1: necklace
+    //2: ocarina
+    //3: book
+    //4: spoon
+
+    [Tooltip("0: magnifying glass \n 1: necklace \n 2: ocarina \n 3: book \n 4: spoon")]
     public int CollectibleType;
 
 
