@@ -7,6 +7,8 @@ public class getKey : MonoBehaviour
     public string keyNumber;
     bool snapToPlayer = false;
     bool snapToKeyHole = false;
+    public Transform playerItemHolding;
+    public Transform itemToConsole;
 
     GameObject keyhole;  
     GameObject player;
@@ -27,11 +29,11 @@ public class getKey : MonoBehaviour
     void Update()
     {
         if (snapToPlayer) {
-            gameObject.transform.position = player.transform.position;
+            gameObject.transform.position = playerItemHolding.transform.position;
         }
 
         if (snapToKeyHole) {
-            gameObject.transform.position = keyhole.transform.position;
+            gameObject.transform.position = itemToConsole.transform.position;
             PlayerPrefs.SetInt("usedKey" + keyNumber, 1);
             //keyholeA.GetComponent<TowerB>().keyHoleAActivated = true; // makes rings move
 
@@ -41,7 +43,7 @@ public class getKey : MonoBehaviour
     }
 
     void OnCollisionEnter (Collision collision) {
-        Debug.Log("collision registered!");
+        Debug.Log("collision registered!!!");
 
         if (collision.gameObject.CompareTag ("Player")) {
             Debug.Log("Got Key!");
@@ -52,7 +54,6 @@ public class getKey : MonoBehaviour
             Debug.Log("Key Inserted!");
             snapToPlayer = false;
             snapToKeyHole = true;
-            
         }
 
     }
