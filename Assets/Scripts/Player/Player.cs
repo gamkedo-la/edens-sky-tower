@@ -174,9 +174,13 @@ public class Player : MonoBehaviour
             bool isHeld = PlayerPrefs.GetInt("holdKey" + keyNumber, 0) == 1;
             if(isHeld) {
                 Debug.Log("Key Inserted!");
-                PlayerPrefs.SetInt("usedKey" + keyNumber, 1);
-                PlayerPrefs.SetInt("holdKey" + keyNumber, 0);
                 CarryingKey.SetActive(false);
+                ConsoleKeyManager CKMScript = collision.gameObject.GetComponent<ConsoleKeyManager>();
+                if(CKMScript) {
+                    CKMScript.UseKey();
+                } else {
+                    Debug.LogWarning("console is missing a ConsoleKeyManager");
+                }
             }
             
         }
