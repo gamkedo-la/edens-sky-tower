@@ -19,6 +19,7 @@ public class RingMovement : MonoBehaviour
        positionReachable = transform.position;
         destination = transform.position;
        SnapToPosition();
+       transform.position = destination; // player shouldn't see transition at start
     }
 
     
@@ -40,8 +41,7 @@ public class RingMovement : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate() // not using update since move destination uses lerp
     {
       SnapToPosition();
         MoveToDestination();
