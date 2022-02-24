@@ -26,6 +26,13 @@ public class WindBurst : MonoBehaviour
     private float amountRotated;  
     private bool isRotating;  
 
+    void Start () {
+        if(rbTarget == null || player == null) {
+            this.enabled = false; // preventing constant error from uninitalized variables
+            Debug.Log("preventing null ref exception while wind burst - WIP");
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Player")
@@ -128,7 +135,9 @@ public class WindBurst : MonoBehaviour
     private IEnumerator ReEnablePlayerMovementAfterDuration()
     {
         yield return new WaitForSeconds(durationPlayerLosesControl);
-        player.isAffectedByWind = false;
+        if(player) {
+            player.isAffectedByWind = false;
+        }
     }
 
     private IEnumerator DisableWindAfterDuration()
@@ -139,6 +148,7 @@ public class WindBurst : MonoBehaviour
     
     private bool isGrounded()
     {
+        
         RaycastHit rhInfo;
         return Physics.Raycast(rbTarget.transform.position, Vector3.down, out rhInfo, 1.5f, player.jumpFrom, QueryTriggerInteraction.Ignore);
     }
