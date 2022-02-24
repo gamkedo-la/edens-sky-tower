@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class Player : MonoBehaviour
     public bool PlayerTransferShard1 = false;
     public bool PlayerTransferShard2 = false;
     public bool PlayerTransferShard3 = false;
+    public GameObject CarryingKey;
 
     public LayerMask jumpFrom;
     public Transform TeleportDebugLocation;
@@ -31,6 +33,13 @@ public class Player : MonoBehaviour
         jumpFrom = ~jumpFrom;
         rb = GetComponent<Rigidbody>();
         TiltGlideModel.localRotation = Quaternion.identity;
+        bool isHeld = PlayerPrefs.GetInt("holdKey" + 1, 0) == 1;
+        CarryingKey.SetActive(isHeld);
+    }
+
+    public void GetKey (string whichKey) {
+        PlayerPrefs.SetInt("holdKey" + whichKey, 1);
+        CarryingKey.SetActive(true);
     }
 
     void ShowGlider(bool turnOn) {
@@ -138,6 +147,12 @@ public class Player : MonoBehaviour
             PlayerPrefs.SetInt("usedKey4", 0);
             Debug.Log("unuse all keys");
         }
+    
+        if(Input.GetKeyDown(KeyCode.Alpha6)) {
+            PlayerPrefs.DeleteAll();
+            Debug.Log ("forgetting all player pref - reloding scene");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
 
     } // end of Update
 
@@ -152,22 +167,20 @@ public class Player : MonoBehaviour
             isRunning = false;
         }
     }
-/*
-    void OnCollisionEnter (Collision collision) {
-         if (collision.gameObject.CompareTag ("LevitatingBase1")) {
-             transform.position = LevBase1.position;
-             Debug.Log ("LevBase 1 collision");
-         }
 
-         if (collision.gameObject.CompareTag ("LevitatingBase2")) {
-             Debug.Log ("LevBase 2 collision");
-             transform.position = LevBase2.position;
-         }
-         
-         if (collision.gameObject.CompareTag ("LevitatingBase3")) {
-             transform.position = LevBase3.position;
-         }
+    void OnCollisionEnter (Collision collision) {
+        if (collision.gameObject.CompareTag ("KeyHoleA")) {
+            int keyNumber = 1;
+            bool isHeld = PlayerPrefs.GetInt("holdKey" + keyNumber, 0) == 1;
+            if(isHeld) {
+                Debug.Log("Key Inserted!");
+                PlayerPrefs.SetInt("usedKey" + keyNumber, 1);
+                PlayerPrefs.SetInt("holdKey" + keyNumber, 0);
+                CarryingKey.SetActive(false);
+            }
+            
+        }
          
     }
-*/
+
 } // end of class

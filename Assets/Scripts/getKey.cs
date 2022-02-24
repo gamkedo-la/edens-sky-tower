@@ -5,8 +5,6 @@ using UnityEngine;
 public class getKey : MonoBehaviour
 {
     public string keyNumber;
-    bool snapToPlayer = false;
-    bool snapToKeyHole = false;
     public Transform playerItemHolding;
     public Transform itemToConsole;
 
@@ -17,28 +15,10 @@ public class getKey : MonoBehaviour
     void Awake() {
         keyhole = GameObject.Find("TowerShards/Shard" + keyNumber);
         player = GameObject.Find("PLAYER");
-    }
-
-
-    void Start()
-    {
-
-        
-    }
-
-    void Update()
-    {
-        if (snapToPlayer) {
-            gameObject.transform.position = playerItemHolding.transform.position;
-        }
-
-        if (snapToKeyHole) {
-            gameObject.transform.position = itemToConsole.transform.position;
-            PlayerPrefs.SetInt("usedKey" + keyNumber, 1);
-            //keyholeA.GetComponent<TowerB>().keyHoleAActivated = true; // makes rings move
-
-            snapToPlayer = false;
-            snapToKeyHole = false;
+        bool isHeld = PlayerPrefs.GetInt("holdKey" + keyNumber, 0) == 1;
+        bool isUsed = PlayerPrefs.GetInt("usedKey" + keyNumber, 0) == 1;
+        if(isHeld || isUsed) {
+            gameObject.SetActive (false);
         }
     }
 
@@ -47,13 +27,9 @@ public class getKey : MonoBehaviour
 
         if (collision.gameObject.CompareTag ("Player")) {
             Debug.Log("Got Key!");
-            snapToPlayer = true;
-        }
-
-        if (collision.gameObject.CompareTag ("KeyHoleA")) {
-            Debug.Log("Key Inserted!");
-            snapToPlayer = false;
-            snapToKeyHole = true;
+            gameObject.SetActive(false);
+            Player player = collision.gameObject.GetComponent<Player>(); 
+            player.GetKey(keyNumber);
         }
 
     }
