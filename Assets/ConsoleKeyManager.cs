@@ -16,7 +16,8 @@ public class ConsoleKeyManager : MonoBehaviour
 
     public void UseKey()
     {
-        PlayerPrefs.SetInt("usedKey" + keyNumber, 1);
+        //PlayerPrefs.SetInt("usedKey" + keyNumber, 1);
+        PlayerPrefs.SetInt("usedKey1", 1);
         PlayerPrefs.SetInt("holdKey" + keyNumber, 0);
         engagedKey.SetActive(true);
     }
