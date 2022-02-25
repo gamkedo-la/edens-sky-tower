@@ -7,6 +7,7 @@ public class DialogManager : MonoBehaviour
 {
     public Text DialogUI;
     public CanvasGroup Window;
+    public GameManager GM;
 
     public string[] CurrentDialog;
 
@@ -27,10 +28,12 @@ public class DialogManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    private void FixedUpdate()
+    private void Update()
     {
         if(DialogActive == true)
         {
+            Debug.Log("dialog active " + TypingSpeed);
+
             if (CharMark < CurrentLine.Length)
             {
                 TypingSpeed -= Time.unscaledDeltaTime;
@@ -70,6 +73,7 @@ public class DialogManager : MonoBehaviour
         Window.interactable = true;
 
         DialogActive = true;
+        GM.PauseGame();
         NextLine();
     }
 
@@ -90,6 +94,7 @@ public class DialogManager : MonoBehaviour
             Window.interactable = false;
 
             DialogActive = false;
+            GM.UnpauseGame();
         }
     }
 }
