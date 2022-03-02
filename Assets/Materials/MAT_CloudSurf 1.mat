@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: MAT_CloudSurf 1
+  m_Shader: {fileID: 4800000, guid: 2eb359f9e00234e46b9778ba14b54293, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseTex:
+        m_Texture: {fileID: 2800000, guid: dac89d054d570ef4abd95871570d2ffc, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _Glossiness: 0.5
+    - _Height: 0.09
+    - _Metallic: 0
+    - _NoiseSpeedX: 1
+    - _NoiseSpeedY: 0.4
+    - _NoiseSpeedZ: 0.4
+    - _RimPower: 5.2
+    - _Strength: 0.49
+    m_Colors:
+    - _CloudColor: {r: 0.7534469, g: 0.8886809, b: 0.90800005, a: 1}
+    - _CloudTopColor: {r: 1, g: 0.97052175, b: 0.88699996, a: 1}
+    - _Color: {r: 0.851, g: 1, b: 0.9220187, a: 1}
+    - _RimColor: {r: 0.8773585, g: 0.43454075, b: 0.43454075, a: 1}
+  m_BuildTextureStacks: []
