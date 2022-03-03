@@ -28,7 +28,7 @@ public class ThirdPersonCameraController : MonoBehaviour
         mouseY = Mathf.Clamp(mouseY, -35, 180);
 
         //transform.LookAt(target);
-        float smoothRate = 0.002f;
+        float smoothRate = 0.02f;
         //Vector3 cameraTurn = cameraPivot.rotation.ToEulerAngles();
         //cameraPivot.rotation = Quaternion.Euler(mouseY, cameraTurn.y, cameraTurn.z);
 
