@@ -28,10 +28,7 @@ public class ShardPosition : MonoBehaviour
         if(Input.GetKeyDown("y")) {
             Debug.Log("Anim Test Started");
             for (int i = 0; i < animList.Length; i++) {
-                bool didWork = animList [i].Play();
-                Debug.Log(didWork);
                 foreach (AnimationState state in animList[i]) {
-                    Debug.Log (state.name);
                     animList[i].Play (state.name);
                 }
             }
