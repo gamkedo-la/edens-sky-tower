@@ -25,6 +25,8 @@ public class ShardPosition : MonoBehaviour
         } else {
             gameObject.transform.localPosition = startLocalPosition;
         }  
+
+        /*
         if(Input.GetKeyDown("y")) {
             Debug.Log("Anim Test Started");
             for (int i = 0; i < animList.Length; i++) {
@@ -32,7 +34,7 @@ public class ShardPosition : MonoBehaviour
                     animList[i].Play (state.name);
                 }
             }
-        }
+        } */
 
     }
 
