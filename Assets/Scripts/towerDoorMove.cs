@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class towerBridgeMove : MonoBehaviour
+public class towerDoorMove : MonoBehaviour
 {    
     private Animator animatorComponent;
     private Renderer rendererComponent;
 
-    private const string TOWER_BRIDGE_EXTENDS = "shardBridgeExtends";
-    private const string TOWER_BRIDGE_RECTRACTS = "shardBridgeRetracts";
+    private const string TOWER_DOOR_CLOSE = "shardDoorClosing";
+    private const string TOWER_DOOR_OPEN = "shardDoorOpening";
 
     // Start is called before the first frame update
     void Awake()
@@ -17,12 +17,14 @@ public class towerBridgeMove : MonoBehaviour
         rendererComponent = GetComponent<Renderer>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.I)){
-            animatorComponent.Play(TOWER_BRIDGE_RECTRACTS);
-        }
+   public void CloseTowerDoor() {
+       Debug.Log("Door to close!");
+        animatorComponent.Play(TOWER_DOOR_CLOSE);
+    }
+
+    public void OpenTowerDoor() {
+       Debug.Log("Door to close!");
+        animatorComponent.Play(TOWER_DOOR_OPEN);
     }
 
     public void Disable() {
@@ -32,13 +34,12 @@ public class towerBridgeMove : MonoBehaviour
     public void Enable() {
         rendererComponent.enabled = true;
     }
-
+/*
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Player")
-        {
-            Debug.Log("bridge to extend!");
-            animatorComponent.Play(TOWER_BRIDGE_EXTENDS);
-        }
+        Debug.Log("Door to open!");
+        animatorComponent.Play(TOWER_DOOR_OPEN);
+
     }
+*/
 }
