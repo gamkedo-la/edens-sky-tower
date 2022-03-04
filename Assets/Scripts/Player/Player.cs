@@ -6,9 +6,6 @@ public class Player : MonoBehaviour
     public Transform ToShardOne;
     public Transform ToShardTwo;
     public Transform ToShardThree;
-    public Transform LevBase1;
-    public Transform LevBase2;
-    public Transform LevBase3;
     public bool PlayerTransferShard1 = false;
     public bool PlayerTransferShard2 = false;
     public bool PlayerTransferShard3 = false;
