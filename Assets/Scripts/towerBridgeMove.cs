@@ -9,6 +9,8 @@ public class towerBridgeMove : MonoBehaviour
 
     private const string TOWER_BRIDGE_EXTENDS = "shardBridgeExtends";
     private const string TOWER_BRIDGE_RECTRACTS = "shardBridgeRetracts";
+    private const string TOWER_RAMP_EXTENDS = "shardRampExtending";
+    private const string TOWER_RAMP_RECTRACTS = "shardRampRetracting";
 
     // Start is called before the first frame update
     void Awake()
@@ -25,6 +27,13 @@ public class towerBridgeMove : MonoBehaviour
         animatorComponent.Play(TOWER_BRIDGE_RECTRACTS);
     }
 
+    public void OpenTowerRamp() {
+        animatorComponent.Play(TOWER_RAMP_EXTENDS);
+    }
+
+    public void CloseTowerRamp() {
+        animatorComponent.Play(TOWER_RAMP_RECTRACTS);
+    }
 
     public void Disable() {
         rendererComponent.enabled = false;

@@ -9,7 +9,6 @@ public class shardOpenDoorAndBridge : MonoBehaviour
 
 
     void OnTriggerEnter (Collider other) {
-
         towerBridgeMove.OpenTowerBridge();
         towerDoorMove.OpenTowerDoor();
 
