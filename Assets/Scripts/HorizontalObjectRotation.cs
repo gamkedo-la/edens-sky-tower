@@ -8,7 +8,8 @@ public class HorizontalObjectRotation : MonoBehaviour
     bool controllingObject = false;
     Player playerScript;
 
-    public towerBridgeMove towerBridgeMove;    
+    public towerBridgeMove towerBridgeMove;   
+    public towerGateMove towerGateMove; 
 
 
     void Start()
@@ -34,8 +35,8 @@ public class HorizontalObjectRotation : MonoBehaviour
             }
 
             if(Input.GetKeyDown (KeyCode.Space)) {
-                Debug.Log(towerBridgeMove);
                 towerBridgeMove.OpenTowerRamp();
+                towerGateMove.LowerTowerGate();
             }
         }
     }
