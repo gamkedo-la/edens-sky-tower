@@ -1,0 +1,401 @@
+{
+	"connections": [
+		{
+			"from": "voronoi",
+			"from_port": 0,
+			"to": "invert",
+			"to_port": 0
+		},
+		{
+			"from": "shape",
+			"from_port": 0,
+			"to": "splatter",
+			"to_port": 0
+		},
+		{
+			"from": "dilate",
+			"from_port": 0,
+			"to": "Material",
+			"to_port": 6
+		},
+		{
+			"from": "dilate",
+			"from_port": 0,
+			"to": "Material",
+			"to_port": 0
+		},
+		{
+			"from": "dilate",
+			"from_port": 0,
+			"to": "multi_warp",
+			"to_port": 0
+		},
+		{
+			"from": "fbm2",
+			"from_port": 0,
+			"to": "multi_warp",
+			"to_port": 1
+		},
+		{
+			"from": "shape",
+			"from_port": 0,
+			"to": "tiler",
+			"to_port": 0
+		},
+		{
+			"from": "tiler",
+			"from_port": 0,
+			"to": "dilate",
+			"to_port": 0
+		},
+		{
+			"from": "dilate",
+			"from_port": 0,
+			"to": "edge_detect",
+			"to_port": 0
+		},
+		{
+			"from": "tiler",
+			"from_port": 1,
+			"to": "dilate",
+			"to_port": 1
+		},
+		{
+			"from": "edge_detect",
+			"from_port": 0,
+			"to": "invert_2",
+			"to_port": 0
+		},
+		{
+			"from": "fbm2_4",
+			"from_port": 0,
+			"to": "auto_tones",
+			"to_port": 0
+		},
+		{
+			"from": "fbm2_2",
+			"from_port": 0,
+			"to": "auto_tones_2",
+			"to_port": 0
+		},
+		{
+			"from": "fbm2_3",
+			"from_port": 0,
+			"to": "auto_tones_3",
+			"to_port": 0
+		}
+	],
+	"label": "Graph",
+	"longdesc": "",
+	"name": "@@2356",
+	"node_position": {
+		"x": 0,
+		"y": 0
+	},
+	"nodes": [
+		{
+			"export_paths": {
+
+			},
+			"name": "Material",
+			"node_position": {
+				"x": 0,
+				"y": 0
+			},
+			"parameters": {
+				"albedo_color": {
+					"a": 1,
+					"b": 1,
+					"g": 1,
+					"r": 1,
+					"type": "Color"
+				},
+				"ao": 1,
+				"depth_scale": -1.99,
+				"emission_energy": 1,
+				"flags_transparent": true,
+				"metallic": 0,
+				"normal": 1,
+				"roughness": 1,
+				"size": 11,
+				"sss": 0
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "material_tesselated"
+		},
+		{
+			"name": "voronoi",
+			"node_position": {
+				"x": -1035.361084,
+				"y": 2.263885
+			},
+			"parameters": {
+				"intensity": 1,
+				"randomness": 1,
+				"scale_x": 4,
+				"scale_y": 4,
+				"stretch_x": 1.2,
+				"stretch_y": 0.99
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "voronoi"
+		},
+		{
+			"name": "invert",
+			"node_position": {
+				"x": -580.361084,
+				"y": -62.736115
+			},
+			"parameters": {
+
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "invert"
+		},
+		{
+			"name": "splatter",
+			"node_position": {
+				"x": -954.161133,
+				"y": 326.147247
+			},
+			"parameters": {
+				"count": 11,
+				"rotate": 0,
+				"scale": 0,
+				"scale_x": 0.07,
+				"scale_y": "$scale_x",
+				"select_inputs": 0,
+				"value": 0,
+				"variations": false
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "splatter"
+		},
+		{
+			"name": "shape",
+			"node_position": {
+				"x": -1167.161133,
+				"y": 329.323944
+			},
+			"parameters": {
+				"edge": 1,
+				"radius": 0.16,
+				"shape": 0,
+				"sides": 2
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "shape"
+		},
+		{
+			"name": "dilate",
+			"node_position": {
+				"x": -601.244446,
+				"y": 597.546143
+			},
+			"parameters": {
+				"param0": 9,
+				"param1": 0.26,
+				"param2": 1,
+				"param3": 0
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "dilate"
+		},
+		{
+			"name": "fbm2",
+			"node_position": {
+				"x": -362.967529,
+				"y": 884.428223
+			},
+			"parameters": {
+				"folds": 0,
+				"iterations": 5,
+				"noise": 0,
+				"offset": 0,
+				"persistence": 0.5,
+				"scale_x": 2,
+				"scale_y": 2
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "fbm2"
+		},
+		{
+			"name": "multi_warp",
+			"node_position": {
+				"x": -3.542476,
+				"y": 753.771545
+			},
+			"parameters": {
+				"param0": 9,
+				"param1": 1.279,
+				"param2": 1,
+				"param3": 0
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "multi_warp"
+		},
+		{
+			"name": "tiler",
+			"node_position": {
+				"x": -1023.735229,
+				"y": 679.477112
+			},
+			"parameters": {
+				"fixed_offset": 0,
+				"offset": 1,
+				"overlap": 5,
+				"rotate": 45,
+				"scale": 0,
+				"scale_x": 0.07,
+				"scale_y": "$scale_x",
+				"select_inputs": 0,
+				"tx": 4,
+				"ty": "$tx",
+				"value": 1,
+				"variations": false
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "tiler"
+		},
+		{
+			"name": "edge_detect",
+			"node_position": {
+				"x": -226.651993,
+				"y": 503.935486
+			},
+			"parameters": {
+				"size": 9,
+				"threshold": 0.03,
+				"width": 89
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "edge_detect"
+		},
+		{
+			"name": "invert_2",
+			"node_position": {
+				"x": 78.514793,
+				"y": 505.074341
+			},
+			"parameters": {
+
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "invert"
+		},
+		{
+			"name": "fbm2_2",
+			"node_position": {
+				"x": -923.886414,
+				"y": 1439.308105
+			},
+			"parameters": {
+				"folds": 0,
+				"iterations": 4,
+				"noise": 2,
+				"offset": 0.14,
+				"persistence": 0.3,
+				"scale_x": 1,
+				"scale_y": 2
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "fbm2"
+		},
+		{
+			"name": "fbm2_3",
+			"node_position": {
+				"x": -938.482361,
+				"y": 2016.810303
+			},
+			"parameters": {
+				"folds": 0,
+				"iterations": 6,
+				"noise": 1,
+				"offset": 1,
+				"persistence": 0.68,
+				"scale_x": 4,
+				"scale_y": 4
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "fbm2"
+		},
+		{
+			"name": "fbm2_4",
+			"node_position": {
+				"x": -1120.815674,
+				"y": 1664.227051
+			},
+			"parameters": {
+				"folds": 2,
+				"iterations": 10,
+				"noise": 3,
+				"offset": 0.37,
+				"persistence": 0.7,
+				"scale_x": 1,
+				"scale_y": "$scale_x"
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "fbm2"
+		},
+		{
+			"name": "auto_tones",
+			"node_position": {
+				"x": -600.454651,
+				"y": 1711.588013
+			},
+			"parameters": {
+				"param0": 11
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "auto_tones"
+		},
+		{
+			"name": "auto_tones_2",
+			"node_position": {
+				"x": -594.204651,
+				"y": 1472.615845
+			},
+			"parameters": {
+				"param0": 11
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "auto_tones"
+		},
+		{
+			"name": "auto_tones_3",
+			"node_position": {
+				"x": -606.959534,
+				"y": 1986.271606
+			},
+			"parameters": {
+				"param0": 11
+			},
+			"seed": 0,
+			"seed_locked": false,
+			"type": "auto_tones"
+		}
+	],
+	"parameters": {
+
+	},
+	"seed": 0,
+	"seed_locked": false,
+	"shortdesc": "",
+	"type": "graph"
+}
