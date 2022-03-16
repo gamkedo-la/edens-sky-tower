@@ -9,7 +9,7 @@ public class ShardPosition : MonoBehaviour
     public Transform ShardEngagementDestination;
     private Vector3 startLocalPosition;
 
-    
+    public Animation [] animList;
 
     void Start()
     {
@@ -25,6 +25,16 @@ public class ShardPosition : MonoBehaviour
         } else {
             gameObject.transform.localPosition = startLocalPosition;
         }  
+
+        /*
+        if(Input.GetKeyDown("y")) {
+            Debug.Log("Anim Test Started");
+            for (int i = 0; i < animList.Length; i++) {
+                foreach (AnimationState state in animList[i]) {
+                    animList[i].Play (state.name);
+                }
+            }
+        } */
 
     }
 
