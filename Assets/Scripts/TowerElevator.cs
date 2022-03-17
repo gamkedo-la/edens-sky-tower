@@ -24,7 +24,7 @@ public class TowerElevator : MonoBehaviour
             progress += Time.deltaTime * progressPace;
             if(progress > 1.0f) {
                 inMotion = false;
-                playerScript.enabled = true;
+                //playerScript.enabled = true;
             } else {
                 playerScript.transform.position = Vector3.Lerp(wayPointList[0].position, wayPointList[goToWayPoint].position, progress);
             }
@@ -38,6 +38,8 @@ public class TowerElevator : MonoBehaviour
         if(firstKey && collision.gameObject.CompareTag ("Player")) {
             playerScript = collision.gameObject.GetComponent<Player>();
             playerScript.enabled = false;
+            Rigidbody playerRb = playerScript.GetComponent<Rigidbody>();
+            playerRb.useGravity = false;
             inMotion = true;
             progress = 0.0f;
             bool secondKey = PlayerPrefs.GetInt("usedKey2", 0) == 1;

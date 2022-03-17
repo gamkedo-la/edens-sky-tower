@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
+    public static Player instance;
     public Transform ToShardOne;
     public Transform ToShardTwo;
     public Transform ToShardThree;
@@ -24,6 +25,10 @@ public class Player : MonoBehaviour
 
     private bool isRunning = false;
     public bool isAffectedByWind = false;
+
+    void Awake() {
+        instance = this;
+    }
 
     void Start()
     {

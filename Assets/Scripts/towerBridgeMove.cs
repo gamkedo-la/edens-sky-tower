@@ -35,6 +35,13 @@ public class towerBridgeMove : MonoBehaviour
         animatorComponent.Play(TOWER_RAMP_RECTRACTS);
     }
 
+    public void TowerAnimFinished() {
+        Debug.Log ("Player to Drop");
+        Player.instance.enabled = true;
+        Rigidbody playerRb = Player.instance.GetComponent<Rigidbody>();
+        playerRb.useGravity = true;
+    }
+
     public void Disable() {
         rendererComponent.enabled = false;
     }
