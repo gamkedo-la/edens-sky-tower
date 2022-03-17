@@ -11,7 +11,12 @@ public class ConsoleKeyManager : MonoBehaviour
     void Start()
     {
         bool isUsed = PlayerPrefs.GetInt("usedKey" + keyNumber, 0) == 1;
-        engagedKey.SetActive (isUsed);
+        if(engagedKey) {
+            engagedKey.SetActive (isUsed);
+        } else {
+            Debug.Log("engagedKey not set up for " + gameObject.name);
+        }
+        
     }
 
     public void UseKey()
