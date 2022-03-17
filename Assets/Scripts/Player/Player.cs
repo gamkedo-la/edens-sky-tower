@@ -147,6 +147,10 @@ public class Player : MonoBehaviour
             PlayerPrefs.SetInt("usedKey2", 0);
             PlayerPrefs.SetInt("usedKey3", 0);
             PlayerPrefs.SetInt("usedKey4", 0);
+            PlayerPrefs.SetInt("holdKey1", 0);
+            PlayerPrefs.SetInt("holdKey2", 0);
+            PlayerPrefs.SetInt("holdKey3", 0);
+            PlayerPrefs.SetInt("holdKey4", 0);
             Debug.Log("unuse all keys");
         }
     
@@ -170,21 +174,45 @@ public class Player : MonoBehaviour
         }
     }
 
+    void InsertKey(int keyNumber, GameObject consoleKeyGO) {
+        Debug.Log("Key Inserted!");
+        CarryingKey.SetActive(false);
+        ConsoleKeyManager CKMScript = consoleKeyGO.GetComponent<ConsoleKeyManager>();
+        if(CKMScript) {
+            CKMScript.UseKey();
+        } else {
+            Debug.LogWarning("console is missing a ConsoleKeyManager");
+        }
+
+    }
+
     void OnCollisionEnter (Collision collision) {
         if (collision.gameObject.CompareTag ("KeyHoleA")) {
-            int keyNumber = 1;
-            bool isHeld = PlayerPrefs.GetInt("holdKey" + keyNumber, 0) == 1;
-            if(isHeld) {
-                Debug.Log("Key Inserted!");
-                CarryingKey.SetActive(false);
-                ConsoleKeyManager CKMScript = collision.gameObject.GetComponent<ConsoleKeyManager>();
-                if(CKMScript) {
-                    CKMScript.UseKey();
-                } else {
-                    Debug.LogWarning("console is missing a ConsoleKeyManager");
-                }
-            }
-            
+            bool isHeld1 = PlayerPrefs.GetInt("holdKey" + 1, 0) == 1;
+            if(isHeld1) {
+               InsertKey(1, collision.gameObject);
+            } 
+        }
+
+        if (collision.gameObject.CompareTag ("KeyHoleB")) {
+            bool isHeld2 = PlayerPrefs.GetInt("holdKey" + 2, 0) == 1;
+            if(isHeld2) {
+               InsertKey(2, collision.gameObject);
+            } 
+        }
+
+        if (collision.gameObject.CompareTag ("KeyHoleC")) {
+            bool isHeld3 = PlayerPrefs.GetInt("holdKey" + 3, 0) == 1;
+            if(isHeld3) {
+               InsertKey(3, collision.gameObject);
+            } 
+        }
+
+        if (collision.gameObject.CompareTag ("KeyHoleD")) {
+            bool isHeld4 = PlayerPrefs.GetInt("holdKey" + 4, 0) == 1;
+            if(isHeld4) {
+               InsertKey(4, collision.gameObject);
+            } 
         }
          
     }
