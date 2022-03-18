@@ -23,7 +23,7 @@ public class towerDoorMove : MonoBehaviour
     }
 
     public void OpenTowerDoor() {
-       Debug.Log("Door to close!");
+       Debug.Log("Door to open!");
         animatorComponent.Play(TOWER_DOOR_OPEN);
     }
 
@@ -34,12 +34,4 @@ public class towerDoorMove : MonoBehaviour
     public void Enable() {
         rendererComponent.enabled = true;
     }
-/*
-    private void OnTriggerEnter(Collider other)
-    {
-        Debug.Log("Door to open!");
-        animatorComponent.Play(TOWER_DOOR_OPEN);
-
-    }
-*/
 }
