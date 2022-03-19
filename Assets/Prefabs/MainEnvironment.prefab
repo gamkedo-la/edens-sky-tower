@@ -239,7 +239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ed6a0232caf56945a85c19e3cee0984, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerBridgeMove: {fileID: 0}
+  towerBridgeMove: {fileID: 6203476494017736179}
   towerGateMove: {fileID: 0}
 --- !u!114 &194002981
 MonoBehaviour:
@@ -549,8 +549,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21e3774418a5a4c4f9526dee69f2e037, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerBridgeMove: {fileID: 0}
-  towerDoorMove: {fileID: 980525247, guid: d03479c192db97d4b88a26cadce4787e, type: 3}
+  towerBridgeMove: {fileID: 6203476494017736179}
+  towerDoorMove: {fileID: 2084841469}
 --- !u!95 &440090578
 Animator:
   serializedVersion: 3
@@ -695,7 +695,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ed6a0232caf56945a85c19e3cee0984, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerBridgeMove: {fileID: 0}
+  towerBridgeMove: {fileID: 6203476494017736179}
   towerGateMove: {fileID: 0}
 --- !u!114 &975469514
 MonoBehaviour:
@@ -777,7 +777,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0322a6e2aac84bd479f8af793b414323, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerBridgeMove: {fileID: 0}
+  towerBridgeMove: {fileID: 6203476494017736179}
   towerDoorMove: {fileID: 2084841469}
 --- !u!1 &1729026032
 GameObject:
@@ -846,7 +846,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerBridgeMove: {fileID: 0}
-  towerDoorMove: {fileID: 0}
+  towerDoorMove: {fileID: 2344187216543155932}
 --- !u!1 &1769550149
 GameObject:
   m_ObjectHideFlags: 0
@@ -1780,7 +1780,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controlledObject: {fileID: 6350032748842901853}
-  towerBridgeMove: {fileID: 0}
+  towerBridgeMove: {fileID: 6203476494017736179}
   towerGateMove: {fileID: 1613547581}
 --- !u!1 &2447725602146850034
 GameObject:
@@ -2143,7 +2143,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4232358714887946021}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.1, y: 81.4, z: 2.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8624419033238304693}
@@ -2320,7 +2320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ed6a0232caf56945a85c19e3cee0984, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerBridgeMove: {fileID: 0}
+  towerBridgeMove: {fileID: 6203476494017736179}
   towerGateMove: {fileID: 1613547581}
 --- !u!1 &4373174515301518399
 GameObject:
@@ -4153,7 +4153,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5165388618323169170}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6, y: 0.47, z: -1.03}
+  m_LocalPosition: {x: -6, y: 2.28, z: -13.46}
   m_LocalScale: {x: 4, y: 0.2, z: 4}
   m_Children:
   - {fileID: 1849937401484923325}
@@ -7765,13 +7765,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8990815995899752686}
-  m_LocalRotation: {x: -0.7071068, y: -0.00000023040467, z: -0.0000002304047, w: 0.7071067}
-  m_LocalPosition: {x: 0.099999905, y: 81.4, z: 2.7}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 48.66785, y: 90.45896, z: 100}
   m_Children: []
   m_Father: {fileID: 5381865956355937449}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &2075643212131174104
 MeshFilter:
   m_ObjectHideFlags: 0
