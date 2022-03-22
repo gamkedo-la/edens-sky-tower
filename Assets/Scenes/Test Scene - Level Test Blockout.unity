@@ -123,6 +123,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &16887400 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5454128663189083439, guid: d03479c192db97d4b88a26cadce4787e,
+    type: 3}
+  m_PrefabInstance: {fileID: 5165388618894579483}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5a9eb2d944f9dd469ed0ecf66bdf08a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &97061249
 Mesh:
   m_ObjectHideFlags: 0
@@ -3069,6 +3081,38 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 10, y: 0, z: 0}
+--- !u!114 &1791213720 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5352784679224175407, guid: d03479c192db97d4b88a26cadce4787e,
+    type: 3}
+  m_PrefabInstance: {fileID: 5165388618894579483}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f714dbea52f6474f9ad128338298e36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1826297728 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2934797572014537834, guid: d03479c192db97d4b88a26cadce4787e,
+    type: 3}
+  m_PrefabInstance: {fileID: 5165388618894579483}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1826297732
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1826297728}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6293929514803317542, guid: c7f3df38573031f4f90ff11df33ef000, type: 3}
 --- !u!43 &1927387397
 Mesh:
   m_ObjectHideFlags: 0
@@ -4950,6 +4994,24 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1530829367, guid: d03479c192db97d4b88a26cadce4787e, type: 3}
+      propertyPath: towerDoorMove
+      value: 
+      objectReference: {fileID: 16887400}
+    - target: {fileID: 1530829367, guid: d03479c192db97d4b88a26cadce4787e, type: 3}
+      propertyPath: towerBridgeMove
+      value: 
+      objectReference: {fileID: 1791213720}
+    - target: {fileID: 1441389373826213346, guid: d03479c192db97d4b88a26cadce4787e,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a7114d0e18b806f45a1aa98d78880318, type: 2}
+    - target: {fileID: 2934797572014537834, guid: d03479c192db97d4b88a26cadce4787e,
+        type: 3}
+      propertyPath: m_Name
+      value: platform_ShardTop
+      objectReference: {fileID: 0}
     - target: {fileID: 5165388617861235834, guid: d03479c192db97d4b88a26cadce4787e,
         type: 3}
       propertyPath: m_RootOrder
@@ -5009,6 +5071,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MainEnvironment
+      objectReference: {fileID: 0}
+    - target: {fileID: 7921708936214327310, guid: d03479c192db97d4b88a26cadce4787e,
+        type: 3}
+      propertyPath: m_Name
+      value: gate_ShardTop
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d03479c192db97d4b88a26cadce4787e, type: 3}
@@ -6238,17 +6305,17 @@ PrefabInstance:
     - target: {fileID: 5637139110404580721, guid: 9d14710e096c8f84d813a2969a0e303c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.61
+      value: -6.6
       objectReference: {fileID: 0}
     - target: {fileID: 5637139110404580721, guid: 9d14710e096c8f84d813a2969a0e303c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 178.38
+      value: 261.25
       objectReference: {fileID: 0}
     - target: {fileID: 5637139110404580721, guid: 9d14710e096c8f84d813a2969a0e303c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -16.88
+      value: -16.9
       objectReference: {fileID: 0}
     - target: {fileID: 5637139110404580721, guid: 9d14710e096c8f84d813a2969a0e303c,
         type: 3}
