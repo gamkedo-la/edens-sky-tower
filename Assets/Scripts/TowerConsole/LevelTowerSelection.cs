@@ -1,16 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LevelTowerSelection : MonoBehaviour
 {
     private bool triggering;
 
-    public GameObject toolTipText;
+    public Text toolTipText;
   
     void Start()
     {
-        toolTipText.SetActive(false);
+        toolTipText.gameObject.SetActive(false);
     }
 
     void Update()
@@ -28,7 +29,34 @@ public class LevelTowerSelection : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            toolTipText.SetActive(true);
+            toolTipText.text = "Which Floor?\n";
+
+            bool noKeys = true;
+
+            if(PlayerPrefs.GetInt("usedKey1", 0) == 1)
+            {
+                toolTipText.text += "U: Floor One\n";
+                noKeys = false;
+            }
+
+            if (PlayerPrefs.GetInt("usedKey2", 0) == 1)
+            {
+                toolTipText.text += "I: Floor Two\n";
+                noKeys = false;
+            }
+
+            if (PlayerPrefs.GetInt("usedKey3", 0) == 1)
+            {
+                toolTipText.text += "O: Floor Three\n";
+                noKeys = false;
+            }
+
+            if (noKeys)
+            {
+                toolTipText.text += "[Search for Keys]";
+            }
+
+            toolTipText.gameObject.SetActive(true);
             triggering = true;
         }
     }
@@ -37,7 +65,7 @@ public class LevelTowerSelection : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            toolTipText.SetActive(false);
+            toolTipText.gameObject.SetActive(false);
             triggering = false;
         }
     }
