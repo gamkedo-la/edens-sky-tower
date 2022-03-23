@@ -2,45 +2,43 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Interaction : MonoBehaviour
+public class LevelTowerSelection : MonoBehaviour
 {
-    private GameObject triggeringNpc;
     private bool triggering;
 
-    public GameObject npcText;
+    public GameObject toolTipText;
   
+    void Start()
+    {
+        toolTipText.SetActive(false);
+    }
+
     void Update()
     {
         if(triggering)
         {
-            npcText.SetActive(true);
-
             if (Input.GetKeyDown(KeyCode.E))
             {
                 print("Console has been activated.");
             }
-
-        } else {
-            npcText.SetActive(false);
-
-        }
+        } 
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "NPC")
+        if(other.tag == "Player")
         {
+            toolTipText.SetActive(true);
             triggering = true;
-            triggeringNpc = other.gameObject;
         }
     }
 
     void OnTriggerExit(Collider other)
     {
-        if (other.tag == "NPC")
+        if (other.tag == "Player")
         {
+            toolTipText.SetActive(false);
             triggering = false;
-            triggeringNpc = null;
         }
     }
 
