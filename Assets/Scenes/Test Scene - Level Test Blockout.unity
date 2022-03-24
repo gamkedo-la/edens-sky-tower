@@ -10213,11 +10213,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1222211186778466323, guid: d03479c192db97d4b88a26cadce4787e,
-        type: 3}
-      propertyPath: m_Name
-      value: Camera_ExteriorOverviewShardLow
-      objectReference: {fileID: 0}
     - target: {fileID: 5165388617861235834, guid: d03479c192db97d4b88a26cadce4787e,
         type: 3}
       propertyPath: m_RootOrder
@@ -10277,21 +10272,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MainEnvironment
-      objectReference: {fileID: 0}
-    - target: {fileID: 5165388618323169174, guid: d03479c192db97d4b88a26cadce4787e,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3.96
-      objectReference: {fileID: 0}
-    - target: {fileID: 5165388618323169174, guid: d03479c192db97d4b88a26cadce4787e,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -11.03
-      objectReference: {fileID: 0}
-    - target: {fileID: 8538898773198352295, guid: d03479c192db97d4b88a26cadce4787e,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d03479c192db97d4b88a26cadce4787e, type: 3}

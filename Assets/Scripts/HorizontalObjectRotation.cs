@@ -31,12 +31,13 @@ public class HorizontalObjectRotation : MonoBehaviour
             }
 
             if (Input.GetKeyDown (KeyCode.S)) {
-                controllingObject = false;
-                playerScript.enabled = true;
-                ThirdPersonCameraController.instance.cameraPositionOverride = null;
+                
             }
 
             if(Input.GetKeyDown (KeyCode.Space)) {
+                controllingObject = false;
+                playerScript.enabled = true;
+                ThirdPersonCameraController.instance.cameraPositionOverride = null;
                 towerBridgeMove.OpenTowerRamp();
                 towerGateMove.LowerTowerGate();
             }
