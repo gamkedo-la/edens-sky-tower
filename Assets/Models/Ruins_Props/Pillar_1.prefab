@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 5024317944908589238}
   - component: {fileID: 4475699524848352877}
   - component: {fileID: 2054166381593570239}
+  - component: {fileID: -6706529135139218656}
   m_Layer: 0
   m_Name: Pillar_1
   m_TagString: NPC
@@ -141,3 +142,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4, y: 3, z: 4}
   m_Center: {x: 0, y: 1.6, z: 0}
+--- !u!114 &-6706529135139218656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5688651204953240076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1c6fc65f19086a439a7f16d26937fe4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toolTipText: {fileID: 3998882866054596647, guid: 98ff304e1ad703c4e98a5a2cebe3e723,
+    type: 3}
