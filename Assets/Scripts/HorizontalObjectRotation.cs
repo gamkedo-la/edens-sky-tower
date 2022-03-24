@@ -11,6 +11,7 @@ public class HorizontalObjectRotation : MonoBehaviour
     public towerBridgeMove towerBridgeMove;   
     public towerGateMove towerGateMove; 
 
+    public Transform cameraPositionOverride;
 
     void Start()
     {
@@ -32,6 +33,7 @@ public class HorizontalObjectRotation : MonoBehaviour
             if (Input.GetKeyDown (KeyCode.S)) {
                 controllingObject = false;
                 playerScript.enabled = true;
+                ThirdPersonCameraController.instance.cameraPositionOverride = null;
             }
 
             if(Input.GetKeyDown (KeyCode.Space)) {
@@ -48,6 +50,9 @@ public class HorizontalObjectRotation : MonoBehaviour
             playerScript = collision.gameObject.GetComponent<Player>();
             playerScript.enabled = false;
             controllingObject = true;
+            if(cameraPositionOverride) {
+                ThirdPersonCameraController.instance.cameraPositionOverride = cameraPositionOverride;
+            }
          }
     }
 }
