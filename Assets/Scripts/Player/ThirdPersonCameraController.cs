@@ -26,7 +26,7 @@ public class ThirdPersonCameraController : MonoBehaviour
     void CamControl(){
         float smoothRate = 0.2f;
         if(cameraPositionOverride != null) {
-            smoothRate = 0.02f;
+            smoothRate = 0.002f;
             transform.position = Vector3.Lerp(transform.position, cameraPositionOverride.position, smoothRate);
             transform.rotation = Quaternion.Slerp(transform.rotation, cameraPositionOverride.rotation, smoothRate);
             return;
