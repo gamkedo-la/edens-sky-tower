@@ -10,6 +10,7 @@ public class TowerElevator : MonoBehaviour
     float progress = 0.0f;
     float progressPace = 0.2f;
     int goToWayPoint;
+    public towerMonolithMove towerMonolithMove;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +35,7 @@ public class TowerElevator : MonoBehaviour
 
     void OnCollisionEnter (Collision collision) {
         //checking collision to control objects
+        towerMonolithMove.RiseMonolith();
         bool firstKey = PlayerPrefs.GetInt("usedKey1", 0) == 1;
         if(firstKey && collision.gameObject.CompareTag ("Player")) {
             playerScript = collision.gameObject.GetComponent<Player>();
