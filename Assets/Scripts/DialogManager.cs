@@ -9,6 +9,9 @@ public class DialogManager : MonoBehaviour
     public CanvasGroup Window;
     public GameManager GM;
 
+    [SerializeField] Text hintManagerTextbox;
+    public string myHintText = "Press E to continue";
+
     public string[] CurrentDialog;
 
     private int bookmark = 0;
@@ -47,6 +50,7 @@ public class DialogManager : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
+                    hintManagerTextbox.gameObject.SetActive(false);
                     DialogUI.text = CurrentLine;
                     CharMark = CurrentLine.Length;
                 }
@@ -63,6 +67,13 @@ public class DialogManager : MonoBehaviour
 
     public void StartDialog(string[] DialogEvent)
     {
+        if (!GameManager.dialogHintShown)
+        {
+            hintManagerTextbox.text = myHintText;
+            hintManagerTextbox.gameObject.SetActive(true);
+            GameManager.dialogHintShown = true;
+        }
+
         CurrentDialog = DialogEvent;
         bookmark = 0;
 
