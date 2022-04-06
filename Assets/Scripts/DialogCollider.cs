@@ -21,6 +21,7 @@ public class DialogCollider : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("dialog collider collided");
         DM.StartDialog(ThisDialog);
         Destroy(gameObject);
     }

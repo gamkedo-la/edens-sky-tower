@@ -5,7 +5,9 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
 
+    public static bool wasdHintShown = false;
     public static bool dialogHintShown = false;
+    public static bool aboutToShowJumpHint = false;
     // Start is called before the first frame update
     void Start()
     {

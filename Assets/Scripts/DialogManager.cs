@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class DialogManager : MonoBehaviour
 {
@@ -9,7 +10,8 @@ public class DialogManager : MonoBehaviour
     public CanvasGroup Window;
     public GameManager GM;
 
-    [SerializeField] Text hintManagerTextbox;
+    [SerializeField] private GameObject hintManager;
+    [SerializeField] private TextMeshProUGUI hintManagerTMProTextbox;
     public string myHintText = "Press E to continue";
 
     public string[] CurrentDialog;
@@ -50,7 +52,6 @@ public class DialogManager : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    hintManagerTextbox.gameObject.SetActive(false);
                     DialogUI.text = CurrentLine;
                     CharMark = CurrentLine.Length;
                 }
@@ -69,9 +70,11 @@ public class DialogManager : MonoBehaviour
     {
         if (!GameManager.dialogHintShown)
         {
-            hintManagerTextbox.text = myHintText;
-            hintManagerTextbox.gameObject.SetActive(true);
+            hintManager.SetActive(true);
+            hintManagerTMProTextbox.text = myHintText;
+            hintManagerTMProTextbox.gameObject.SetActive(true);
             GameManager.dialogHintShown = true;
+            GameManager.aboutToShowJumpHint = true;
         }
 
         CurrentDialog = DialogEvent;
@@ -106,6 +109,14 @@ public class DialogManager : MonoBehaviour
 
             DialogActive = false;
             GM.UnpauseGame();
+
+            if (GameManager.aboutToShowJumpHint)
+            {
+                GM.PauseGame();
+                hintManagerTMProTextbox.text = "Now go left and jump up the platforms to the obelisk. \nSpace bar to jump. E to continue.";
+                hintManager.SetActive(true);
+                GameManager.aboutToShowJumpHint = false;
+            }
         }
     }
 }
