@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Laser : MonoBehaviour
 {
-
     private int _maxBounce = 20;
 
     private int _count;
@@ -16,7 +15,6 @@ public class Laser : MonoBehaviour
     private void Start()
     {
         _laser = GetComponent<LineRenderer>();
-
     }
     private void Update()
     {
@@ -69,5 +67,4 @@ public class Laser : MonoBehaviour
         }
 
     }
-
 }
