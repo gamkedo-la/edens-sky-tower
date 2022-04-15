@@ -6,13 +6,16 @@ public class PlatformTrigger : MonoBehaviour
 {
     public GameObject platformMove;
 
-    void OnTriggerEnter(Collider other)
+    private bool beenTriggered = false;
 
+    public void ActivatePlatform()
     {
-        if (other.tag == "Laser") 
-            {
-                platformMove.GetComponent<Animator>().Play("Platform");
-                this.gameObject.GetComponent<BoxCollider>().enabled = false;
+        if (beenTriggered)
+        {
+            return;
         }
+        beenTriggered = true;
+        platformMove.GetComponent<Animator>().Play("Platform");
+        this.gameObject.GetComponent<BoxCollider>().enabled = false;
     }
 }

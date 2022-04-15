@@ -22,13 +22,11 @@ public class LaserMirrorMovement : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.U))
             {
-                print("Console has been activated.");
                 transform.Rotate(/*point,*/ Vector3.forward, 20 * Time.deltaTime);
             }
 
             if (Input.GetKey(KeyCode.I))
             {
-                print("Console has been activated.");
                 transform.Rotate(/*point,*/ -Vector3.forward, 20 * Time.deltaTime);
             }
         }

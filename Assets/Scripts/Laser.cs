@@ -40,6 +40,12 @@ public class Laser : MonoBehaviour
                 direction = Vector3.Reflect(direction, hit.normal);
                 _laser.SetPosition(_count, hit.point);
 
+                PlatformTrigger hitTrigger = hit.collider.GetComponent<PlatformTrigger>();
+                if (hitTrigger)
+                {
+                    hitTrigger.ActivatePlatform();
+                }
+
                 if (hit.transform.tag != "Mirror")
                 {
 
