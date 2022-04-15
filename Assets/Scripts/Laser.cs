@@ -45,7 +45,11 @@ public class Laser : MonoBehaviour
 
                     for (int j = (i + 1); j < _maxBounce; j++)
                     {
-                        _laser.SetPosition(j, hit.point);
+                        if (j >= 0 && j < _laser.positionCount)
+                        {
+                            _laser.SetPosition(j, hit.point);
+                        }
+                            
 
                     }
                     break;
@@ -58,8 +62,11 @@ public class Laser : MonoBehaviour
             }
             else
             {
-
-                _laser.SetPosition(_count, ray.GetPoint(300));
+                if(_count >= 0 && _count < _laser.positionCount)
+                {
+                     _laser.SetPosition(_count, ray.GetPoint(300));
+                }
+               
 
             }
 
