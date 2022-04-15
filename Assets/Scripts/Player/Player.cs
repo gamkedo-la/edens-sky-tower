@@ -17,6 +17,8 @@ public class Player : MonoBehaviour
     public Transform TeleportDebugLocation;
     public Transform TiltGlideModel;
 
+    private NESWPushable blockInFrontOfUs;
+    private bool grabbingBlock = false;
 
     [Range(1.0f, 4.0f)]
     public float runningSpeedMultiplier = 2.0f;
@@ -64,7 +66,8 @@ public class Player : MonoBehaviour
         }
         Vector3 velWithGravity = rb.velocity;
         float saveYV = velWithGravity.y;
-        velWithGravity = transform.forward * 10.0f * Input.GetAxis("Vertical");
+        float playerForwardBackwardSpeed = 10.0f *Input.GetAxis("Vertical");
+        velWithGravity = transform.forward * playerForwardBackwardSpeed;
 
         checkIfChangingToRunningOrWalkingMode();
         if (isRunning && !holdingGlide) velWithGravity *= runningSpeedMultiplier;
@@ -78,8 +81,6 @@ public class Player : MonoBehaviour
 
         transform.Rotate(Vector3.up, 60.0f * Time.deltaTime * Input.GetAxis("Horizontal")); 
         
-        // player jump
-        
         RaycastHit rhInfo;
         //ground beneath us?
         if (Physics.Raycast (transform.position, Vector3.down, out rhInfo, 1.5f, jumpFrom)) {
@@ -87,11 +88,31 @@ public class Player : MonoBehaviour
                 rb.velocity = Vector3.zero;
             }
             transform.SetParent (rhInfo.collider.transform);
-            if(Input.GetKeyDown (KeyCode.Space)) {
-                rb.AddForce (Vector3.up * 350);
-            } 
 
             ShowGlider(false);
+            // checking for block in front of us to pull/push
+            if (Physics.Raycast (transform.position, transform.forward, out rhInfo, 3.5f, jumpFrom)) {
+                NESWPushable blockHere = rhInfo.collider.GetComponent <NESWPushable>();
+                if(blockHere) {
+                    blockInFrontOfUs = blockHere;
+                }
+            }
+            if(Input.GetKeyDown (KeyCode.Space)) {
+                if(blockInFrontOfUs) {
+                    grabbingBlock = !grabbingBlock;
+                    if(grabbingBlock == false) {
+                        if(blockInFrontOfUs) {
+                            blockInFrontOfUs.ReleaseForgetDir();
+                            blockInFrontOfUs = null;
+                        }                        
+                    }
+                } else { //jump if no block in front of us
+                    rb.AddForce (Vector3.up * 350); 
+                }
+            } 
+            if(grabbingBlock && blockInFrontOfUs) {
+                blockInFrontOfUs.PushOrPull(transform);               
+            }
         } else {
             if(Input.GetKeyDown (KeyCode.Space)) {
                 ShowGlider(true);
@@ -100,7 +121,13 @@ public class Player : MonoBehaviour
                 ShowGlider(false);
             }
         }
-        
+        if(blockInFrontOfUs && blockInFrontOfUs.CheckIfStuck()){
+            blockInFrontOfUs.ReleaseForgetDir();
+            grabbingBlock = false;
+        }
+        if(blockInFrontOfUs == null && grabbingBlock) {
+            grabbingBlock = false;
+        }
 
         if(PlayerTransferShard1) {
             gameObject.transform.position = ToShardOne.position;
