@@ -101,7 +101,7 @@ public class Player : MonoBehaviour
             if (Physics.Raycast (transform.position, transform.forward, out rhInfo, 3.5f, jumpFrom)) {
                 NESWPushable blockHere = rhInfo.collider.GetComponent <NESWPushable>();
                 blockInFrontOfUs = blockHere;               
-            } else if (grabbingBlock == false) {
+            } else if (grabbingBlock == false && blockInFrontOfUs) {
                 blockInFrontOfUs.ReleaseForgetDir();
                 blockInFrontOfUs = null;
             }
@@ -119,7 +119,10 @@ public class Player : MonoBehaviour
                 }
             } 
             if(grabbingBlock && blockInFrontOfUs) {
-                blockInFrontOfUs.PushOrPull(transform);               
+                if(blockInFrontOfUs.PushOrPull(transform))
+                {
+                    blockInFrontOfUs = null;
+                }               
             }
         } else {
             if(Input.GetKeyDown (KeyCode.Space)) {
