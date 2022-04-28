@@ -83,6 +83,10 @@ public class Player : MonoBehaviour
         rb.velocity = velWithGravity;
 
         transform.Rotate(Vector3.up, 60.0f * Time.deltaTime * Input.GetAxis("Horizontal")); 
+        if(InteractTip.activeSelf != (blockInFrontOfUs != null))
+        {
+            InteractTip.SetActive(blockInFrontOfUs != null);
+        }
         
         RaycastHit rhInfo;
         //ground beneath us?
@@ -96,9 +100,10 @@ public class Player : MonoBehaviour
             // checking for block in front of us to pull/push
             if (Physics.Raycast (transform.position, transform.forward, out rhInfo, 3.5f, jumpFrom)) {
                 NESWPushable blockHere = rhInfo.collider.GetComponent <NESWPushable>();
-                if(blockHere) {
-                    blockInFrontOfUs = blockHere;
-                }
+                blockInFrontOfUs = blockHere;               
+            } else if (grabbingBlock == false) {
+                blockInFrontOfUs.ReleaseForgetDir();
+                blockInFrontOfUs = null;
             }
             if(Input.GetKeyDown (KeyCode.Space)) {
                 if(blockInFrontOfUs) {
