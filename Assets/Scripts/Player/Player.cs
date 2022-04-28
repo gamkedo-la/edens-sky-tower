@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     public bool PlayerTransferShard2 = false;
     public bool PlayerTransferShard3 = false;
     public GameObject CarryingKey;
+    public GameObject InteractTip = null;
 
     public LayerMask jumpFrom;
     public Transform TeleportDebugLocation;
@@ -40,6 +41,8 @@ public class Player : MonoBehaviour
         TiltGlideModel.localRotation = Quaternion.identity;
         bool isHeld = PlayerPrefs.GetInt("holdKey" + 1, 0) == 1;
         CarryingKey.SetActive(isHeld);
+
+        InteractTip.SetActive(false);
     }
 
     public void GetKey (string whichKey) {
