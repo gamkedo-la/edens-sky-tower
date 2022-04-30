@@ -16,6 +16,8 @@ public class Player : MonoBehaviour
 
     public LayerMask jumpFrom;
     public Transform TeleportDebugLocation;
+    public Transform RespawnLocation;
+    public bool playerFell = false;
     public Transform TiltGlideModel;
 
     private NESWPushable blockInFrontOfUs;
@@ -153,6 +155,12 @@ public class Player : MonoBehaviour
         if(PlayerTransferShard3) {
             gameObject.transform.position = ToShardThree.position;
             PlayerTransferShard3 = false;
+        }
+
+        if(playerFell == true) // respawning
+        {
+            transform.position = RespawnLocation.position;
+            playerFell = false;
         }
 
         //debug
