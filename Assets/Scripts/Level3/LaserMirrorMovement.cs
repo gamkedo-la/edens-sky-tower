@@ -22,12 +22,12 @@ public class LaserMirrorMovement : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.U))
             {
-                transform.Rotate(/*point,*/ Vector3.forward, 20 * Time.deltaTime);
+                transform.Rotate(/*point,*/ Vector3.down, 20 * Time.deltaTime);
             }
 
             if (Input.GetKey(KeyCode.I))
             {
-                transform.Rotate(/*point,*/ -Vector3.forward, 20 * Time.deltaTime);
+                transform.Rotate(/*point,*/ -Vector3.down, 20 * Time.deltaTime);
             }
         }
     }

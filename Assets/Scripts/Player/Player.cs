@@ -12,9 +12,12 @@ public class Player : MonoBehaviour
     public bool PlayerTransferShard2 = false;
     public bool PlayerTransferShard3 = false;
     public GameObject CarryingKey;
+    public GameObject InteractTip = null;
 
     public LayerMask jumpFrom;
     public Transform TeleportDebugLocation;
+    public Transform RespawnLocation;
+    public bool playerFell = false;
     public Transform TiltGlideModel;
 
     private NESWPushable blockInFrontOfUs;
@@ -40,6 +43,8 @@ public class Player : MonoBehaviour
         TiltGlideModel.localRotation = Quaternion.identity;
         bool isHeld = PlayerPrefs.GetInt("holdKey" + 1, 0) == 1;
         CarryingKey.SetActive(isHeld);
+
+        InteractTip.SetActive(false);
     }
 
     public void GetKey (string whichKey) {
@@ -80,6 +85,10 @@ public class Player : MonoBehaviour
         rb.velocity = velWithGravity;
 
         transform.Rotate(Vector3.up, 60.0f * Time.deltaTime * Input.GetAxis("Horizontal")); 
+        if(InteractTip.activeSelf != (blockInFrontOfUs != null))
+        {
+            InteractTip.SetActive(blockInFrontOfUs != null);
+        }
         
         RaycastHit rhInfo;
         //ground beneath us?
@@ -93,9 +102,10 @@ public class Player : MonoBehaviour
             // checking for block in front of us to pull/push
             if (Physics.Raycast (transform.position, transform.forward, out rhInfo, 3.5f, jumpFrom)) {
                 NESWPushable blockHere = rhInfo.collider.GetComponent <NESWPushable>();
-                if(blockHere) {
-                    blockInFrontOfUs = blockHere;
-                }
+                blockInFrontOfUs = blockHere;               
+            } else if (grabbingBlock == false && blockInFrontOfUs) {
+                blockInFrontOfUs.ReleaseForgetDir();
+                blockInFrontOfUs = null;
             }
             if(Input.GetKeyDown (KeyCode.Space)) {
                 if(blockInFrontOfUs) {
@@ -111,7 +121,10 @@ public class Player : MonoBehaviour
                 }
             } 
             if(grabbingBlock && blockInFrontOfUs) {
-                blockInFrontOfUs.PushOrPull(transform);               
+                if(blockInFrontOfUs.PushOrPull(transform))
+                {
+                    blockInFrontOfUs = null;
+                }               
             }
         } else {
             if(Input.GetKeyDown (KeyCode.Space)) {
@@ -142,6 +155,12 @@ public class Player : MonoBehaviour
         if(PlayerTransferShard3) {
             gameObject.transform.position = ToShardThree.position;
             PlayerTransferShard3 = false;
+        }
+
+        if(playerFell == true) // respawning
+        {
+            transform.position = RespawnLocation.position;
+            playerFell = false;
         }
 
         //debug
