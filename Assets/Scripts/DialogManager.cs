@@ -68,14 +68,14 @@ public class DialogManager : MonoBehaviour
 
     public void StartDialog(string[] DialogEvent)
     {
-        if (!GameManager.dialogHintShown)
-        {
+        //if (!GameManager.dialogHintShown)
+       // {
             hintManager.SetActive(true);
             hintManagerTMProTextbox.text = myHintText;
             hintManagerTMProTextbox.gameObject.SetActive(true);
             GameManager.dialogHintShown = true;
-            GameManager.aboutToShowJumpHint = true;
-        }
+            GameManager.aboutToShowJumpHint = false;
+       // }
 
         CurrentDialog = DialogEvent;
         bookmark = 0;
@@ -109,14 +109,14 @@ public class DialogManager : MonoBehaviour
 
             DialogActive = false;
             GM.UnpauseGame();
-
-            if (GameManager.aboutToShowJumpHint)
+            hintManager.SetActive(false);
+            /*if (GameManager.aboutToShowJumpHint)
             {
                 GM.PauseGame();
                 hintManagerTMProTextbox.text = "Now go left and jump up the platforms to the obelisk. \nSpace bar to jump. E to continue.";
                 hintManager.SetActive(true);
                 GameManager.aboutToShowJumpHint = false;
-            }
+            } */
         }
     }
 }

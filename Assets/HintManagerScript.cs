@@ -11,11 +11,12 @@ public class HintManagerScript : MonoBehaviour
     void Start()
     {
         dialogManagerScript = dialogWindow.GetComponent<DialogManager>();
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
+        gameObject.SetActive(false);
     }
 
     // Update is called once per frame
-    void Update()
+    /*void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -27,4 +28,5 @@ public class HintManagerScript : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
+    */
 }
