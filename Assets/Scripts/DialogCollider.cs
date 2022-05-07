@@ -6,6 +6,7 @@ public class DialogCollider : MonoBehaviour
 {
     public string[] ThisDialog;
     public DialogManager DM;
+    public GameObject StoryTabletParticleSystem;
 
     // Start is called before the first frame update
     void Start()
@@ -24,5 +25,6 @@ public class DialogCollider : MonoBehaviour
         Debug.Log("dialog collider collided");
         DM.StartDialog(ThisDialog);
         Destroy(gameObject);
+        StoryTabletParticleSystem.SetActive(false);
     }
 }

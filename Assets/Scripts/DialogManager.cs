@@ -9,6 +9,8 @@ public class DialogManager : MonoBehaviour
     public Text DialogUI;
     public CanvasGroup Window;
     public GameManager GM;
+    public GameObject StoryTabletParticleSystem;
+
 
     [SerializeField] private GameObject hintManager;
     [SerializeField] private TextMeshProUGUI hintManagerTMProTextbox;
@@ -110,6 +112,7 @@ public class DialogManager : MonoBehaviour
             DialogActive = false;
             GM.UnpauseGame();
             hintManager.SetActive(false);
+            Debug.Log("shut off partciles");
             /*if (GameManager.aboutToShowJumpHint)
             {
                 GM.PauseGame();
