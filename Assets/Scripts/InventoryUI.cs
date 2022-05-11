@@ -5,7 +5,9 @@ using UnityEngine.UI;
 
 public class InventoryUI : MonoBehaviour
 {
-    public Text[] TextBoxes;
+    public Text TabletCount;
+    public Text StoryText;
+    public Image[] keys;
 
     bool open = false;
 
@@ -25,6 +27,7 @@ public class InventoryUI : MonoBehaviour
     {
         A = ClosePos;
         B = ClosePos;
+        UpdateUI();
     }
 
     // Update is called once per frame
@@ -39,12 +42,11 @@ public class InventoryUI : MonoBehaviour
         }
     }
 
-    public void UpdateUI(int[] numbers)
+    public void UpdateUI()
     {
-        for(int i = 0; i < numbers.Length; i++)
-        {
-            TextBoxes[i].text = numbers[i].ToString();
-        }               
+        StoryText.text = "---";
+        TabletCount.text = "3/7";
+
     }
 
     public void OpenClose()

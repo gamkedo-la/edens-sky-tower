@@ -286,12 +286,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0ffa8cc899a334479dd0661db4d1f16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TextBoxes:
-  - {fileID: 2321429939654022578}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  TabletCount: {fileID: 2321429939654022578}
+  StoryText: {fileID: 7752682460556059564}
+  keys:
+  - {fileID: 4290534734197323561}
+  - {fileID: 1480882145349475195}
+  - {fileID: 919738290394166993}
+  - {fileID: 2637094246008454962}
   OpenPos: 0
   ClosePos: -810
   AnimSpeed: 3

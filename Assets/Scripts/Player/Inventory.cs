@@ -21,7 +21,7 @@ public class Inventory : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        myInventoryUI.UpdateUI(Items);
+        myInventoryUI.UpdateUI();
     }
 
     // Update is called once per frame
@@ -39,7 +39,7 @@ public class Inventory : MonoBehaviour
         }
 
         Items[itemIndex]++;
-        myInventoryUI.UpdateUI(Items);
+        myInventoryUI.UpdateUI();
     }
 
     public bool UseItem(int itemIndex, bool drop, int numberRequired)
@@ -51,7 +51,7 @@ public class Inventory : MonoBehaviour
             {
                 Items[itemIndex]--;
             }
-            myInventoryUI.UpdateUI(Items);
+            myInventoryUI.UpdateUI();
             return true;
         }
         else
