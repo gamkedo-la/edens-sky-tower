@@ -8,6 +8,7 @@ public class InventoryUI : MonoBehaviour
     public Text TabletCount;
     public Text StoryText;
     public Image[] keys;
+    public Image[] invItems;
 
     bool open = false;
 
@@ -54,6 +55,11 @@ public class InventoryUI : MonoBehaviour
         keys[2].enabled = showKey;
         showKey = (PlayerPrefs.GetInt("usedKey4", 0) + PlayerPrefs.GetInt("holdKey4", 0)) >= 1;
         keys[3].enabled = showKey;
+
+        for(int i = 0; i < invItems.Length; i++)
+        {
+            invItems[i].enabled = false;
+        }
     }
 
     public void OpenClose()
