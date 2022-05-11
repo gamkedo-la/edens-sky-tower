@@ -46,11 +46,19 @@ public class InventoryUI : MonoBehaviour
     {
         StoryText.text = "---";
         TabletCount.text = "3/7";
-
+        bool showKey = (PlayerPrefs.GetInt("usedKey1", 0) + PlayerPrefs.GetInt("holdKey1", 0)) >= 1;
+        keys[0].enabled = showKey;
+        showKey = (PlayerPrefs.GetInt("usedKey2", 0) + PlayerPrefs.GetInt("holdKey2", 0)) >= 1;
+        keys[1].enabled = showKey;
+        showKey = (PlayerPrefs.GetInt("usedKey3", 0) + PlayerPrefs.GetInt("holdKey3", 0)) >= 1;
+        keys[2].enabled = showKey;
+        showKey = (PlayerPrefs.GetInt("usedKey4", 0) + PlayerPrefs.GetInt("holdKey4", 0)) >= 1;
+        keys[3].enabled = showKey;
     }
 
     public void OpenClose()
     {
+        UpdateUI();
         if(open == true)
         {
             A = OpenPos;
