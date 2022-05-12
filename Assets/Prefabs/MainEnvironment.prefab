@@ -12580,6 +12580,24 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 292704952438151907, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
         type: 3}
+      propertyPath: ThisDialog.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 292704952438151907, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
+        type: 3}
+      propertyPath: ThisDialog.Array.data[0]
+      value: "It is only after a millennia of being in the sky that the prophecy
+        of old emerges and unfolds. A being from the tower, a Self on its own, emerges
+        to deliver upon humanities soul\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 292704952438151907, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
+        type: 3}
+      propertyPath: ThisDialog.Array.data[1]
+      value: "The Self is tasked with assembling the shattered tower and bringing
+        together the city once more\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 292704952438151907, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
+        type: 3}
       propertyPath: StoryTabletParticleSystem
       value: 
       objectReference: {fileID: 4521953584251461878}
@@ -12732,6 +12750,24 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8727616804311686494, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
+        type: 3}
+      propertyPath: ThisDialog.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8727616804311686494, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
+        type: 3}
+      propertyPath: ThisDialog.Array.data[0]
+      value: "It is only after a millennia of being in the sky that the prophecy
+        of old emerges and unfolds. A being from the tower, a Self on its own, emerges
+        to deliver upon humanities soul\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8727616804311686494, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
+        type: 3}
+      propertyPath: ThisDialog.Array.data[1]
+      value: "The Self is tasked with assembling the shattered tower and bringing
+        together the city once more\u2026"
       objectReference: {fileID: 0}
     - target: {fileID: 8727616804311686494, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
         type: 3}
@@ -14160,8 +14196,26 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 292704952438151907, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
         type: 3}
+      propertyPath: ThisDialog.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 292704952438151907, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
+        type: 3}
       propertyPath: ThisDialog.Array.data[0]
-      value: story text here...
+      value: "The city of Eden is the core of Earth, the source of the purest water
+        and the strongest life energy from which all living things depend on to thrive\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 292704952438151907, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
+        type: 3}
+      propertyPath: ThisDialog.Array.data[1]
+      value: "With Eden, plants blossom in every direction and color, creatures of
+        all kin come forth as real. The city was filled with humans too\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 292704952438151907, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
+        type: 3}
+      propertyPath: ThisDialog.Array.data[2]
+      value: "They were tasked with being keepers of creation and living in harmony
+        with each other. But time passed \u2026"
       objectReference: {fileID: 0}
     - target: {fileID: 292704952438151907, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
         type: 3}
@@ -14321,22 +14375,25 @@ PrefabInstance:
     - target: {fileID: 8727616804311686494, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
         type: 3}
       propertyPath: ThisDialog.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8727616804311686494, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
         type: 3}
       propertyPath: ThisDialog.Array.data[0]
-      value: story text here...
+      value: "The city of Eden is the core of Earth, the source of the purest water
+        and the strongest life energy from which all living things depend on to thrive\u2026"
       objectReference: {fileID: 0}
     - target: {fileID: 8727616804311686494, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
         type: 3}
       propertyPath: ThisDialog.Array.data[1]
-      value: 
+      value: "With Eden, plants blossom in every direction and color, creatures of
+        all kin come forth as real. The city was filled with humans too\u2026"
       objectReference: {fileID: 0}
     - target: {fileID: 8727616804311686494, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
         type: 3}
       propertyPath: ThisDialog.Array.data[2]
-      value: 
+      value: "They were tasked with being keepers of creation and living in harmony
+        with each other. But time passed \u2026"
       objectReference: {fileID: 0}
     - target: {fileID: 8727616804311686494, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
         type: 3}
@@ -14364,6 +14421,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5668262633284405621}
     m_Modifications:
+    - target: {fileID: 292704952438151907, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
+        type: 3}
+      propertyPath: ThisDialog.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 292704952438151907, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
+        type: 3}
+      propertyPath: ThisDialog.Array.data[0]
+      value: "Eden was no longer within human reach. Humans were left to face the
+        unabashed consequences of their new ways. A world devoid of life\u2019s source\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 292704952438151907, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
+        type: 3}
+      propertyPath: ThisDialog.Array.data[1]
+      value: "An Earth that would now crumble and rust. The tower now floating amidst
+        a sea of clouds starts to undo what humans have done\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 292704952438151907, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
+        type: 3}
+      propertyPath: ThisDialog.Array.data[2]
+      value: "The fragmented floating city is now a haven, creatures and plants are
+        created anew, the Tower its keeper once more\u2026"
+      objectReference: {fileID: 0}
     - target: {fileID: 292704952438151907, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
         type: 3}
       propertyPath: StoryTabletParticleSystem
@@ -14518,6 +14598,24 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8727616804311686494, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
+        type: 3}
+      propertyPath: ThisDialog.Array.data[0]
+      value: "Eden was no longer within human reach. Humans were left to face the
+        unabashed consequences of their new ways. A world devoid of life\u2019s source\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8727616804311686494, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
+        type: 3}
+      propertyPath: ThisDialog.Array.data[1]
+      value: "An Earth that would now crumble and rust. The tower now floating amidst
+        a sea of clouds starts to undo what humans have done\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8727616804311686494, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
+        type: 3}
+      propertyPath: ThisDialog.Array.data[2]
+      value: "The fragmented floating city is now a haven, creatures and plants are
+        created anew, the Tower its keeper once more\u2026"
       objectReference: {fileID: 0}
     - target: {fileID: 8727616804311686494, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
         type: 3}
@@ -17417,6 +17515,26 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 292704952438151907, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
         type: 3}
+      propertyPath: ThisDialog.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 292704952438151907, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
+        type: 3}
+      propertyPath: ThisDialog.Array.data[0]
+      value: "The Self, comes to know about human\u2019s past. A history filled with
+        greatness drowned by selfishness. For the prophecy to fulfill the self must
+        decide\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 292704952438151907, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
+        type: 3}
+      propertyPath: ThisDialog.Array.data[1]
+      value: "For the Tower to go back, the self must sacrifice. The self must give
+        up what he has learned, encountered, and lived. All memories to be emptied,
+        his body turned a shell. He\u2026will be gone, but a new opportunity would
+        come\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 292704952438151907, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
+        type: 3}
       propertyPath: StoryTabletParticleSystem
       value: 
       objectReference: {fileID: 953181096137241983}
@@ -17569,6 +17687,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8727616804311686494, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
+        type: 3}
+      propertyPath: ThisDialog.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8727616804311686494, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
+        type: 3}
+      propertyPath: ThisDialog.Array.data[0]
+      value: "The Self, comes to know about human\u2019s past. A history filled with
+        greatness drowned by selfishness. For the prophecy to fulfill the self must
+        decide\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8727616804311686494, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
+        type: 3}
+      propertyPath: ThisDialog.Array.data[1]
+      value: "For the Tower to go back, the self must sacrifice. The self must give
+        up what he has learned, encountered, and lived. All memories to be emptied,
+        his body turned a shell. He\u2026will be gone, but a new opportunity would
+        come\u2026"
       objectReference: {fileID: 0}
     - target: {fileID: 8727616804311686494, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
         type: 3}
@@ -35559,6 +35697,24 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 292704952438151907, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
         type: 3}
+      propertyPath: ThisDialog.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 292704952438151907, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
+        type: 3}
+      propertyPath: ThisDialog.Array.data[0]
+      value: "A chance for humans to enter Eden once more relies on a decision to
+        be made, as the prophecy foretold. As humans have heard, as some believed,
+        someone could pay the price for their horrible deeds\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 292704952438151907, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
+        type: 3}
+      propertyPath: ThisDialog.Array.data[1]
+      value: "Deeds to be forgotten so Eden can be lowered, a city no longer in the
+        skies, its gates once more opened\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 292704952438151907, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
+        type: 3}
       propertyPath: StoryTabletParticleSystem
       value: 
       objectReference: {fileID: 8610125532689196232}
@@ -35711,6 +35867,24 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8727616804311686494, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
+        type: 3}
+      propertyPath: ThisDialog.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8727616804311686494, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
+        type: 3}
+      propertyPath: ThisDialog.Array.data[0]
+      value: "A chance for humans to enter Eden once more relies on a decision to
+        be made, as the prophecy foretold. As humans have heard, as some believed,
+        someone could pay the price for their horrible deeds\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8727616804311686494, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
+        type: 3}
+      propertyPath: ThisDialog.Array.data[1]
+      value: "Deeds to be forgotten so Eden can be lowered, a city no longer in the
+        skies, its gates once more opened\u2026"
       objectReference: {fileID: 0}
     - target: {fileID: 8727616804311686494, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
         type: 3}
@@ -36229,6 +36403,25 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 292704952438151907, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
         type: 3}
+      propertyPath: ThisDialog.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 292704952438151907, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
+        type: 3}
+      propertyPath: ThisDialog.Array.data[0]
+      value: "Their way was lost, becoming self-centered. They turned against each
+        other and disregarded nature as a resource to be consumed and other humans
+        to be used\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 292704952438151907, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
+        type: 3}
+      propertyPath: ThisDialog.Array.data[1]
+      value: "Amidst a world-breaking earthquake, emptying its streets, the Tower
+        deemed human\u2019s worthy no more. Fragmenting and breaking the Tower took
+        the city and rose\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 292704952438151907, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
+        type: 3}
       propertyPath: StoryTabletParticleSystem
       value: 
       objectReference: {fileID: 7408214594624310425}
@@ -36381,6 +36574,25 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8727616804311686494, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
+        type: 3}
+      propertyPath: ThisDialog.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8727616804311686494, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
+        type: 3}
+      propertyPath: ThisDialog.Array.data[0]
+      value: "Their way was lost, becoming self-centered. They turned against each
+        other and disregarded nature as a resource to be consumed and other humans
+        to be used\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8727616804311686494, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
+        type: 3}
+      propertyPath: ThisDialog.Array.data[1]
+      value: "Amidst a world-breaking earthquake, emptying its streets, the Tower
+        deemed human\u2019s worthy no more. Fragmenting and breaking the Tower took
+        the city and rose\u2026"
       objectReference: {fileID: 0}
     - target: {fileID: 8727616804311686494, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
         type: 3}

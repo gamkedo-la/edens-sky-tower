@@ -1437,8 +1437,27 @@ PrefabInstance:
       objectReference: {fileID: 8305627197396359309}
     - target: {fileID: 292704952438151907, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
         type: 3}
+      propertyPath: ThisDialog.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 292704952438151907, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
+        type: 3}
       propertyPath: ThisDialog.Array.data[0]
-      value: last bit of the story to become the key
+      value: "Amanu, the Self, finally learning his name, the Last Key is now ready
+        to be. He is now worthy and ready to decide if his journey is to end here\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 292704952438151907, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
+        type: 3}
+      propertyPath: ThisDialog.Array.data[1]
+      value: He must ponder on humanity and the sacrifice that is he. Are they worthy
+        of such creation? They already destroyed it once. But also consider, is nature
+        complete if humans are not?...
+      objectReference: {fileID: 0}
+    - target: {fileID: 292704952438151907, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
+        type: 3}
+      propertyPath: ThisDialog.Array.data[2]
+      value: 'Questions to consider for the Last Key, his last decision to be made
+        where he first saw a tree. '
       objectReference: {fileID: 0}
     - target: {fileID: 292704952438151907, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
         type: 3}
@@ -1573,12 +1592,26 @@ PrefabInstance:
     - target: {fileID: 8727616804311686494, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
         type: 3}
       propertyPath: ThisDialog.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8727616804311686494, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
         type: 3}
       propertyPath: ThisDialog.Array.data[0]
-      value: last bit of the story to become the key
+      value: "Amanu, the Self, finally learning his name, the Last Key is now ready
+        to be. He is now worthy and ready to decide if his journey is to end here\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8727616804311686494, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
+        type: 3}
+      propertyPath: ThisDialog.Array.data[1]
+      value: He must ponder on humanity and the sacrifice that is he. Are they worthy
+        of such creation? They already destroyed it once. But also consider, is nature
+        complete if humans are not?...
+      objectReference: {fileID: 0}
+    - target: {fileID: 8727616804311686494, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
+        type: 3}
+      propertyPath: ThisDialog.Array.data[2]
+      value: 'Questions to consider for the Last Key, his last decision to be made
+        where he first saw a tree. '
       objectReference: {fileID: 0}
     - target: {fileID: 8727616804311686494, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
         type: 3}
@@ -4380,7 +4413,7 @@ Transform:
   - {fileID: 541576950}
   - {fileID: 1320730624}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &2711695722342646257
 MeshRenderer:
@@ -10076,17 +10109,17 @@ PrefabInstance:
     - target: {fileID: 5637139110404580721, guid: 9d14710e096c8f84d813a2969a0e303c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.1
+      value: 10.470818
       objectReference: {fileID: 0}
     - target: {fileID: 5637139110404580721, guid: 9d14710e096c8f84d813a2969a0e303c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 74.6
+      value: 15.019585
       objectReference: {fileID: 0}
     - target: {fileID: 5637139110404580721, guid: 9d14710e096c8f84d813a2969a0e303c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.9
+      value: -658.6671
       objectReference: {fileID: 0}
     - target: {fileID: 5637139110404580721, guid: 9d14710e096c8f84d813a2969a0e303c,
         type: 3}

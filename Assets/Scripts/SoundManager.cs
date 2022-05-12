@@ -11,8 +11,8 @@ public class SoundManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        storyNarrationOne = SFX.Load<AudioClip>("SFX_Ambience_Space_Crickets");
-        storyNarrationTwo = SFX.Load<AudioClip>("SFX_Ambience_Space_Wind");
+        //storyNarrationOne = SFX.Load<AudioClip>("SFX_Ambience_Space_Crickets");
+       // storyNarrationTwo = SFX.Load<AudioClip>("SFX_Ambience_Space_Wind");
 
         audioSrc = GetComponent<AudioSource>();
     }
