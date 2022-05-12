@@ -307,7 +307,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 241743437}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73f3cea1f5a0b6b439365b41171937c8, type: 3}
+  m_Script: {fileID: 11500000, guid: 2c6ec858a88a74949a282815dd1f1329, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &241743440
@@ -355,8 +355,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 241743439}
-        m_TargetAssemblyTypeName: TitleScreen, Assembly-CSharp
-        m_MethodName: StartButton
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1128,7 +1128,7 @@ GameObject:
   - component: {fileID: 1253043384}
   - component: {fileID: 1253043383}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Main Menu Screen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1681,8 +1681,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1937927665}
-        m_TargetAssemblyTypeName: TitleScreen, Assembly-CSharp
-        m_MethodName: StartButton
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: StartGameButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1739,7 +1739,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1937927660}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73f3cea1f5a0b6b439365b41171937c8, type: 3}
+  m_Script: {fileID: 11500000, guid: 2c6ec858a88a74949a282815dd1f1329, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2006317396
