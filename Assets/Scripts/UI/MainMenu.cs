@@ -10,6 +10,16 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("Main Scene");
     }
 
+    public void OptionsButton()
+    {
+        SceneManager.LoadScene("Options Scene");
+    }
+
+    public void CreditsButton()
+    {
+        SceneManager.LoadScene("Credits Scene");
+    }
+
     public void QuitGame ()
     {
         Debug.Log("Quit!");
