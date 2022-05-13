@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
     public float runningSpeedMultiplier = 2.0f;
 
     private Rigidbody rb;
+    public Animator animator;
     private bool holdingGlide = false;
 
     private bool isRunning = false;
@@ -43,6 +44,7 @@ public class Player : MonoBehaviour
         TiltGlideModel.localRotation = Quaternion.identity;
         bool isHeld = PlayerPrefs.GetInt("holdKey" + 1, 0) == 1;
         CarryingKey.SetActive(isHeld);
+        animator = GetComponentInChildren<Animator>();
 
         InteractTip.SetActive(false);
     }
@@ -83,6 +85,7 @@ public class Player : MonoBehaviour
             velWithGravity.y = saveYV; 
         }
         rb.velocity = velWithGravity;
+        animator.SetFloat("Speed", playerForwardBackwardSpeed);
 
         transform.Rotate(Vector3.up, 60.0f * Time.deltaTime * Input.GetAxis("Horizontal")); 
         if(InteractTip.activeSelf != (blockInFrontOfUs != null))
