@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
     private bool grabbingBlock = false;
 
     [Range(1.0f, 4.0f)]
-    public float runningSpeedMultiplier = 2.0f;
+    public float runningSpeedMultiplier = 1.5f;
 
     private Rigidbody rb;
     public Animator animator;
@@ -73,14 +73,14 @@ public class Player : MonoBehaviour
         }
         Vector3 velWithGravity = rb.velocity;
         float saveYV = velWithGravity.y;
-        float playerForwardBackwardSpeed = 10.0f *Input.GetAxis("Vertical");
+        float playerForwardBackwardSpeed = 5.0f *Input.GetAxis("Vertical"); // player speed
         velWithGravity = transform.forward * playerForwardBackwardSpeed;
 
         checkIfChangingToRunningOrWalkingMode();
         if (isRunning && !holdingGlide) velWithGravity *= runningSpeedMultiplier;
 
         if(holdingGlide) {
-            velWithGravity.y = -3.5f; 
+            velWithGravity.y = -1.0f; //gliding falling speed
         } else {
             velWithGravity.y = saveYV; 
         }
@@ -95,7 +95,7 @@ public class Player : MonoBehaviour
         
         RaycastHit rhInfo;
         //ground beneath us?
-        if (Physics.Raycast (transform.position, Vector3.down, out rhInfo, 1.5f, jumpFrom)) {
+        if (Physics.Raycast (transform.position, Vector3.down, out rhInfo, 0.5f, jumpFrom)) {
             if(rb.velocity.y < -15.0f) { // temporary change, raycast detects wind trigger otherwise (WIP)
                 rb.velocity = Vector3.zero;
             }
@@ -120,7 +120,7 @@ public class Player : MonoBehaviour
                         }                        
                     }
                 } else { //jump if no block in front of us
-                    rb.AddForce (Vector3.up * 350); 
+                    rb.AddForce (Vector3.up * 350); // player jump
                 }
             } 
             if(grabbingBlock && blockInFrontOfUs) {
