@@ -23,8 +23,11 @@ public class Player : MonoBehaviour
     private NESWPushable blockInFrontOfUs;
     private bool grabbingBlock = false;
 
+    [Range(0, 20)]
+    public float baseMovementSpeed = 5.0f;
     [Range(1.0f, 4.0f)]
     public float runningSpeedMultiplier = 1.5f;
+    private float maximumForwardSpeed;
 
     private Rigidbody rb;
     public Animator animator;
@@ -45,6 +48,7 @@ public class Player : MonoBehaviour
         bool isHeld = PlayerPrefs.GetInt("holdKey" + 1, 0) == 1;
         CarryingKey.SetActive(isHeld);
         animator = GetComponentInChildren<Animator>();
+        CalculateMaximumForwardSpeed();
 
         InteractTip.SetActive(false);
     }
@@ -73,7 +77,7 @@ public class Player : MonoBehaviour
         }
         Vector3 velWithGravity = rb.velocity;
         float saveYV = velWithGravity.y;
-        float playerForwardBackwardSpeed = 5.0f *Input.GetAxis("Vertical"); // player speed
+        float playerForwardBackwardSpeed = baseMovementSpeed *Input.GetAxis("Vertical");
         velWithGravity = transform.forward * playerForwardBackwardSpeed;
 
         checkIfChangingToRunningOrWalkingMode();
@@ -85,7 +89,7 @@ public class Player : MonoBehaviour
             velWithGravity.y = saveYV; 
         }
         rb.velocity = velWithGravity;
-        animator.SetFloat("Speed", playerForwardBackwardSpeed);
+        animator.SetFloat("Speed", playerForwardBackwardSpeed / maximumForwardSpeed);
 
         transform.Rotate(Vector3.up, 60.0f * Time.deltaTime * Input.GetAxis("Horizontal")); 
         if(InteractTip.activeSelf != (blockInFrontOfUs != null))
@@ -245,6 +249,15 @@ public class Player : MonoBehaviour
         if(isHeld) {
             InsertKey(Convert.ToInt32(CKMScript.keyNumber), collision.gameObject);
         }  
+    }
+
+    void CalculateMaximumForwardSpeed()
+    {
+        maximumForwardSpeed = baseMovementSpeed * runningSpeedMultiplier;
+    }
+
+    void OnValidate() {
+        CalculateMaximumForwardSpeed();
     }
 
 } // end of class
