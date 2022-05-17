@@ -39,7 +39,7 @@ public class DialogManager : MonoBehaviour
     {
         if(DialogActive == true)
         {
-            Debug.Log("dialog active " + TypingSpeed);
+            //Debug.Log("dialog active " + TypingSpeed);
 
             if (CharMark < CurrentLine.Length)
             {
