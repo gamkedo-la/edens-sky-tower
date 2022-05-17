@@ -386,7 +386,9 @@ MonoBehaviour:
   RespawnLocation: {fileID: 0}
   playerFell: 0
   TiltGlideModel: {fileID: 6224685976639430919}
+  baseMovementSpeed: 10
   runningSpeedMultiplier: 2
+  animator: {fileID: 0}
   isAffectedByWind: 0
 --- !u!114 &2141491515793639891
 MonoBehaviour:
