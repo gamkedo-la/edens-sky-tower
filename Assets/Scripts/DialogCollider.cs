@@ -26,6 +26,6 @@ public class DialogCollider : MonoBehaviour
         DM.StartDialog(ThisDialog);
         Destroy(gameObject);
         StoryTabletParticleSystem.SetActive(false);
-        SoundManager.PlaySound("narrationOne");
+        SoundManager.PlaySound("narrationTwo");
     }
 }
