@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System;
+using System.Collections;
 
 public class Player : MonoBehaviour
 {
@@ -35,6 +36,8 @@ public class Player : MonoBehaviour
 
     private bool isRunning = false;
     public bool isAffectedByWind = false;
+    private bool isGrounded = false;
+    public float jumpDelay = 0.125f;
 
     void Awake() {
         instance = this;
@@ -100,6 +103,12 @@ public class Player : MonoBehaviour
         RaycastHit rhInfo;
         //ground beneath us?
         if (Physics.Raycast (transform.position, Vector3.down, out rhInfo, 0.5f, jumpFrom)) {
+
+            if (!isGrounded) {
+                isGrounded = true;
+                animator.SetTrigger("Land");
+            }
+
             if(rb.velocity.y < -15.0f) { // temporary change, raycast detects wind trigger otherwise (WIP)
                 rb.velocity = Vector3.zero;
             }
@@ -124,7 +133,8 @@ public class Player : MonoBehaviour
                         }                        
                     }
                 } else { //jump if no block in front of us
-                    rb.AddForce (Vector3.up * 350); // player jump
+                    animator.SetTrigger("Jump");
+                    StartCoroutine(AnimCallbackJump());
                 }
             } 
             if(grabbingBlock && blockInFrontOfUs) {
@@ -134,6 +144,7 @@ public class Player : MonoBehaviour
                 }               
             }
         } else {
+            isGrounded = false;
             if(Input.GetKeyDown (KeyCode.Space)) {
                 ShowGlider(true);
             }
@@ -215,6 +226,13 @@ public class Player : MonoBehaviour
         }
 
     } // end of Update
+
+
+    private IEnumerator AnimCallbackJump() {
+        yield return new WaitForSeconds(jumpDelay);
+        rb.AddForce (Vector3.up * 350); // player jump
+        animator.ResetTrigger("Land");
+    }
 
     private void checkIfChangingToRunningOrWalkingMode()
     {
