@@ -7,10 +7,18 @@ public class LV4CubeKeyholeTrigger : MonoBehaviour
     public LoweringPlatformLV4Move LoweringPlatformLV4Move;
     public GameObject cubeKey;
 
+    public Player playerScript; // referencing Player script
+
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Key Inserted!");
-        cubeKey.SetActive(true);
-        LoweringPlatformLV4Move.lowerPlatform();
+        Debug.Log("Colliding");
+        if(other.tag == "CubeKey")
+        {
+            Debug.Log("Key Inserted!");
+            playerScript.carryingLV4CubeKey = false;
+            cubeKey.SetActive(true);
+            LoweringPlatformLV4Move.lowerPlatform();
+        }
+        
     }
 }
