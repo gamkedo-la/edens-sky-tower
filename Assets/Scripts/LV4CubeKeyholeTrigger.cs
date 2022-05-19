@@ -6,6 +6,7 @@ public class LV4CubeKeyholeTrigger : MonoBehaviour
 {
     public LoweringPlatformLV4Move LoweringPlatformLV4Move;
     public GameObject cubeKey;
+    public GameObject textBox;
 
     public Player playerScript; // referencing Player script
 
@@ -18,6 +19,7 @@ public class LV4CubeKeyholeTrigger : MonoBehaviour
             playerScript.carryingLV4CubeKey = false;
             cubeKey.SetActive(true);
             LoweringPlatformLV4Move.lowerPlatform();
+            textBox.SetActive(true);
         }
         
     }
