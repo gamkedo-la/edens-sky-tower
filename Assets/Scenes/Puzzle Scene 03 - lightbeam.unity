@@ -2783,6 +2783,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c83c70ae160b53442aaf15967b00cb7d, type: 3}
+--- !u!1 &507570648 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6569672946500556368, guid: 9d14710e096c8f84d813a2969a0e303c,
+    type: 3}
+  m_PrefabInstance: {fileID: 8305627197396359308}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &514381495
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15503,6 +15509,11 @@ PrefabInstance:
       propertyPath: LevBase3
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4432713663525057983, guid: 9d14710e096c8f84d813a2969a0e303c,
+        type: 3}
+      propertyPath: LV4CubeKey
+      value: 
+      objectReference: {fileID: 507570648}
     - target: {fileID: 4432713663525057983, guid: 9d14710e096c8f84d813a2969a0e303c,
         type: 3}
       propertyPath: ToShardOne
