@@ -12,6 +12,8 @@ public class Player : MonoBehaviour
     public bool PlayerTransferShard1 = false;
     public bool PlayerTransferShard2 = false;
     public bool PlayerTransferShard3 = false;
+    public bool carryingLV4CubeKey = false;
+    public GameObject LV4CubeKey;
     public GameObject CarryingKey;
     public GameObject InteractTip = null;
 
@@ -225,6 +227,14 @@ public class Player : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
+
+        if (carryingLV4CubeKey == true)
+        {
+            LV4CubeKey.SetActive(true);
+        } else
+        {
+            LV4CubeKey.SetActive(false);
+        }
     } // end of Update
 
 
