@@ -233,7 +233,7 @@ public class Player : MonoBehaviour
         }
 
 
-        if (carryingLV4CubeKey == true)
+        if (carryingLV4CubeKey == true) // managing key for LV4
         {
             LV4CubeKey.SetActive(true);
         } else
