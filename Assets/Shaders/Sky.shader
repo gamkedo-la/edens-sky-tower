@@ -152,9 +152,8 @@ Shader "Unlit/Sky"
                 float3 stars = tex2D(_Stars, skyUV + (_StarsSpeed * _Time.x));
                 float inverseToD = 1 - _TimeOfDay;
                 stars *= inverseToD;
-                // stars *= saturate(-_WorldSpaceLightPos0.y);
                 stars = step(_StarsCutoff, stars);
-                // stars += (baseNoise * _StarsSkyColor);
+                stars += (baseNoise * _StarsSkyColor);
                 stars *= cloudsNegative;
 
                 // Day/Night depending on sun position
