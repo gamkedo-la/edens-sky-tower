@@ -188,33 +188,53 @@ public class Player : MonoBehaviour
             playerFell = false;
         }
 
-        //debug
-        if (Input.GetKeyDown(KeyCode.T)) {
-            transform.position = TeleportDebugLocation.position;
-            Debug.Log ("teleproting Debug");
+
+        if (carryingLV4CubeKey == true) // managing key for LV4
+        {
+            LV4CubeKey.SetActive(true);
+        } else
+        {
+            LV4CubeKey.SetActive(false);
         }
 
-        if(Input.GetKeyDown(KeyCode.Alpha1)) {
+        DebugFunction(); // debug
+    } // end of Update
+
+    private void DebugFunction ()
+    {
+        //debug
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            transform.position = TeleportDebugLocation.position;
+            Debug.Log("teleproting Debug");
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
             PlayerPrefs.SetInt("usedKey1", 1);
             Debug.Log("used Key One");
         }
 
-        if(Input.GetKeyDown(KeyCode.Alpha2)) {
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
             PlayerPrefs.SetInt("usedKey2", 1);
             Debug.Log("used Key Two");
         }
 
-        if(Input.GetKeyDown(KeyCode.Alpha3)) {
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
             PlayerPrefs.SetInt("usedKey3", 1);
             Debug.Log("used Key Three");
         }
 
-        if(Input.GetKeyDown(KeyCode.Alpha4)) {
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
             PlayerPrefs.SetInt("usedKey4", 1);
             Debug.Log("used Key Four");
         }
 
-        if(Input.GetKeyDown(KeyCode.Alpha5)) {
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
             PlayerPrefs.SetInt("usedKey1", 0);
             PlayerPrefs.SetInt("usedKey2", 0);
             PlayerPrefs.SetInt("usedKey3", 0);
@@ -225,22 +245,14 @@ public class Player : MonoBehaviour
             PlayerPrefs.SetInt("holdKey4", 0);
             Debug.Log("unuse all keys");
         }
-    
-        if(Input.GetKeyDown(KeyCode.Alpha6)) {
+
+        if (Input.GetKeyDown(KeyCode.Alpha6))
+        {
             PlayerPrefs.DeleteAll();
-            Debug.Log ("forgetting all player pref - reloding scene");
+            Debug.Log("forgetting all player pref - reloding scene");
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
-
-
-        if (carryingLV4CubeKey == true) // managing key for LV4
-        {
-            LV4CubeKey.SetActive(true);
-        } else
-        {
-            LV4CubeKey.SetActive(false);
-        }
-    } // end of Update
+    }
 
 
     private IEnumerator AnimCallbackJump() {
