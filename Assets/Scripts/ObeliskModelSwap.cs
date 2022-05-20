@@ -12,16 +12,16 @@ public class ObeliskModelSwap : MonoBehaviour
     void Start()
     {
         obeliskState = obeliskState + 1;
-        //Debug.Log(obeliskState);
+        Debug.Log(obeliskState);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(obeliskState == 4)
+        if(obeliskState == 2)
         {
             ObeliskModelSolved.SetActive(true);
-            ObeliskModelUnsolved.SetActive(false);
+            ObeliskModelUnsolved.SetActive(false);            
         }
     }
 }
