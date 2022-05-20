@@ -67,9 +67,11 @@ public class Player : MonoBehaviour
         if(holdingGlide != turnOn) {
             holdingGlide = turnOn;
             if(holdingGlide) {
-                TiltGlideModel.localRotation = Quaternion.AngleAxis(50.0f, Vector3.right);
+                // TiltGlideModel.localRotation = Quaternion.AngleAxis(50.0f, Vector3.right);
+                TiltGlideModel.gameObject.SetActive(true);
             }else{
-                TiltGlideModel.localRotation = Quaternion.identity;
+                TiltGlideModel.gameObject.SetActive(false);
+                // TiltGlideModel.localRotation = Quaternion.identity;
             }
         }
     }
@@ -108,6 +110,7 @@ public class Player : MonoBehaviour
 
             if (!isGrounded) {
                 isGrounded = true;
+                animator.SetBool("Gliding", false);
                 animator.SetTrigger("Land");
             }
 
@@ -149,9 +152,11 @@ public class Player : MonoBehaviour
             isGrounded = false;
             if(Input.GetKeyDown (KeyCode.Space)) {
                 ShowGlider(true);
+                animator.SetBool("Gliding", true);
             }
             if(Input.GetKeyUp(KeyCode.Space)) {
                 ShowGlider(false);
+                animator.SetBool("Gliding", false);
             }
         }
         if(blockInFrontOfUs && blockInFrontOfUs.CheckIfStuck()){

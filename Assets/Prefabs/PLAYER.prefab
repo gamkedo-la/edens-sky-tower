@@ -387,11 +387,12 @@ MonoBehaviour:
   TeleportDebugLocation: {fileID: 0}
   RespawnLocation: {fileID: 0}
   playerFell: 0
-  TiltGlideModel: {fileID: 6224685976639430919}
+  TiltGlideModel: {fileID: 7779180649429948029}
   baseMovementSpeed: 10
   runningSpeedMultiplier: 2
   animator: {fileID: 0}
   isAffectedByWind: 0
+  jumpDelay: 0.125
 --- !u!114 &2141491515793639891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -807,10 +808,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5733317549336056563, guid: 61f0739e9a4810c48aa0ba92fd02822d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 61f0739e9a4810c48aa0ba92fd02822d,
         type: 3}
       propertyPath: m_Name
       value: Amanu
+      objectReference: {fileID: 0}
+    - target: {fileID: 4644297669644122051, guid: 61f0739e9a4810c48aa0ba92fd02822d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61f0739e9a4810c48aa0ba92fd02822d, type: 3}
@@ -823,6 +834,12 @@ Transform:
 --- !u!1 &2830378620229229807 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 61f0739e9a4810c48aa0ba92fd02822d,
+    type: 3}
+  m_PrefabInstance: {fileID: 3136457566672036286}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7779180649429948029 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4644297669644122051, guid: 61f0739e9a4810c48aa0ba92fd02822d,
     type: 3}
   m_PrefabInstance: {fileID: 3136457566672036286}
   m_PrefabAsset: {fileID: 0}
