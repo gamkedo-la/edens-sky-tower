@@ -45,7 +45,70 @@ public class InventoryUI : MonoBehaviour
 
     public void UpdateUI()
     {
-        StoryText.text = "---";
+        string revealedStory = " ";
+        if(PlayerPrefs.GetInt("seenTablet1", 0) == 1)
+        {
+            revealedStory += " I have seen tablet 1";
+        } else
+        {
+            revealedStory += "don't have it yet";
+        }
+
+        if (PlayerPrefs.GetInt("seenTablet2", 0) == 1)
+        {
+            revealedStory += " I have seen tablet 2";
+        }
+        else
+        {
+            revealedStory += "don't have it yet";
+        }
+
+        if (PlayerPrefs.GetInt("seenTablet3", 0) == 1)
+        {
+            revealedStory += " I have seen tablet 3";
+        }
+        else
+        {
+            revealedStory += "don't have it yet";
+        }
+
+        if (PlayerPrefs.GetInt("seenTablet4", 0) == 1)
+        {
+            revealedStory += " I have seen tablet 4";
+        }
+        else
+        {
+            revealedStory += "don't have it yet";
+        }
+
+        if (PlayerPrefs.GetInt("seenTablet5", 0) == 1)
+        {
+            revealedStory += " I have seen tablet 5";
+        }
+        else
+        {
+            revealedStory += "don't have it yet";
+        }
+
+        if (PlayerPrefs.GetInt("seenTablet6", 0) == 1)
+        {
+            revealedStory += " I have seen tablet 6";
+        }
+        else
+        {
+            revealedStory += "don't have it yet";
+        }
+
+        if (PlayerPrefs.GetInt("seenTablet7", 0) == 1)
+        {
+            revealedStory += " I have seen tablet 7";
+        }
+        else
+        {
+            revealedStory += "don't have it yet";
+        }
+
+        StoryText.text = revealedStory;
         TabletCount.text = "3/7";
         bool showKey = (PlayerPrefs.GetInt("usedKey1", 0) + PlayerPrefs.GetInt("holdKey1", 0)) >= 1;
         keys[0].enabled = showKey;

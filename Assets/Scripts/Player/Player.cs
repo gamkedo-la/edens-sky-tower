@@ -202,7 +202,6 @@ public class Player : MonoBehaviour
 
     private void DebugFunction ()
     {
-        //debug
         if (Input.GetKeyDown(KeyCode.T))
         {
             transform.position = TeleportDebugLocation.position;
@@ -251,6 +250,48 @@ public class Player : MonoBehaviour
             PlayerPrefs.DeleteAll();
             Debug.Log("forgetting all player pref - reloding scene");
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            Debug.Log("tabletstory1");
+            PlayerPrefs.SetInt("seenTablet1", 1);
+        }
+
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            Debug.Log("tabletstory2");
+            PlayerPrefs.SetInt("seenTablet2", 1);
+        }
+
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            Debug.Log("tabletstory3");
+            PlayerPrefs.SetInt("seenTablet3", 1);
+        }
+
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            Debug.Log("tabletstory4");
+            PlayerPrefs.SetInt("seenTablet4", 1);
+        }
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            Debug.Log("tabletstory5");
+            PlayerPrefs.SetInt("seenTablet5", 1);
+        }
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            Debug.Log("tabletstory6");
+            PlayerPrefs.SetInt("seenTablet6", 1);
+        }
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            Debug.Log("tabletstory7");
+            PlayerPrefs.SetInt("seenTablet7", 1);
         }
     }
 
