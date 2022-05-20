@@ -9,6 +9,7 @@ public class InventoryUI : MonoBehaviour
     public Text StoryText;
     public Image[] keys;
     public Image[] invItems;
+    public Text[] invCount;
 
     bool open = false;
 
@@ -121,8 +122,12 @@ public class InventoryUI : MonoBehaviour
 
         for(int i = 0; i < invItems.Length; i++)
         {
-            invItems[i].enabled = false;
+            int howMany = PlayerPrefs.GetInt("invNum" + i, 0);
+            invItems[i].enabled = howMany > 0;
+            invCount[i].text = "" + howMany; 
         }
+
+
     }
 
     public void OpenClose()
