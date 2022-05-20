@@ -43,6 +43,7 @@ Shader "Unlit/Sky"
         _SunRadius ("Sun Radius", Range(0, 1)) = 0.1
         _SunAttenuation ("Sun Attenuation", Range(0, 100)) = 2
         _SunColor ("Sun Color", Color) = (1, 1, 1, 1)
+        _TimeOfDay ("Night <--> Day", Range(0, 1)) = 1
         
         [Header(Stars)]
         _Stars ("Stars texture", 2D) = "black" {}
@@ -90,7 +91,7 @@ Shader "Unlit/Sky"
             float _HorizonIntensity, _HorizonOffset;
             half4 _DayTopColor, _DayHorizonColor, _DayBottomColor, _NightTopColor, _NightHorizonColor, _SunSetColor, _NightBottomColor;
 
-            float _SunRadius, _SunAttenuation;
+            float _SunRadius, _SunAttenuation, _TimeOfDay;
             half4 _SunColor;
             
             sampler2D _Stars;
@@ -116,7 +117,7 @@ Shader "Unlit/Sky"
 #endif
                 
                 // Sky color
-                float horizonGlow = saturate((1-horizon) * saturate(_WorldSpaceLightPos0.y));
+                float horizonGlow = saturate((1-horizon) * _TimeOfDay);
                 float4 dayGlow = horizonGlow * _DayHorizonColor;
                 float4 dayGradient = lerp(_DayBottomColor, _DayTopColor, saturate(i.uv.y));
                 float4 nightGradient = lerp(_NightBottomColor, _NightTopColor, saturate(i.uv.y));
@@ -149,16 +150,18 @@ Shader "Unlit/Sky"
 
                 // Stars
                 float3 stars = tex2D(_Stars, skyUV + (_StarsSpeed * _Time.x));
-                stars *= saturate(-_WorldSpaceLightPos0.y);
+                float inverseToD = 1 - _TimeOfDay;
+                stars *= inverseToD;
+                // stars *= saturate(-_WorldSpaceLightPos0.y);
                 stars = step(_StarsCutoff, stars);
                 // stars += (baseNoise * _StarsSkyColor);
                 stars *= cloudsNegative;
 
                 // Day/Night depending on sun position
-                float4 skyGradients = lerp(nightGradient, dayGradient, saturate(_WorldSpaceLightPos0.y));
+                float4 skyGradients = lerp(nightGradient, dayGradient, _TimeOfDay);
 
-                float sunset = saturate((1 - horizon) * saturate(_WorldSpaceLightPos0.y * 1));
-                float3 sunsetColor = horizon * _SunSetColor * saturate(_WorldSpaceLightPos0.y * 1);
+                float sunset = saturate((1 - horizon) * _TimeOfDay);
+                float3 sunsetColor = horizon * _SunSetColor * _TimeOfDay;
                 
                 // Combine color and apply fog
                 fixed3 col = skyGradients + dayGlow + cloudColor + sunAndMoon + stars + sunsetColor;
