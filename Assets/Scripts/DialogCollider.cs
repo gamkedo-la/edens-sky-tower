@@ -17,6 +17,11 @@ public class DialogCollider : MonoBehaviour
         Destroy(gameObject); // comment out to be able to engage with story tablet once more
         StoryTabletParticleSystem.SetActive(false);
 
+        if(VoiceStoryFile.Length > 0)
+        {
+            PlayerPrefs.SetInt("seenTablet" + VoiceStoryFile, 1);
+        }
+
         switch (VoiceStoryFile) //managing which voice files plays
         {
             case "1":
