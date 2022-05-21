@@ -35,6 +35,7 @@ public class InventoryUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         GetComponent<RectTransform>().anchoredPosition = new Vector2(Mathf.Lerp(A, B, T), 30);
         T += Time.unscaledDeltaTime * AnimSpeed;
 
