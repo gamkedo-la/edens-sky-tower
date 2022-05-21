@@ -28,8 +28,8 @@ public class WindBurst : MonoBehaviour
 
     void Start () {
         if(rbTarget == null || player == null) {
-            this.enabled = false; // preventing constant error from uninitalized variables
-            Debug.Log("preventing null ref exception while wind burst - WIP");
+            //this.enabled = false; // preventing constant error from uninitalized variables
+            //Debug.Log("preventing null ref exception while wind burst - WIP");
         }
     }
 
@@ -56,8 +56,18 @@ public class WindBurst : MonoBehaviour
     {
         if (affectedByWind)
         {
+            Vector3 forceDirection;
+            //If player is still in the trigger, we should just make player go upwards.
+            if (!windCameraSpeedOn)
+            {
+                forceDirection = new Vector3(0,1,0);
+            }
+            else
+            {
+                forceDirection = direction;
+            }
             float smoothRate = 0.005f;
-            rbTarget.AddForce(direction * windMagnitude, ForceMode.VelocityChange);
+            rbTarget.AddForce(forceDirection * windMagnitude);
             rbTarget.transform.rotation = Quaternion.Lerp(rbTarget.transform.rotation, targetRotation, smoothRate * Time.deltaTime);
         }
     }
@@ -102,10 +112,13 @@ public class WindBurst : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        StartCoroutine(RotateBackAround());
-        StartCoroutine(ReEnablePlayerMovementAfterDuration());
-        StartCoroutine(CameraFollowPlayerForDuration());
-        StartCoroutine(DisableWindAfterDuration());
+        if (other.gameObject.tag == "Player")
+        {
+            StartCoroutine(RotateBackAround());
+            StartCoroutine(ReEnablePlayerMovementAfterDuration());
+            StartCoroutine(CameraFollowPlayerForDuration());
+            StartCoroutine(DisableWindAfterDuration());
+        }
     }
 
     private IEnumerator RotateBackAround()
