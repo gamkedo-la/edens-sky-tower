@@ -8,6 +8,7 @@ public class DialogCollider : MonoBehaviour
     public DialogManager DM;
     public GameObject StoryTabletParticleSystem;
     public string VoiceStoryFile;
+    public InventoryUI sotryTabletUICount;
 
 
     private void OnTriggerEnter(Collider other)
@@ -26,24 +27,31 @@ public class DialogCollider : MonoBehaviour
         {
             case "1":
                 SoundManager.PlaySound("narrationOne");
+                sotryTabletUICount.UpdateUIStoryCount();// calls out function that ticks up counter in UI
                 break;
             case "2":
                 SoundManager.PlaySound("narrationTwo");
+                sotryTabletUICount.UpdateUIStoryCount();
                 break;
             case "3":
                 SoundManager.PlaySound("narrationThree");
+                sotryTabletUICount.UpdateUIStoryCount();
                 break;
             case "4":
                 SoundManager.PlaySound("narrationFour");
+                sotryTabletUICount.UpdateUIStoryCount();
                 break;
             case "5":
                 SoundManager.PlaySound("narrationFive");
+                sotryTabletUICount.UpdateUIStoryCount();
                 break;
             case "6":
                 SoundManager.PlaySound("narrationSix");
+                sotryTabletUICount.UpdateUIStoryCount();
                 break;
             case "7":
                 SoundManager.PlaySound("narrationSeven");
+                sotryTabletUICount.UpdateUIStoryCount();
                 break;
         }
     }

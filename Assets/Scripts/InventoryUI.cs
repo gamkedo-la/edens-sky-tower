@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class InventoryUI : MonoBehaviour
 {
     public Text TabletCount;
+    private float StoryCount = 0;
     public Text StoryText;
     public Image[] keys;
     public Image[] invItems;
@@ -43,6 +44,11 @@ public class InventoryUI : MonoBehaviour
         {
             OpenClose();
         }
+    }
+
+    public void UpdateUIStoryCount ()
+    {
+        StoryCount += 1;
     }
 
     public void UpdateUI()
@@ -111,7 +117,7 @@ public class InventoryUI : MonoBehaviour
         }
 
         StoryText.text = revealedStory;
-        TabletCount.text = "3/7";
+        TabletCount.text = StoryCount + "/7";
         bool showKey = (PlayerPrefs.GetInt("usedKey1", 0) + PlayerPrefs.GetInt("holdKey1", 0)) >= 1;
         keys[0].enabled = showKey;
         showKey = (PlayerPrefs.GetInt("usedKey2", 0) + PlayerPrefs.GetInt("holdKey2", 0)) >= 1;
@@ -134,7 +140,7 @@ public class InventoryUI : MonoBehaviour
     public void OpenClose()
     {
         UpdateUI();
-        if(open == true)
+        if (open == true)
         {
             A = OpenPos;
             B = ClosePos;
