@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class InventoryUI : MonoBehaviour
 {
     public Text TabletCount;
-    private float StoryCount = 0;
+    public float StoryCount = 0;
     public Text StoryText;
     public Image[] keys;
     public Image[] invItems;

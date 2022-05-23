@@ -7,6 +7,8 @@ public class SceneChangeToPuzzle : MonoBehaviour
 {
     public string sceneToLoad;
     public static int destroyCollider = 0;
+    public InventoryUI sotryTabletUICount;
+    public float puzzleSceneNumber = 0; // deferentiator to checking that its puzzle scene number 4
 
     void Update ()
     {
@@ -17,9 +19,20 @@ public class SceneChangeToPuzzle : MonoBehaviour
     }
 
     void OnTriggerEnter (Collider other) {
-        //destroyCollider = destroyCollider + 1;
-        SceneManager.LoadScene(sceneToLoad);
-        
+
+        if(puzzleSceneNumber != 0)
+        {
+            if(sotryTabletUICount.StoryCount == 6)
+            {
+                Debug.Log("scene 4 loaded - all story bits");
+                SceneManager.LoadScene(sceneToLoad);
+            }
+        } else
+        {
+            //destroyCollider = destroyCollider + 1;
+            Debug.Log("normal scene load");
+            SceneManager.LoadScene(sceneToLoad);
+        }        
     }
 
 }

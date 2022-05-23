@@ -12,7 +12,7 @@ public class ObeliskModelSwap : MonoBehaviour
     void Start()
     {
         obeliskState = obeliskState + 1;
-        Debug.Log(obeliskState);
+        //Debug.Log(obeliskState);
     }
 
     // Update is called once per frame
