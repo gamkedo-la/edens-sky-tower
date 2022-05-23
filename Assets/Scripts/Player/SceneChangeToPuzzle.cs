@@ -8,7 +8,7 @@ public class SceneChangeToPuzzle : MonoBehaviour
     public string sceneToLoad;
     public static int destroyCollider = 0;
     public InventoryUI sotryTabletUICount;
-    public float puzzleSceneNumber = 0; // deferentiator to checking that its puzzle scene number 4
+    public float puzzleSceneCounter = 0; // deferentiator to checking that its puzzle scene number 4
 
     void Update ()
     {
@@ -20,7 +20,7 @@ public class SceneChangeToPuzzle : MonoBehaviour
 
     void OnTriggerEnter (Collider other) {
 
-        if(puzzleSceneNumber != 0)
+        if(puzzleSceneCounter != 0)
         {
             if(sotryTabletUICount.StoryCount == 6)
             {
