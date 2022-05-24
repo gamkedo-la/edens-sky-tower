@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class SceneChangeToPuzzle : MonoBehaviour
 {
     public string sceneToLoad;
-    public static int destroyCollider = 0;
 
     public GameObject unsolvedForm;
     public GameObject solvedForm;
@@ -28,15 +27,13 @@ public class SceneChangeToPuzzle : MonoBehaviour
         }
     }
 
-    void Update ()
-    {
-        if (destroyCollider == 1)
-        {
-            Destroy(gameObject);
-        }
-    }
-
     void OnTriggerEnter (Collider other) {
+        bool isSolved = PlayerPrefs.GetInt(PlayerPrefsObeliskKey(), 0) == 1;
+        if(isSolved) {
+            Debug.Log("already used");
+            return;
+        }
+
         int storyCount = 0;
         for(int i=1;i<=7;i++) {
             if (PlayerPrefs.GetInt("seenTablet"+i, 0) == 1) {
@@ -49,7 +46,6 @@ public class SceneChangeToPuzzle : MonoBehaviour
             SceneManager.LoadScene(sceneToLoad);
         } else
         {
-            //destroyCollider = destroyCollider + 1;
             Debug.Log("normal scene load");
             PlayerPrefs.SetInt(PlayerPrefsObeliskKey(), 1);
 
