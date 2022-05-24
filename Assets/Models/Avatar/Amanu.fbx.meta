@@ -36,7 +36,17 @@ ModelImporter:
   - first:
       74: -8537876041650713521
     second: amanu | gliding
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: amanu
+    second: {fileID: 2100000, guid: 929c5dbe0ee9f32438b905155506c5e1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wings
+    second: {fileID: 2100000, guid: 0218f0945de37c04392623960b70cfa8, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
