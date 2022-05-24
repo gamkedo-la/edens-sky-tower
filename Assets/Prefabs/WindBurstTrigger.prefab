@@ -88,7 +88,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9932dc1643f9c594cac3c24466ac9f20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  windBurstPowerUp: 5
-  windBurstPowerBack: 7
+  windMagnitude: 50
   durationPlayerLosesControl: 4
+  durationWindAffectsPlayer: 0.3
   originTransform: {fileID: 460421798}

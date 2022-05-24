@@ -3588,6 +3588,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4557762602718593396}
+  - component: {fileID: 4757217208212120580}
+  - component: {fileID: 5044084437292178015}
   m_Layer: 0
   m_Name: Coffeecup
   m_TagString: Untagged
@@ -3612,6 +3614,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -37.73, z: 0}
+--- !u!114 &4757217208212120580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4690484856121257323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e85d6d3dc6789904389974d0ce149307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollectibleType: 2
+--- !u!65 &5044084437292178015
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4690484856121257323}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4, y: 4, z: 4}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6365774181395100270
 GameObject:
   m_ObjectHideFlags: 0

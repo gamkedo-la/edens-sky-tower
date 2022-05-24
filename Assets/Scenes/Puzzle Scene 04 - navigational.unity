@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.53538275, g: 0.9887863, b: 0.80307937, a: 1}
+  m_IndirectSpecularColor: {r: 0.55947465, g: 0.7065261, b: 0.635514, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -876,6 +876,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50d1e0d56b66498479011246d4c8844a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SceneChangeToPuzzle: {fileID: 0}
 --- !u!65 &625060655
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2300,6 +2301,11 @@ PrefabInstance:
       propertyPath: VoiceStoryFile
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 292704952438151907, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
+        type: 3}
+      propertyPath: sotryTabletUICount
+      value: 
+      objectReference: {fileID: 8305627197396359310}
     - target: {fileID: 292704952438151907, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
         type: 3}
       propertyPath: ThisDialog.Array.size
@@ -11494,6 +11500,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4588485228892158445, guid: 9d14710e096c8f84d813a2969a0e303c,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4588485228892158445, guid: 9d14710e096c8f84d813a2969a0e303c,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4588485228892158445, guid: 9d14710e096c8f84d813a2969a0e303c,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5201214769044530271, guid: 9d14710e096c8f84d813a2969a0e303c,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -11557,17 +11578,17 @@ PrefabInstance:
     - target: {fileID: 5637139110404580721, guid: 9d14710e096c8f84d813a2969a0e303c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.57
+      value: 1.1802654
       objectReference: {fileID: 0}
     - target: {fileID: 5637139110404580721, guid: 9d14710e096c8f84d813a2969a0e303c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.3239174
+      value: 2.84
       objectReference: {fileID: 0}
     - target: {fileID: 5637139110404580721, guid: 9d14710e096c8f84d813a2969a0e303c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -448.13
+      value: -732.3378
       objectReference: {fileID: 0}
     - target: {fileID: 5872778682783845596, guid: 9d14710e096c8f84d813a2969a0e303c,
         type: 3}
@@ -11801,6 +11822,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 834fcdbef246f254fbaaecaee17f2cd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8305627197396359310 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3501779902307227053, guid: 9d14710e096c8f84d813a2969a0e303c,
+    type: 3}
+  m_PrefabInstance: {fileID: 8305627197396359308}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0ffa8cc899a334479dd0661db4d1f16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!23 &8322039792711548914
