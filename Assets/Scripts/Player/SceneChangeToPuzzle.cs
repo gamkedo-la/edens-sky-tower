@@ -20,6 +20,12 @@ public class SceneChangeToPuzzle : MonoBehaviour
         bool isSolved = PlayerPrefs.GetInt(PlayerPrefsObeliskKey(), 0) == 1;
         unsolvedForm.SetActive(isSolved == false);
         solvedForm.SetActive(isSolved);
+
+        if(PlayerPrefsObeliskKey() == PlayerPrefs.GetString("LastUsedPortalWentTo", "original")) {
+            Player.instance.transform.position = transform.position - transform.right * 3.0f; // away from red arrow (.right)
+            Player.instance.transform.LookAt(transform.position);
+            PlayerPrefs.SetString("LastUsedPortalWentTo", "original"); // forget the last portal used
+        }
     }
 
     void Update ()
@@ -46,6 +52,9 @@ public class SceneChangeToPuzzle : MonoBehaviour
             //destroyCollider = destroyCollider + 1;
             Debug.Log("normal scene load");
             PlayerPrefs.SetInt(PlayerPrefsObeliskKey(), 1);
+
+            // next variable is used to match when we return
+            PlayerPrefs.SetString("LastUsedPortalWentTo", PlayerPrefsObeliskKey());
             SceneManager.LoadScene(sceneToLoad);
         }        
     }
