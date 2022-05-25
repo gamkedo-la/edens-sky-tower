@@ -9,6 +9,7 @@ public class ThirdPersonCameraController : MonoBehaviour
     public Transform target, player, cameraPivot;
     float mouseX = 0f, mouseY = 0f;
     public Transform cameraPositionOverride = null;
+    public bool sharpTransition = false;
 
     void Start(){
         instance = this;
@@ -25,8 +26,20 @@ public class ThirdPersonCameraController : MonoBehaviour
 
     void CamControl(){
         float smoothRate = 0.2f;
+
+        
+
+        Debug.Log(smoothRate);
+
         if(cameraPositionOverride != null) {
-            smoothRate = 0.002f;
+            
+            if (sharpTransition == true)
+            {
+                smoothRate = 5.0f; // used for elevator view
+            } else
+            {
+                smoothRate = 0.002f; // used for transitioning to controlling tower shard view
+            }
             transform.position = Vector3.Lerp(transform.position, cameraPositionOverride.position, smoothRate);
             transform.rotation = Quaternion.Slerp(transform.rotation, cameraPositionOverride.rotation, smoothRate);
             return;

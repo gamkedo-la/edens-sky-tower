@@ -8,10 +8,12 @@ public class TowerElevator : MonoBehaviour
     private Player playerScript;
     bool inMotion = false;
     float progress = 0.0f;
-    float progressPace = 0.2f;
+    float progressPace = 0.05f;
     int goToWayPoint;
     public towerMonolithMove towerMonolithMove;
     public float chosenLevel = 0;
+
+    public GameObject ElevatorPlatform;
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +34,8 @@ public class TowerElevator : MonoBehaviour
             }
             else
             {
-                playerScript.transform.position = Vector3.Lerp(wayPointList[0].position, wayPointList[goToWayPoint].position, progress);
+                //playerScript.transform.position = Vector3.Lerp(wayPointList[0].position, wayPointList[goToWayPoint].position, progress);
+                ElevatorPlatform.transform.position = Vector3.Lerp(wayPointList[0].position, wayPointList[goToWayPoint].position, progress);
             }
         }
 
