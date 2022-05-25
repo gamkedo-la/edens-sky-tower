@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     public GameObject InteractTip = null;
     public LevelTowerSelection LevelTowerSelection;
     public towerMonolithMove towerMonolithMove;
+    public TowerElevator TowerElevatorScript;
 
     public LayerMask jumpFrom;
     public Transform TeleportDebugLocation;
@@ -201,6 +202,7 @@ public class Player : MonoBehaviour
                 Debug.Log("to shard bottom");
                 LevelTowerSelection.TowerElevatorUI.SetActive(false);
                 towerMonolithMove.LowerMonolith();
+                TowerElevatorScript.chosenLevel = 1;
             }
         }
 
@@ -211,6 +213,7 @@ public class Player : MonoBehaviour
                 Debug.Log("to shard middle");
                 LevelTowerSelection.TowerElevatorUI.SetActive(false);
                 towerMonolithMove.LowerMonolith();
+                TowerElevatorScript.chosenLevel = 2;
             }
         }
 
@@ -221,6 +224,7 @@ public class Player : MonoBehaviour
                 Debug.Log("to shard top");
                 LevelTowerSelection.TowerElevatorUI.SetActive(false);
                 towerMonolithMove.LowerMonolith();
+                TowerElevatorScript.chosenLevel = 3;
             }
         }
             
