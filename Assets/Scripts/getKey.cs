@@ -9,12 +9,10 @@ public class getKey : MonoBehaviour
     //public Transform itemToConsole;
 
     GameObject keyhole;  
-    GameObject player;
     
 
     void Awake() {
         keyhole = GameObject.Find("TowerShards/Shard" + keyNumber);
-        player = GameObject.Find("PLAYER");
         bool isHeld = PlayerPrefs.GetInt("holdKey" + keyNumber, 0) == 1;
         bool isUsed = PlayerPrefs.GetInt("usedKey" + keyNumber, 0) == 1;
         if(isHeld || isUsed) {
@@ -26,7 +24,7 @@ public class getKey : MonoBehaviour
         Debug.Log("collision registered!!!");
 
         if (collision.gameObject.CompareTag ("Player")) {
-            Debug.Log("Got Key!");
+            Debug.Log("Got Key! " + keyNumber);
             gameObject.SetActive(false);
             Player player = collision.gameObject.GetComponent<Player>(); 
             player.GetKey(keyNumber);

@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
     public bool PlayerTransferShard3 = false;
     public bool carryingLV4CubeKey = false;
     public GameObject LV4CubeKey;
-    public GameObject CarryingKey;
+    public GameObject[] CarryingKey;
     public GameObject InteractTip = null;
 
     public LayerMask jumpFrom;
@@ -52,8 +52,11 @@ public class Player : MonoBehaviour
         jumpFrom = ~jumpFrom;
         rb = GetComponent<Rigidbody>();
         TiltGlideModel.localRotation = Quaternion.identity;
-        bool isHeld = PlayerPrefs.GetInt("holdKey" + 1, 0) == 1;
-        CarryingKey.SetActive(isHeld);
+        for (int i = 0; i < CarryingKey.Length; i++) {
+            bool isHeld = PlayerPrefs.GetInt("holdKey" + (i+1), 0) == 1;
+            CarryingKey[i].SetActive(isHeld);
+        }
+        
         animator = GetComponentInChildren<Animator>();
         CalculateMaximumForwardSpeed();
 
@@ -62,7 +65,11 @@ public class Player : MonoBehaviour
 
     public void GetKey (string whichKey) {
         PlayerPrefs.SetInt("holdKey" + whichKey, 1);
-        CarryingKey.SetActive(true);
+        for (int i = 0; i < CarryingKey.Length; i++)
+        {
+            bool isHeld = PlayerPrefs.GetInt("holdKey" + (i+1), 0) == 1;
+            CarryingKey[i].SetActive(isHeld);
+        }
     }
 
     void ShowGlider(bool turnOn) {
@@ -328,11 +335,17 @@ public class Player : MonoBehaviour
     }
 
     void InsertKey(int keyNumber, GameObject consoleKeyGO) {
-        Debug.Log("Key Inserted!");
-        CarryingKey.SetActive(false);
+        Debug.Log("Key Inserted!");      
+        
         ConsoleKeyManager CKMScript = consoleKeyGO.GetComponent<ConsoleKeyManager>();
         if(CKMScript) {
             CKMScript.UseKey();
+            for (int i = 0; i < CarryingKey.Length; i++)
+            {
+                //bool isHeld = PlayerPrefs.GetInt("holdKey" + (i + 1), 0) == 1;
+                CarryingKey[i].SetActive(false);
+            }
+            Debug.Log("key Used");
         } else {
             Debug.LogWarning("console is missing a ConsoleKeyManager");
         }

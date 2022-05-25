@@ -12,7 +12,7 @@ public class SceneChangeToPuzzle : MonoBehaviour
 
     private void Start() {
         if (unsolvedForm == null || solvedForm == null) {
-            Debug.Log(gameObject.name + " is missing its solved/unsolved form, replace with prefab");
+            Debug.LogWarning(gameObject.name + " is missing its solved/unsolved form, replace with prefab");
             return;
         }
         // NOTE: RELIES ON THE PARENT (P_Obelisk) being a unique name per each one
