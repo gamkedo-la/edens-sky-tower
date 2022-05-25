@@ -23,11 +23,11 @@ public class HorizontalObjectRotation : MonoBehaviour
     {
         if(controllingObject) {
             if (Input.GetKey (KeyCode.A)) {
-                controlledObject.transform.Rotate(0, 01, 0, Space.Self);
+                controlledObject.transform.Rotate(0, -01, 0, Space.Self);
             }
 
             if (Input.GetKey (KeyCode.D)) {
-                controlledObject.transform.Rotate(0, -01, 0, Space.Self);
+                controlledObject.transform.Rotate(0, 01, 0, Space.Self);
             }
 
             if (Input.GetKeyDown (KeyCode.S)) {

@@ -12,6 +12,7 @@ public class TowerElevator : MonoBehaviour
     int goToWayPoint;
     public towerMonolithMove towerMonolithMove;
     public float chosenLevel = 0;
+    public GameObject frontWall;
 
     public GameObject ElevatorPlatform;
 
@@ -30,6 +31,7 @@ public class TowerElevator : MonoBehaviour
             if (progress > 1.0f)
             {
                 inMotion = false;
+                frontWall.SetActive(false);
                 //playerScript.enabled = true;
             }
             else
@@ -48,37 +50,33 @@ public class TowerElevator : MonoBehaviour
         //bool firstKey = PlayerPrefs.GetInt("usedKey1", 0) == 1;
         if (/*firstKey*/ chosenLevel == 1 && collision.gameObject.CompareTag("Player"))
         {
-            playerScript = collision.gameObject.GetComponent<Player>();
-            playerScript.enabled = false;
-            Rigidbody playerRb = playerScript.GetComponent<Rigidbody>();
-            playerRb.useGravity = false;
+
+            //playerScript = collision.gameObject.GetComponent<Player>();
+            //playerScript.enabled = false;
+            //Rigidbody playerRb = playerScript.GetComponent<Rigidbody>();
+            //playerRb.useGravity = false;
             inMotion = true;
             progress = 0.0f;
             //bool secondKey = PlayerPrefs.GetInt("usedKey2", 0) == 1;
             //bool thirdKey = PlayerPrefs.GetInt("usedKey3", 0) == 1;
+            frontWall.SetActive(true);
             goToWayPoint = 1;
         }
 
         if (chosenLevel == 2 && collision.gameObject.CompareTag("Player"))
         {
-            playerScript = collision.gameObject.GetComponent<Player>();
-            playerScript.enabled = false;
-            Rigidbody playerRb = playerScript.GetComponent<Rigidbody>();
-            playerRb.useGravity = false;
             inMotion = true;
             progress = 0.0f;
+            frontWall.SetActive(true);
             goToWayPoint = 2;
 
         }
 
         if (chosenLevel == 3 && collision.gameObject.CompareTag("Player"))
         {
-            playerScript = collision.gameObject.GetComponent<Player>();
-            playerScript.enabled = false;
-            Rigidbody playerRb = playerScript.GetComponent<Rigidbody>();
-            playerRb.useGravity = false;
             inMotion = true;
             progress = 0.0f;
+            frontWall.SetActive(true);
             goToWayPoint = 3;
         }
 

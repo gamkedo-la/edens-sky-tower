@@ -6,6 +6,7 @@ public class ElevatorPlatform : MonoBehaviour
 {
     public Transform cameraPositionOverride;
     public ThirdPersonCameraController cameraScript;
+    public GameObject startingPoint;
 
     void OnCollisionEnter(Collision collision)
     {
@@ -20,14 +21,16 @@ public class ElevatorPlatform : MonoBehaviour
         }
     }
 
-    /*
+ 
     void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            Debug.Log("normal camera view");
             cameraScript.sharpTransition = false;
             ThirdPersonCameraController.instance.cameraPositionOverride = null;
+            this.transform.position = startingPoint.transform.position;
         }
     }
-    */
+
 }

@@ -38,7 +38,7 @@ public class ThirdPersonCameraController : MonoBehaviour
                 smoothRate = 5.0f; // used for elevator view
             } else
             {
-                smoothRate = 0.002f; // used for transitioning to controlling tower shard view
+                smoothRate = 0.02f; // used for transitioning to controlling tower shard view
             }
             transform.position = Vector3.Lerp(transform.position, cameraPositionOverride.position, smoothRate);
             transform.rotation = Quaternion.Slerp(transform.rotation, cameraPositionOverride.rotation, smoothRate);
