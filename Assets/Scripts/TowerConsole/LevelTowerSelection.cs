@@ -10,11 +10,21 @@ public class LevelTowerSelection : MonoBehaviour
     public Text toolTipText;
 
     public GameObject TowerElevatorUI;
-  
+    public GameObject TowerElevatorButtonOne;
+    public GameObject TowerElevatorButtonTwo;
+    public GameObject TowerElevatorButtonThree;
+    public GameObject SelectShardText;
+    public GameObject TipText;
+
     void Start()
     {
         toolTipText.gameObject.SetActive(false);
         TowerElevatorUI.SetActive(false);
+        TowerElevatorButtonOne.SetActive(false);
+        TowerElevatorButtonTwo.SetActive(false);
+        TowerElevatorButtonThree.SetActive(false);
+        SelectShardText.SetActive(false);
+
     }
 
     void Update()
@@ -25,14 +35,35 @@ public class LevelTowerSelection : MonoBehaviour
             {
                 print("Console has been activated.");
             }
-        } 
-    }
+        }
+
+        if (PlayerPrefs.GetInt("usedKey1", 0) == 1)
+        {
+            TipText.SetActive(false);
+            SelectShardText.SetActive(true);
+            TowerElevatorButtonOne.SetActive(true);
+        }
+
+        if (PlayerPrefs.GetInt("usedKey2", 0) == 1)
+        {
+
+            TowerElevatorButtonTwo.SetActive(true);
+        }
+
+        if (PlayerPrefs.GetInt("usedKey3", 0) == 1)
+        {
+
+            TowerElevatorButtonThree.SetActive(true);
+        }
+
+
+        }
 
     void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
         {
-
+            
             TowerElevatorUI.SetActive(true);
 
 
@@ -42,18 +73,21 @@ public class LevelTowerSelection : MonoBehaviour
 
             if(PlayerPrefs.GetInt("usedKey1", 0) == 1)
             {
+
                 toolTipText.text += "U: Floor One\n";
                 noKeys = false;
             }
 
             if (PlayerPrefs.GetInt("usedKey2", 0) == 1)
             {
+
                 toolTipText.text += "I: Floor Two\n";
                 noKeys = false;
             }
 
             if (PlayerPrefs.GetInt("usedKey3", 0) == 1)
             {
+
                 toolTipText.text += "O: Floor Three\n";
                 noKeys = false;
             }
