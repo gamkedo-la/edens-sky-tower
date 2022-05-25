@@ -37,7 +37,7 @@ Shader "Unlit/Sky"
         _DayCloudColorEdge("Edge cloud color", Color) = (1, 1, 1, .8)
         _DayCloudColorMain("Main cloud color", Color) = (.8, .9, .8, .8)
         _DayCloudColorLayered("Layered clouds color", Color) = (.5, .5, .5, 1)
-        _DayCloudBrightness("Brightness", Range(0, 10)) = 2.5
+        _DayCloudBrightness("Brightness", Range(0, 1)) = 1.0
         
         [Header(Sun and Moon)]
         _SunRadius ("Sun Radius", Range(0, 1)) = 0.1
@@ -134,7 +134,7 @@ Shader "Unlit/Sky"
 
                 // Cloud color
                 float4 cloudColorMain = lerp(_DayCloudColorLayered, _DayCloudColorMain, cloudsLayered);
-                float4 cloudColor = lerp(_DayCloudColorEdge, cloudColorMain, clouds) * clouds;
+                float4 cloudColor = lerp(_DayCloudColorEdge, cloudColorMain, clouds) * clouds * _DayCloudBrightness;
 
                 // Sun
                 float cloudsNegative = (1 - clouds) * horizon;

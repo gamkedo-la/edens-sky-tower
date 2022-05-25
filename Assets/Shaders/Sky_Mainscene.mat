@@ -39,15 +39,15 @@ Material:
     m_Floats:
     - _BaseNoiseScale: 0.142
     - _CloudCutoff: 0
-    - _CloudSpeed: -6.21
-    - _DayCloudBrightness: 2.5
-    - _DistortScale: 0.048
+    - _CloudSpeed: 1.42
+    - _DayCloudBrightness: 0.232
+    - _DistortScale: 0.095
     - _DistortSpeed: 0.31
     - _ExtraDistortion: 0.039
     - _Fuzziness: 1
-    - _HorizonIntensity: 2.2
+    - _HorizonIntensity: 1.98
     - _HorizonOffset: 0
-    - _LayeredFuzziness: 0
+    - _LayeredFuzziness: 1
     - _NoiseSpeed: 0.5
     - _ReflectedSky: 1
     - _SecondaryNoiseScale: 0.048
@@ -57,16 +57,16 @@ Material:
     - _SunRadius: 0.1
     - _TimeOfDay: 1
     m_Colors:
-    - _DayBottomColor: {r: 0.12416898, g: 0.3147945, b: 0.383, a: 1}
-    - _DayCloudColorEdge: {r: 1, g: 1, b: 1, a: 0.8}
-    - _DayCloudColorLayered: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - _DayCloudColorMain: {r: 0.8, g: 0.9, b: 0.8, a: 0.8}
-    - _DayHorizonColor: {r: 0.2784314, g: 0.7058824, b: 0.8588236, a: 1}
-    - _DayTopColor: {r: 0, g: 0.6325119, b: 0.85882354, a: 1}
+    - _DayBottomColor: {r: 0.29803923, g: 0.17554511, b: 0.2577451, a: 1}
+    - _DayCloudColorEdge: {r: 0.09411766, g: 0.3254902, b: 0.41176474, a: 0.8}
+    - _DayCloudColorLayered: {r: 0.7169812, g: 0.7169812, b: 0.7169812, a: 1}
+    - _DayCloudColorMain: {r: 0, g: 0.11764707, b: 0.7019608, a: 0.7019608}
+    - _DayHorizonColor: {r: 0.21870588, g: 0.36692923, b: 0.56078434, a: 1}
+    - _DayTopColor: {r: 0.0032012162, g: 0.38414642, b: 0.525, a: 1}
     - _NightBottomColor: {r: 0.5, g: 0, b: 0.5, a: 1}
     - _NightHorizonColor: {r: 0, g: 0, b: 0, a: 1}
     - _NightTopColor: {r: 0.29999998, g: 0, b: 0.19999996, a: 1}
     - _StarsSkyColor: {r: 0, g: 0.19999996, b: 0.09999997, a: 1}
     - _SunColor: {r: 1, g: 1, b: 1, a: 1}
-    - _SunSetColor: {r: 0.452104, g: 0.40820798, b: 0.496, a: 0}
+    - _SunSetColor: {r: 0.16037738, g: 0.16037738, b: 0.16037738, a: 0}
   m_BuildTextureStacks: []
