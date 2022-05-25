@@ -90,7 +90,11 @@ public class Player : MonoBehaviour
         velWithGravity = transform.forward * playerForwardBackwardSpeed;
 
         checkIfChangingToRunningOrWalkingMode();
-        if (isRunning && !holdingGlide) velWithGravity *= runningSpeedMultiplier;
+        if (isRunning && !holdingGlide)
+        {
+            playerForwardBackwardSpeed *= runningSpeedMultiplier;
+            velWithGravity *= runningSpeedMultiplier;
+        }
 
         if(holdingGlide) {
             velWithGravity.y = -1.0f; //gliding falling speed
