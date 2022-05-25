@@ -7,8 +7,11 @@ public class towerMonolithMovement : MonoBehaviour
     public towerMonolithMove towerMonolithMove;
 
 
-    void OnTriggerEnter (Collider other) {
-        towerMonolithMove.LowerMonolith();
+    void OnTriggerExit (Collider other) {
+        if(towerMonolithMove.riseMonolith)
+        {
+            towerMonolithMove.RiseMonolith();
+        }
     }
 }
 

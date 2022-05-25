@@ -19,6 +19,8 @@ public class LevelTowerSelection : MonoBehaviour
     public GameObject SelectShardText;
     public GameObject TipText;
 
+    
+
     void Start()
     {
         toolTipText.gameObject.SetActive(false);
@@ -72,6 +74,7 @@ public class LevelTowerSelection : MonoBehaviour
         if(other.tag == "Player")
         {
             TowerElevatorUI.SetActive(true);
+            Debug.Log(TowerElevatorUI);
 
 
             toolTipText.text = "Which Floor?\n";
@@ -80,21 +83,21 @@ public class LevelTowerSelection : MonoBehaviour
 
             if(PlayerPrefs.GetInt("usedKey1", 0) == 1)
             {
-                
+
                 toolTipText.text += "U: Floor One\n";
                 noKeys = false;
             }
 
             if (PlayerPrefs.GetInt("usedKey2", 0) == 1)
             {
-                UIElevButtonMiddle = true;
+
                 toolTipText.text += "I: Floor Two\n";
                 noKeys = false;
             }
 
             if (PlayerPrefs.GetInt("usedKey3", 0) == 1)
             {
-                UIElevButtonTop = true;
+
                 toolTipText.text += "O: Floor Three\n";
                 noKeys = false;
             }
