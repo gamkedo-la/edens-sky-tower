@@ -19,6 +19,7 @@ public class SceneChangeToPuzzle : MonoBehaviour
         bool isSolved = PlayerPrefs.GetInt(PlayerPrefsObeliskKey(), 0) == 1;
         unsolvedForm.SetActive(isSolved == false);
         solvedForm.SetActive(isSolved);
+        Debug.Log(PlayerPrefsObeliskKey() + " " + PlayerPrefs.GetString("LastUsedPortalWentTo", "original"));
 
         if(PlayerPrefsObeliskKey() == PlayerPrefs.GetString("LastUsedPortalWentTo", "original")) {
             Player.instance.transform.position = transform.position - transform.right * 3.0f; // away from red arrow (.right)

@@ -6,7 +6,7 @@ public class getKey : MonoBehaviour
 {
     public string keyNumber;
     public Transform playerItemHolding;
-    public Transform itemToConsole;
+    //public Transform itemToConsole;
 
     GameObject keyhole;  
     GameObject player;
