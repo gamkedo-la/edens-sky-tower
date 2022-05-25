@@ -59,7 +59,6 @@ public class TowerElevator : MonoBehaviour
             progress = 0.0f;
             //bool secondKey = PlayerPrefs.GetInt("usedKey2", 0) == 1;
             //bool thirdKey = PlayerPrefs.GetInt("usedKey3", 0) == 1;
-            frontWall.SetActive(true);
             goToWayPoint = 1;
         }
 
@@ -67,7 +66,6 @@ public class TowerElevator : MonoBehaviour
         {
             inMotion = true;
             progress = 0.0f;
-            frontWall.SetActive(true);
             goToWayPoint = 2;
 
         }
@@ -76,7 +74,6 @@ public class TowerElevator : MonoBehaviour
         {
             inMotion = true;
             progress = 0.0f;
-            frontWall.SetActive(true);
             goToWayPoint = 3;
         }
 

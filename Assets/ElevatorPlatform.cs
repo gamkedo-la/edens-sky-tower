@@ -7,6 +7,7 @@ public class ElevatorPlatform : MonoBehaviour
     public Transform cameraPositionOverride;
     public ThirdPersonCameraController cameraScript;
     public GameObject startingPoint;
+    public GameObject frontWall;
 
     void OnCollisionEnter(Collision collision)
     {
@@ -17,6 +18,7 @@ public class ElevatorPlatform : MonoBehaviour
             {
                 cameraScript.sharpTransition = true;
                 ThirdPersonCameraController.instance.cameraPositionOverride = cameraPositionOverride;
+                frontWall.SetActive(true);
             }
         }
     }
