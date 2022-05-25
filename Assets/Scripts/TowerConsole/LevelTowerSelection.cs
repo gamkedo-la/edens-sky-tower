@@ -8,10 +8,13 @@ public class LevelTowerSelection : MonoBehaviour
     private bool triggering;
 
     public Text toolTipText;
+
+    public GameObject TowerElevatorUI;
   
     void Start()
     {
         toolTipText.gameObject.SetActive(false);
+        TowerElevatorUI.SetActive(false);
     }
 
     void Update()
@@ -29,6 +32,10 @@ public class LevelTowerSelection : MonoBehaviour
     {
         if(other.tag == "Player")
         {
+
+            TowerElevatorUI.SetActive(true);
+
+
             toolTipText.text = "Which Floor?\n";
 
             bool noKeys = true;
@@ -67,6 +74,8 @@ public class LevelTowerSelection : MonoBehaviour
         {
             toolTipText.gameObject.SetActive(false);
             triggering = false;
+
+            TowerElevatorUI.SetActive(false);
         }
     }
 
