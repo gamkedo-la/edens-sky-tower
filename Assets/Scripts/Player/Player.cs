@@ -339,7 +339,7 @@ public class Player : MonoBehaviour
         
         ConsoleKeyManager CKMScript = consoleKeyGO.GetComponent<ConsoleKeyManager>();
         if(CKMScript) {
-            CKMScript.UseKey();
+            CKMScript.UseKey(keyNumber);
             for (int i = 0; i < CarryingKey.Length; i++)
             {
                 //bool isHeld = PlayerPrefs.GetInt("holdKey" + (i + 1), 0) == 1;
@@ -355,12 +355,19 @@ public class Player : MonoBehaviour
     void OnCollisionEnter (Collision collision) {
         ConsoleKeyManager CKMScript = collision.gameObject.GetComponent<ConsoleKeyManager>();
         if(CKMScript == null) {
+  
+
             return;
         }
-        bool isHeld = PlayerPrefs.GetInt("holdKey" + CKMScript.keyNumber, 0) == 1;
-        if(isHeld) {
-            InsertKey(Convert.ToInt32(CKMScript.keyNumber), collision.gameObject);
-        }  
+       
+        for (int i = 0; i < CarryingKey.Length; i++)
+        {
+            bool isHeld = PlayerPrefs.GetInt("holdKey" + (i+1), 0) == 1;
+            if (isHeld)
+            {
+                InsertKey((i+1), collision.gameObject);
+            }
+        }        
     }
 
     void CalculateMaximumForwardSpeed()

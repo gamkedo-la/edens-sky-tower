@@ -4,26 +4,27 @@ using UnityEngine;
 
 public class ConsoleKeyManager : MonoBehaviour
 {
-    public string keyNumber;
-    public GameObject engagedKey;
+
+    public GameObject[] engagedKey;
 
     // Start is called before the first frame update
     void Start()
     {
-        bool isUsed = PlayerPrefs.GetInt("usedKey" + keyNumber, 0) == 1;
-        if(engagedKey) {
-            engagedKey.SetActive (isUsed);
-        } else {
-            Debug.Log("engagedKey not set up for " + gameObject.name);
-        }
+        for (int i = 0; i < engagedKey.Length; i++)
+        {
+            bool isUsed = PlayerPrefs.GetInt("usedKey" + (i+1), 0) == 1;
+            engagedKey[i].SetActive(isUsed);
+               
+        }    
         
     }
 
-    public void UseKey()
+    public void UseKey(int keyNumber)
     {
+        Debug.Log("CKM using Key");
         //PlayerPrefs.SetInt("usedKey" + keyNumber, 1);
         PlayerPrefs.SetInt("usedKey" + keyNumber, 1);
         PlayerPrefs.SetInt("holdKey" + keyNumber, 0);
-        engagedKey.SetActive(true);
+        engagedKey[(keyNumber - 1)].SetActive(true);
     }
 }
