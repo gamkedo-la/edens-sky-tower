@@ -9,13 +9,11 @@ public class Player : MonoBehaviour
     public Transform ToShardOne;
     public Transform ToShardTwo;
     public Transform ToShardThree;
-    public bool PlayerTransferShard1 = false;
-    public bool PlayerTransferShard2 = false;
-    public bool PlayerTransferShard3 = false;
     public bool carryingLV4CubeKey = false;
     public GameObject LV4CubeKey;
     public GameObject[] CarryingKey;
     public GameObject InteractTip = null;
+    public LevelTowerSelection LevelTowerSelection;
 
     public LayerMask jumpFrom;
     public Transform TeleportDebugLocation;
@@ -180,21 +178,6 @@ public class Player : MonoBehaviour
             grabbingBlock = false;
         }
 
-        if(PlayerTransferShard1) {
-            gameObject.transform.position = ToShardOne.position;
-            PlayerTransferShard1 = false;
-        }
-
-        if(PlayerTransferShard2) {
-            gameObject.transform.position = ToShardTwo.position;
-            PlayerTransferShard2 = false;
-        }
-
-        if(PlayerTransferShard3) {
-            gameObject.transform.position = ToShardThree.position;
-            PlayerTransferShard3 = false;
-        }
-
         if(playerFell == true) // respawning
         {
             transform.position = RespawnLocation.position;
@@ -209,6 +192,31 @@ public class Player : MonoBehaviour
         {
             LV4CubeKey.SetActive(false);
         }
+
+        if (LevelTowerSelection.UIElevButtonBottom)
+        {
+            if (Input.GetKeyDown(KeyCode.Z))
+            {
+                Debug.Log("to shard bottom");
+            }
+        }
+
+        if (LevelTowerSelection.UIElevButtonMiddle)
+        {
+            if (Input.GetKeyDown(KeyCode.X))
+            {
+                Debug.Log("to shard middle");
+            }
+        }
+
+        if (LevelTowerSelection.UIElevButtonTop)
+        {
+            if (Input.GetKeyDown(KeyCode.C))
+            {
+                Debug.Log("to shard top");
+            }
+        }
+            
 
         DebugFunction(); // debug
     } // end of Update
