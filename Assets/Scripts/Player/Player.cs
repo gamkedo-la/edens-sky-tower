@@ -139,7 +139,7 @@ public class Player : MonoBehaviour
 
             ShowGlider(false);
             // checking for block in front of us to pull/push
-            if (Physics.Raycast (transform.position, transform.forward, out rhInfo, 3.5f, jumpFrom)) {
+            if (Physics.Raycast (physicsCollider.bounds.center, transform.forward, out rhInfo, 3.5f, jumpFrom)) {
                 NESWPushable blockHere = rhInfo.collider.GetComponent <NESWPushable>();
                 blockInFrontOfUs = blockHere;               
             } else if (grabbingBlock == false && blockInFrontOfUs) {
@@ -403,4 +403,5 @@ public class Player : MonoBehaviour
     void OnValidate() {
         CalculateMaximumForwardSpeed();
     }
+
 } // end of class
