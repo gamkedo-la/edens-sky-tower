@@ -200,7 +200,6 @@ public class Player : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Z))
             {
-                Debug.Log("to shard bottom");
                 LevelTowerSelection.TowerElevatorUI.SetActive(false);
                 towerMonolithMove.LowerMonolith();
                 TowerElevatorScript.chosenLevel = 1;
@@ -212,7 +211,6 @@ public class Player : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.X))
             {
-                Debug.Log("to shard middle");
                 LevelTowerSelection.TowerElevatorUI.SetActive(false);
                 towerMonolithMove.LowerMonolith();
                 TowerElevatorScript.chosenLevel = 2;
@@ -224,7 +222,6 @@ public class Player : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.C))
             {
-                Debug.Log("to shard top");
                 LevelTowerSelection.TowerElevatorUI.SetActive(false);
                 towerMonolithMove.LowerMonolith();
                 TowerElevatorScript.chosenLevel = 3;

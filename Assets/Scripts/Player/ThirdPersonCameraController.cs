@@ -25,7 +25,7 @@ public class ThirdPersonCameraController : MonoBehaviour
 
 
     void CamControl(){
-        float smoothRate = 0.2f;
+        float smoothRate = 0.03f;
 
         
 
@@ -35,7 +35,7 @@ public class ThirdPersonCameraController : MonoBehaviour
             
             if (sharpTransition == true)
             {
-                smoothRate = 5.0f; // used for elevator view
+                smoothRate = 1.0f; // used for elevator view
             } else
             {
                 smoothRate = 0.02f; // used for transitioning to controlling tower shard view
