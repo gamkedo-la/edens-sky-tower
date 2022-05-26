@@ -29,7 +29,7 @@ public class ThirdPersonCameraController : MonoBehaviour
 
         
 
-        Debug.Log(smoothRate);
+        //Debug.Log(smoothRate);
 
         if(cameraPositionOverride != null) {
             

@@ -36,7 +36,6 @@ public class LevelTowerSelection : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("selected level: " + selectedLevel);
         if(triggering)
         {
             if (Input.GetKeyDown(KeyCode.E))
