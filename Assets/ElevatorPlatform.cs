@@ -8,18 +8,20 @@ public class ElevatorPlatform : MonoBehaviour
     public ThirdPersonCameraController cameraScript;
     public GameObject startingPoint;
     public GameObject frontWall;
+    public LevelTowerSelection LevelTowerSelectionScript;
 
     void OnCollisionEnter(Collision collision)
     {
 
         if (collision.gameObject.CompareTag("Player"))
         {
-            if (cameraPositionOverride)
-            {
+            //if (cameraPositionOverride)
+           // {
                 cameraScript.sharpTransition = true;
                 ThirdPersonCameraController.instance.cameraPositionOverride = cameraPositionOverride;
                 frontWall.SetActive(true);
-            }
+                LevelTowerSelectionScript.selectedLevel = false;
+           // }
         }
     }
 
@@ -31,7 +33,7 @@ public class ElevatorPlatform : MonoBehaviour
             Debug.Log("normal camera view");
             cameraScript.sharpTransition = false;
             ThirdPersonCameraController.instance.cameraPositionOverride = null;
-            this.transform.position = startingPoint.transform.position;
+            //transform.position = startingPoint.transform.position;
         }
     }
 

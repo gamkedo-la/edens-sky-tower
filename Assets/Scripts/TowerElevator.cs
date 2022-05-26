@@ -12,7 +12,7 @@ public class TowerElevator : MonoBehaviour
     int goToWayPoint;
     public towerMonolithMove towerMonolithMove;
     public float chosenLevel = 0;
-    public GameObject frontWall;
+    
 
     public GameObject ElevatorPlatform;
 
@@ -31,7 +31,7 @@ public class TowerElevator : MonoBehaviour
             if (progress > 1.0f)
             {
                 inMotion = false;
-                frontWall.SetActive(false);
+                
                 //playerScript.enabled = true;
             }
             else

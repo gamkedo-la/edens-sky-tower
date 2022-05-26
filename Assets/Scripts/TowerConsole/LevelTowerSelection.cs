@@ -18,12 +18,14 @@ public class LevelTowerSelection : MonoBehaviour
     public GameObject TowerElevatorButtonThree;
     public GameObject SelectShardText;
     public GameObject TipText;
+    public bool selectedLevel = false;
 
-    
+
+
 
     void Start()
     {
-        toolTipText.gameObject.SetActive(false);
+        //toolTipText.gameObject.SetActive(false);
         TowerElevatorUI.SetActive(false);
         TowerElevatorButtonOne.SetActive(false);
         TowerElevatorButtonTwo.SetActive(false);
@@ -34,6 +36,7 @@ public class LevelTowerSelection : MonoBehaviour
 
     void Update()
     {
+        Debug.Log("selected level: " + selectedLevel);
         if(triggering)
         {
             if (Input.GetKeyDown(KeyCode.E))
@@ -49,7 +52,6 @@ public class LevelTowerSelection : MonoBehaviour
             TowerElevatorButtonOne.SetActive(true);
 
             UIElevButtonBottom = true;
-            Debug.Log(UIElevButtonBottom);
         }
 
         if (PlayerPrefs.GetInt("usedKey2", 0) == 1)
@@ -73,11 +75,14 @@ public class LevelTowerSelection : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            TowerElevatorUI.SetActive(true);
-            Debug.Log(TowerElevatorUI);
+            if(selectedLevel == false)
+            {
+                TowerElevatorUI.SetActive(true);
+            }
+            
 
 
-            toolTipText.text = "Which Floor?\n";
+            //toolTipText.text = "Which Floor?\n";
 
             bool noKeys = true;
 
@@ -107,7 +112,7 @@ public class LevelTowerSelection : MonoBehaviour
                 toolTipText.text += "[Search for Keys]";
             }
 
-            toolTipText.gameObject.SetActive(true);
+            //toolTipText.gameObject.SetActive(true);
             triggering = true;
         }
     }
@@ -119,7 +124,7 @@ public class LevelTowerSelection : MonoBehaviour
             UIElevButtonBottom = false;
             UIElevButtonMiddle = false;
             UIElevButtonTop = false;
-            toolTipText.gameObject.SetActive(false);
+            //toolTipText.gameObject.SetActive(false);
             triggering = false;
 
             TowerElevatorUI.SetActive(false);

@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     public LevelTowerSelection LevelTowerSelection;
     public towerMonolithMove towerMonolithMove;
     public TowerElevator TowerElevatorScript;
+    public LevelTowerSelection LevelTowerSelectionScript;
 
     public LayerMask jumpFrom;
     public Transform TeleportDebugLocation;
@@ -203,6 +204,7 @@ public class Player : MonoBehaviour
                 LevelTowerSelection.TowerElevatorUI.SetActive(false);
                 towerMonolithMove.LowerMonolith();
                 TowerElevatorScript.chosenLevel = 1;
+                LevelTowerSelectionScript.selectedLevel = true;
             }
         }
 
@@ -214,6 +216,7 @@ public class Player : MonoBehaviour
                 LevelTowerSelection.TowerElevatorUI.SetActive(false);
                 towerMonolithMove.LowerMonolith();
                 TowerElevatorScript.chosenLevel = 2;
+                LevelTowerSelectionScript.selectedLevel = true;
             }
         }
 
@@ -225,6 +228,7 @@ public class Player : MonoBehaviour
                 LevelTowerSelection.TowerElevatorUI.SetActive(false);
                 towerMonolithMove.LowerMonolith();
                 TowerElevatorScript.chosenLevel = 3;
+                LevelTowerSelectionScript.selectedLevel = true;
             }
         }
             

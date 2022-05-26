@@ -12,6 +12,8 @@ public class towerBridgeMove : MonoBehaviour
     private const string TOWER_RAMP_EXTENDS = "shardRampExtending";
     private const string TOWER_RAMP_RECTRACTS = "shardRampRetracting";
 
+    public GameObject frontWall;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -37,6 +39,7 @@ public class towerBridgeMove : MonoBehaviour
 
     public void TowerAnimFinished() {
         Debug.Log ("Player to Drop");
+        frontWall.SetActive(false);
         Player.instance.enabled = true;
         Rigidbody playerRb = Player.instance.GetComponent<Rigidbody>();
         playerRb.useGravity = true;
