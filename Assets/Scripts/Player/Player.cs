@@ -17,6 +17,9 @@ public class Player : MonoBehaviour
     public towerMonolithMove towerMonolithMove;
     public TowerElevator TowerElevatorScript;
     public LevelTowerSelection LevelTowerSelectionScript;
+    private bool pauseMenuON = false;
+    public GameObject PauseMenu;
+ 
 
     public LayerMask jumpFrom;
     public Transform TeleportDebugLocation;
@@ -232,6 +235,24 @@ public class Player : MonoBehaviour
                 TowerElevatorScript.chosenLevel = 3;
                 LevelTowerSelectionScript.selectedLevel = true;
             }
+        }
+
+        
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            pauseMenuON = !pauseMenuON;
+            Debug.Log("pause menu: " + pauseMenuON);
+            if (pauseMenuON)
+            {
+                PauseMenu.SetActive(true);
+                Debug.Log("Pause menu up!");
+                Time.timeScale = 0;
+            } else
+            {
+                PauseMenu.SetActive(false);
+                Time.timeScale = 1;
+            }
+            
         }
             
 
