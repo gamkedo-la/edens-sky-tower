@@ -222,6 +222,7 @@ MonoBehaviour:
   LevelTowerSelection: {fileID: 0}
   towerMonolithMove: {fileID: 0}
   TowerElevatorScript: {fileID: 0}
+  LevelTowerSelectionScript: {fileID: 0}
   jumpFrom:
     serializedVersion: 2
     m_Bits: 0
@@ -233,7 +234,9 @@ MonoBehaviour:
   runningSpeedMultiplier: 2
   animator: {fileID: 0}
   isAffectedByWind: 0
+  isGrounded: 0
   jumpDelay: 0.125
+  physicsCollider: {fileID: 6746695138371045753}
   sotryTabletUICount: {fileID: 0}
 --- !u!114 &2141491515793639891
 MonoBehaviour:

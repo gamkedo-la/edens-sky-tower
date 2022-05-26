@@ -42,6 +42,8 @@ public class Player : MonoBehaviour
     private bool isGrounded = false;
     public float jumpDelay = 0.125f;
 
+    public Collider physicsCollider;
+
     public InventoryUI sotryTabletUICount; // for debug function
 
     void Awake() {
@@ -120,11 +122,13 @@ public class Player : MonoBehaviour
         
         RaycastHit rhInfo;
         //ground beneath us?
-        if (Physics.Raycast (transform.position, Vector3.down, out rhInfo, 0.5f, jumpFrom)) {
+        var testDistance = physicsCollider.bounds.size.y * 0.51f;
+        if (Physics.Raycast (physicsCollider.bounds.center, Vector3.down, out rhInfo, testDistance, jumpFrom)) {
 
             if (!isGrounded) {
                 isGrounded = true;
                 animator.SetBool("Gliding", false);
+                animator.ResetTrigger("Fall");
                 animator.SetTrigger("Land");
             }
 
@@ -164,6 +168,7 @@ public class Player : MonoBehaviour
             }
         } else {
             isGrounded = false;
+            animator.SetTrigger("Fall");
             if(Input.GetKeyDown (KeyCode.Space)) {
                 ShowGlider(true);
                 animator.SetBool("Gliding", true);
@@ -398,5 +403,4 @@ public class Player : MonoBehaviour
     void OnValidate() {
         CalculateMaximumForwardSpeed();
     }
-
 } // end of class
