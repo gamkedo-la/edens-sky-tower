@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.55947465, g: 0.7065261, b: 0.635514, a: 1}
+  m_IndirectSpecularColor: {r: 0.6937576, g: 0.75527614, b: 0.8076962, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2749,20 +2749,20 @@ PrefabInstance:
         type: 3}
       propertyPath: ThisDialog.Array.data[0]
       value: "Amanu, the Self, finally learning his name, the Last Key is now ready
-        to be. He is now worthy and ready to decide if his journey is to end here\u2026"
+        to be. He is now worthy and ready to decide if his journey is to end here\u2026[e]"
       objectReference: {fileID: 0}
     - target: {fileID: 292704952438151907, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
         type: 3}
       propertyPath: ThisDialog.Array.data[1]
       value: He must ponder on humanity and the sacrifice that is he. Are they worthy
         of such creation? They already destroyed it once. But also consider, is nature
-        complete if humans are not?...
+        complete if humans are not?...[e]
       objectReference: {fileID: 0}
     - target: {fileID: 292704952438151907, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
         type: 3}
       propertyPath: ThisDialog.Array.data[2]
-      value: 'Questions to consider for the Last Key, his last decision to be made
-        where he first saw a tree. '
+      value: Questions to consider for the Last Key, his last decision to be made
+        where he first saw a tree. [e]
       objectReference: {fileID: 0}
     - target: {fileID: 292704952438151907, guid: f4864f851de0a9a4fbab5a5d3f729fb0,
         type: 3}
@@ -3302,8 +3302,8 @@ Transform:
   - {fileID: 693918790555484101}
   - {fileID: 2948809154433040787}
   - {fileID: 111483260}
-  - {fileID: 926645356}
   - {fileID: 2145651631}
+  - {fileID: 926645356}
   m_Father: {fileID: 1708466337084283151}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
