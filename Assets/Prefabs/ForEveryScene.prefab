@@ -5640,7 +5640,7 @@ Camera:
   m_GameObject: {fileID: 8305627197784929789}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0.509434, g: 0.6792453, b: 0.676945, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -5699,6 +5699,7 @@ MonoBehaviour:
   player: {fileID: 8305627196426342049}
   cameraPivot: {fileID: 6462081164370860585}
   cameraPositionOverride: {fileID: 0}
+  sharpTransition: 0
 --- !u!114 &3252127392194971902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6431,11 +6432,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3038724028550625468}
     m_Modifications:
+    - target: {fileID: 1499726231940379905, guid: aceb2ae6d6b65464d90ed0136c48579a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1499726231940379905, guid: aceb2ae6d6b65464d90ed0136c48579a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.18
+      objectReference: {fileID: 0}
     - target: {fileID: 2141491515793639891, guid: aceb2ae6d6b65464d90ed0136c48579a,
         type: 3}
       propertyPath: myInventoryUI
       value: 
       objectReference: {fileID: 3501779902307227053}
+    - target: {fileID: 4485152523981970103, guid: aceb2ae6d6b65464d90ed0136c48579a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.25
+      objectReference: {fileID: 0}
     - target: {fileID: 4485152524544090505, guid: aceb2ae6d6b65464d90ed0136c48579a,
         type: 3}
       propertyPath: m_RootOrder
