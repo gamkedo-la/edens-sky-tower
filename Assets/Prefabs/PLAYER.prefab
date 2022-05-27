@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 97c88aa34e189e840a0dbdf16a1aedd5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6d7f921aa072735458700a9d50696261, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -223,6 +223,7 @@ MonoBehaviour:
   towerMonolithMove: {fileID: 0}
   TowerElevatorScript: {fileID: 0}
   LevelTowerSelectionScript: {fileID: 0}
+  PauseMenu: {fileID: 0}
   jumpFrom:
     serializedVersion: 2
     m_Bits: 0
@@ -234,7 +235,6 @@ MonoBehaviour:
   runningSpeedMultiplier: 2
   animator: {fileID: 0}
   isAffectedByWind: 0
-  isGrounded: 0
   jumpDelay: 0.125
   physicsCollider: {fileID: 6746695138371045753}
   sotryTabletUICount: {fileID: 0}
