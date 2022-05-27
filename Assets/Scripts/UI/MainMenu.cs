@@ -10,6 +10,11 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("Main Scene");
     }
 
+    public void ControlsButton()
+    {
+        SceneManager.LoadScene("Controls Scene");
+    }
+
     public void OptionsButton()
     {
         SceneManager.LoadScene("Options Scene");
