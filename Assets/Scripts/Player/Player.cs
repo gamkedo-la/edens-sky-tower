@@ -123,50 +123,75 @@ public class Player : MonoBehaviour
         RaycastHit rhInfo;
         //ground beneath us?
         var testDistance = physicsCollider.bounds.size.y * 0.51f;
-        if (Physics.Raycast (physicsCollider.bounds.center, Vector3.down, out rhInfo, testDistance, jumpFrom)) {
-
-            if (!isGrounded) {
+        if (Physics.Raycast(physicsCollider.bounds.center, Vector3.down, out rhInfo, testDistance, jumpFrom))
+        {
+            
+            if (!isGrounded)
+            {
                 isGrounded = true;
                 animator.SetBool("Gliding", false);
                 animator.ResetTrigger("Fall");
                 animator.SetTrigger("Land");
             }
 
-            if(rb.velocity.y < -15.0f) { // temporary change, raycast detects wind trigger otherwise (WIP)
+            if (rb.velocity.y < -15.0f)
+            {
+                // temporary change, raycast detects wind trigger otherwise (WIP)
                 rb.velocity = Vector3.zero;
             }
-            transform.SetParent (rhInfo.collider.transform);
+
+            transform.SetParent(rhInfo.collider.transform);
 
             ShowGlider(false);
             // checking for block in front of us to pull/push
-            if (Physics.Raycast (physicsCollider.bounds.center, transform.forward, out rhInfo, 3.5f, jumpFrom)) {
-                NESWPushable blockHere = rhInfo.collider.GetComponent <NESWPushable>();
-                blockInFrontOfUs = blockHere;               
-            } else if (grabbingBlock == false && blockInFrontOfUs) {
+            if (Physics.Raycast(physicsCollider.bounds.center, transform.forward, out rhInfo, 3.5f, jumpFrom))
+            {
+                NESWPushable blockHere = rhInfo.collider.GetComponent<NESWPushable>();
+                blockInFrontOfUs = blockHere;
+            }
+            else if (grabbingBlock == false && blockInFrontOfUs)
+            {
                 blockInFrontOfUs.ReleaseForgetDir();
                 blockInFrontOfUs = null;
             }
-            if(Input.GetKeyDown (KeyCode.Space)) {
-                if(blockInFrontOfUs) {
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                if (blockInFrontOfUs)
+                {
                     grabbingBlock = !grabbingBlock;
-                    if(grabbingBlock == false) {
-                        if(blockInFrontOfUs) {
+                    if (grabbingBlock == false)
+                    {
+                        if (blockInFrontOfUs)
+                        {
                             blockInFrontOfUs.ReleaseForgetDir();
                             blockInFrontOfUs = null;
-                        }                        
+                        }
                     }
-                } else { //jump if no block in front of us
+                }
+                else
+                {
+                    //jump if no block in front of us
                     animator.SetTrigger("Jump");
                     StartCoroutine(AnimCallbackJump());
                 }
-            } 
-            if(grabbingBlock && blockInFrontOfUs) {
-                if(blockInFrontOfUs.PushOrPull(transform))
+            }
+
+            if (grabbingBlock && blockInFrontOfUs)
+            {
+                if (blockInFrontOfUs.PushOrPull(transform))
                 {
                     blockInFrontOfUs = null;
-                }               
+                }
             }
         } else {
+            // if we've jumped off a platform entirely, unparent from it
+            testDistance = 20f;
+            if (!Physics.Raycast(physicsCollider.bounds.center, Vector3.down, out rhInfo, testDistance, jumpFrom))
+            {
+                transform.SetParent(null);
+            }
+
             isGrounded = false;
             animator.SetTrigger("Fall");
             if(Input.GetKeyDown (KeyCode.Space)) {
@@ -403,5 +428,4 @@ public class Player : MonoBehaviour
     void OnValidate() {
         CalculateMaximumForwardSpeed();
     }
-
 } // end of class
