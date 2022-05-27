@@ -9,7 +9,19 @@ public class ElevatorPlatform : MonoBehaviour
     public GameObject startingPoint;
     public GameObject frontWall;
     public LevelTowerSelection LevelTowerSelectionScript;
+    public GameObject platformModel;
+    public GameObject platformResetPoint;
+    public bool resetElevPlatform = false;
 
+    void Update ()
+    {
+        if(resetElevPlatform == true)
+        {
+            platformModel.transform.position = platformResetPoint.transform.position;
+            resetElevPlatform = false;
+        }
+    }
+    
     void OnCollisionEnter(Collision collision)
     {
 
@@ -32,8 +44,7 @@ public class ElevatorPlatform : MonoBehaviour
         {
             Debug.Log("normal camera view");
             cameraScript.sharpTransition = false;
-            ThirdPersonCameraController.instance.cameraPositionOverride = null;
-            //transform.position = startingPoint.transform.position;
+            ThirdPersonCameraController.instance.cameraPositionOverride = null;            
         }
     }
 

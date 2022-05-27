@@ -12,7 +12,10 @@ public class TowerElevator : MonoBehaviour
     int goToWayPoint;
     public towerMonolithMove towerMonolithMove;
     public float chosenLevel = 0;
-    
+    public GameObject shardOneElevCollider;
+    public GameObject shardTwoElevCollider;
+    public GameObject shardThreeElevCollider;
+
 
     public GameObject ElevatorPlatform;
 
@@ -60,6 +63,11 @@ public class TowerElevator : MonoBehaviour
             //bool secondKey = PlayerPrefs.GetInt("usedKey2", 0) == 1;
             //bool thirdKey = PlayerPrefs.GetInt("usedKey3", 0) == 1;
             goToWayPoint = 1;
+            shardOneElevCollider.SetActive(true);
+        } 
+        else
+        {
+            shardOneElevCollider.SetActive(false);
         }
 
         if (chosenLevel == 2 && collision.gameObject.CompareTag("Player"))
@@ -67,7 +75,11 @@ public class TowerElevator : MonoBehaviour
             inMotion = true;
             progress = 0.0f;
             goToWayPoint = 2;
-
+            shardTwoElevCollider.SetActive(true);
+        }
+        else
+        {
+            shardTwoElevCollider.SetActive(false);
         }
 
         if (chosenLevel == 3 && collision.gameObject.CompareTag("Player"))
@@ -75,6 +87,11 @@ public class TowerElevator : MonoBehaviour
             inMotion = true;
             progress = 0.0f;
             goToWayPoint = 3;
+            shardThreeElevCollider.SetActive(true);
+        }
+        else
+        {
+            shardThreeElevCollider.SetActive(false);
         }
 
     }

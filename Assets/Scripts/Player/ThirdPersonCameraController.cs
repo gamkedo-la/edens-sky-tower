@@ -13,8 +13,8 @@ public class ThirdPersonCameraController : MonoBehaviour
 
     void Start(){
         instance = this;
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = true;
+        //Cursor.lockState = CursorLockMode.Locked;
         transform.position = target.position;
         transform.rotation = target.rotation;
     }
