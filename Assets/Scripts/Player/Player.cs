@@ -116,8 +116,12 @@ public class Player : MonoBehaviour
         }
         rb.velocity = velWithGravity;
         animator.SetFloat("Speed", playerForwardBackwardSpeed / maximumForwardSpeed);
+        animator.SetBool("Moving", Mathf.Abs(playerForwardBackwardSpeed) > 0);
 
-        transform.Rotate(Vector3.up, 60.0f * Time.deltaTime * Input.GetAxis("Horizontal")); 
+        var rotationAngle = 60.0f * Input.GetAxis("Horizontal");
+        animator.SetFloat("TurnAngle", rotationAngle);
+        transform.Rotate(Vector3.up, rotationAngle * Time.deltaTime); 
+        
         if(InteractTip.activeSelf != (blockInFrontOfUs != null))
         {
             InteractTip.SetActive(blockInFrontOfUs != null);
