@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.17910787, g: 0.22393054, b: 0.14624846, a: 1}
+  m_IndirectSpecularColor: {r: 0.17910793, g: 0.22393718, b: 0.14629555, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -537,6 +537,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 206180679}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &333603540 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3501779902307227053, guid: 9d14710e096c8f84d813a2969a0e303c,
+    type: 3}
+  m_PrefabInstance: {fileID: 8305627197396359308}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0ffa8cc899a334479dd0661db4d1f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &422567100
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7652,6 +7664,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ForEveryScene
       objectReference: {fileID: 0}
+    - target: {fileID: 2190183623911738329, guid: 9d14710e096c8f84d813a2969a0e303c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2328364934761862421, guid: 9d14710e096c8f84d813a2969a0e303c,
         type: 3}
       propertyPath: m_RootOrder
@@ -7944,6 +7961,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4432713663525057983, guid: 9d14710e096c8f84d813a2969a0e303c,
         type: 3}
+      propertyPath: sotryTabletUICount
+      value: 
+      objectReference: {fileID: 333603540}
+    - target: {fileID: 4432713663525057983, guid: 9d14710e096c8f84d813a2969a0e303c,
+        type: 3}
       propertyPath: PlayerFallRespawnPoint
       value: 
       objectReference: {fileID: 1906639109}
@@ -7975,6 +7997,21 @@ PrefabInstance:
     - target: {fileID: 4513564203209977192, guid: 9d14710e096c8f84d813a2969a0e303c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4588485228892158445, guid: 9d14710e096c8f84d813a2969a0e303c,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4588485228892158445, guid: 9d14710e096c8f84d813a2969a0e303c,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4588485228892158445, guid: 9d14710e096c8f84d813a2969a0e303c,
+        type: 3}
+      propertyPath: m_AnchorMin.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5201214769044530271, guid: 9d14710e096c8f84d813a2969a0e303c,
