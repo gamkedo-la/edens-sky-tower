@@ -2572,7 +2572,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5947124966456985590
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4571,7 +4571,7 @@ GameObject:
   - component: {fileID: 7786546689720880813}
   - component: {fileID: 509597020672542068}
   - component: {fileID: 5018911101345236209}
-  - component: {fileID: 4533486855955201930}
+  - component: {fileID: 7965029016348807368}
   m_Layer: 5
   m_Name: Back Button
   m_TagString: Untagged
@@ -4681,8 +4681,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4533486855955201930}
-        m_TargetAssemblyTypeName: OptionScreen, Assembly-CSharp
+      - m_Target: {fileID: 7965029016348807368}
+        m_TargetAssemblyTypeName: ControlWindowFromPauseBackButton, Assembly-CSharp
         m_MethodName: BackButton
         m_Mode: 1
         m_Arguments:
@@ -4693,7 +4693,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &4533486855955201930
+--- !u!114 &7965029016348807368
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4702,9 +4702,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3804569489969474466}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ffe79a8fde6efd4eb56df76d11b674d, type: 3}
+  m_Script: {fileID: 11500000, guid: e5cd84bc71d5ea1459e6f2263eb8094a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 2190183623911738329}
+  controlsMenu: {fileID: 7942274503274925177}
 --- !u!1 &3946249006519576063
 GameObject:
   m_ObjectHideFlags: 0
