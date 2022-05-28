@@ -9,9 +9,7 @@ public class puzzleSceneCubePairing : MonoBehaviour
     public bool cubeOneSlot = false;
     public bool cubeTwoSlot = false;
     public bool cubeThreeSlot = false;
-    public bool cubeFourSlot = false;
-
-    public TiltingPlatformMove seesawPlatformScript;
+    public bool cubeFourSlot = false;    
 
     void OnTriggerEnter(Collider other)
     {
@@ -35,12 +33,6 @@ public class puzzleSceneCubePairing : MonoBehaviour
             }
             //Debug.Log(cubeName + " One Inserted!");
             //Debug.Log(cubeOneSlot);
-        }
-
-        if (cubeOneSlot && cubeTwoSlot && cubeThreeSlot && cubeFourSlot)
-        {
-            Debug.Log("Platform to Tilt!");
-            seesawPlatformScript.tiltPlatformBackwards();
         }
     }
 }

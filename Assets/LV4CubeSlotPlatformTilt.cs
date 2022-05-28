@@ -10,11 +10,14 @@ public class LV4CubeSlotPlatformTilt : MonoBehaviour
     public puzzleSceneCubePairing cubePairingScriptThree;
     public puzzleSceneCubePairing cubePairingScriptFour;
 
+    public TiltingPlatformMove seesawPlatformScript;
+
     void Update()
     {
         if(cubePairingScriptOne.cubeOneSlot && cubePairingScriptTwo.cubeTwoSlot && cubePairingScriptThree.cubeThreeSlot && cubePairingScriptFour.cubeFourSlot)
         {
             Debug.Log("Platform to tilt");
+            seesawPlatformScript.tiltPlatformBackwards();
         }
     }
 }
