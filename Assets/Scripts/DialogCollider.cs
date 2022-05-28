@@ -16,7 +16,11 @@ public class DialogCollider : MonoBehaviour
         //Debug.Log("dialog collider collided");
         DM.StartDialog(ThisDialog);
         Destroy(gameObject); // comment out to be able to engage with story tablet once more
-        StoryTabletParticleSystem.SetActive(false);
+        if (StoryTabletParticleSystem != null)
+        {
+            StoryTabletParticleSystem.SetActive(false);
+        }
+        
 
         if(VoiceStoryFile.Length > 0)
         {
