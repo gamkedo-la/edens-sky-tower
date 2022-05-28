@@ -3554,6 +3554,91 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 10, y: 0, z: 0}
+--- !u!1001 &1774784915
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2105924335}
+    m_Modifications:
+    - target: {fileID: 9012086189923028941, guid: c0da2e1183f480f4ca7dc6806c415eca,
+        type: 3}
+      propertyPath: DM
+      value: 
+      objectReference: {fileID: 8305627197396359309}
+    - target: {fileID: 9012086189923028941, guid: c0da2e1183f480f4ca7dc6806c415eca,
+        type: 3}
+      propertyPath: ThisDialog.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9012086189923028941, guid: c0da2e1183f480f4ca7dc6806c415eca,
+        type: 3}
+      propertyPath: ThisDialog.Array.data[0]
+      value: Navigate to the end of the level to get the last key and hear the end
+        of the story. [e]
+      objectReference: {fileID: 0}
+    - target: {fileID: 9012086189923028943, guid: c0da2e1183f480f4ca7dc6806c415eca,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9012086189923028943, guid: c0da2e1183f480f4ca7dc6806c415eca,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9012086189923028943, guid: c0da2e1183f480f4ca7dc6806c415eca,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9012086189923028943, guid: c0da2e1183f480f4ca7dc6806c415eca,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9012086189923028943, guid: c0da2e1183f480f4ca7dc6806c415eca,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9012086189923028943, guid: c0da2e1183f480f4ca7dc6806c415eca,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9012086189923028943, guid: c0da2e1183f480f4ca7dc6806c415eca,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9012086189923028943, guid: c0da2e1183f480f4ca7dc6806c415eca,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9012086189923028943, guid: c0da2e1183f480f4ca7dc6806c415eca,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9012086189923028943, guid: c0da2e1183f480f4ca7dc6806c415eca,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9012086189923028943, guid: c0da2e1183f480f4ca7dc6806c415eca,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9012086189923028946, guid: c0da2e1183f480f4ca7dc6806c415eca,
+        type: 3}
+      propertyPath: m_Name
+      value: TextPromptCollider
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c0da2e1183f480f4ca7dc6806c415eca, type: 3}
 --- !u!43 &1776232741
 Mesh:
   m_ObjectHideFlags: 0
@@ -4270,6 +4355,12 @@ MeshFilter:
 --- !u!1 &2105924334 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8305627196426342052, guid: 9d14710e096c8f84d813a2969a0e303c,
+    type: 3}
+  m_PrefabInstance: {fileID: 8305627197396359308}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2105924335 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8305627196426342049, guid: 9d14710e096c8f84d813a2969a0e303c,
     type: 3}
   m_PrefabInstance: {fileID: 8305627197396359308}
   m_PrefabAsset: {fileID: 0}
@@ -12513,6 +12604,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8305627196426342049, guid: 9d14710e096c8f84d813a2969a0e303c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.009
       objectReference: {fileID: 0}
     - target: {fileID: 8305627197784929791, guid: 9d14710e096c8f84d813a2969a0e303c,
         type: 3}
