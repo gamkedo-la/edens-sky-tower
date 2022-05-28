@@ -93,6 +93,8 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        DebugFunction(); // debug
+
         if (isAffectedByWind) // if affected by wind, don't allow the player to move
         {
             return; 
@@ -232,7 +234,7 @@ public class Player : MonoBehaviour
         {
             LV4CubeKey.SetActive(false);
         }
-
+        /*
         if (LevelTowerSelection.UIElevButtonBottom)
         {
             if (Input.GetKeyDown(KeyCode.Z))
@@ -263,10 +265,10 @@ public class Player : MonoBehaviour
                 towerMonolithMove.LowerMonolith();
                 TowerElevatorScript.chosenLevel = 3;
                 LevelTowerSelectionScript.selectedLevel = true;
-            }
-        }
+            } 
+        }*/
 
-        
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             pauseMenuON = !pauseMenuON;
@@ -283,9 +285,7 @@ public class Player : MonoBehaviour
             }
             
         }
-            
-
-        DebugFunction(); // debug
+           
     } // end of Update
 
     private void DebugFunction ()

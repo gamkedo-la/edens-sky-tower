@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3803364001986631742}
   - component: {fileID: 3803364001986631737}
   - component: {fileID: 3803364001986631738}
+  - component: {fileID: 9034132882292491786}
   m_Layer: 0
   m_Name: MovablePuzzleObstacle
   m_TagString: Untagged
@@ -126,3 +127,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 005eaa2c08f93ce4ea046082e9dc48d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!64 &9034132882292491786
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3803364001986631743}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
