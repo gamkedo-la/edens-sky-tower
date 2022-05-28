@@ -112,7 +112,7 @@ public class Player : MonoBehaviour
         }
 
         if(holdingGlide) {
-            velWithGravity.y = -1.0f; //gliding falling speed
+            velWithGravity.y = -2.8f; //gliding falling speed
         } else {
             velWithGravity.y = saveYV; 
         }
@@ -398,7 +398,7 @@ public class Player : MonoBehaviour
 
     private IEnumerator AnimCallbackJump() {
         yield return new WaitForSeconds(jumpDelay);
-        rb.AddForce (Vector3.up * 350); // player jump
+        rb.AddForce (Vector3.up * 250); // player jump 350
         animator.ResetTrigger("Land");
     }
 
