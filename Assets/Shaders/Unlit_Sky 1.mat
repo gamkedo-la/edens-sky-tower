@@ -43,34 +43,35 @@ Material:
     m_Floats:
     - _BaseNoiseScale: 0.041
     - _BaseNoiseSpeed: 0.67
-    - _CloudCutoff: 0.188
-    - _CloudSpeed: 0.5
-    - _DayCloudBrightness: 3.57
-    - _DistortScale: 0.13
+    - _CloudCutoff: 1
+    - _CloudSpeed: 2.3
+    - _DayCloudBrightness: 0
+    - _DistortScale: 0.023
     - _DistortSpeed: 2
-    - _ExtraDistortion: 0.209
+    - _ExtraDistortion: 0.295
     - _Fuzziness: 1
-    - _HorizonIntensity: 6.57
-    - _HorizonOffset: 0
-    - _LayeredFuzziness: 0.204
-    - _NoiseSpeed: 2
+    - _HorizonIntensity: 2.41
+    - _HorizonOffset: 1
+    - _LayeredFuzziness: 0.151
+    - _NoiseSpeed: 0.2
     - _ReflectedSky: 1
-    - _SecondaryNoiseScale: 0.12
+    - _SecondaryNoiseScale: 0.079
     - _StarsCutoff: 0.07
     - _StarsSpeed: 0.014
     - _SunAttenuation: 18.3
-    - _SunRadius: 0.088
+    - _SunRadius: 0.039
+    - _TimeOfDay: 1
     m_Colors:
-    - _DayBottomColor: {r: 0.08456756, g: 0.4067298, b: 0.59599996, a: 1}
-    - _DayCloudColorEdge: {r: 0.251062, g: 0.45400003, b: 0.4420625, a: 1}
-    - _DayCloudColorLayered: {r: 0.41099998, g: 0.27306163, b: 0.21676026, a: 1}
-    - _DayCloudColorMain: {r: 0.99300003, g: 0.659019, b: 0.521325, a: 1}
-    - _DayHorizonColor: {r: 0.297856, g: 0.635808, b: 0.71599996, a: 1}
-    - _DayTopColor: {r: 0.65254235, g: 0.9576272, b: 1, a: 1}
+    - _DayBottomColor: {r: 0.30938601, g: 0.44685233, b: 0.53900003, a: 1}
+    - _DayCloudColorEdge: {r: 1, g: 0.96963924, b: 0.44700003, a: 1}
+    - _DayCloudColorLayered: {r: 0.46398398, g: 0.5510448, b: 0.617, a: 1}
+    - _DayCloudColorMain: {r: 0.574, g: 0.574, b: 0.574, a: 1}
+    - _DayHorizonColor: {r: 0.12766999, g: 0.13828844, b: 0.1792453, a: 1}
+    - _DayTopColor: {r: 0.10877, g: 0.23911753, b: 0.73, a: 1}
     - _NightBottomColor: {r: 0.1, g: 0.1, b: 0.1, a: 1}
     - _NightHorizonColor: {r: 0, g: 0, b: 0, a: 1}
-    - _NightTopColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
+    - _NightTopColor: {r: 0.248, g: 0.248, b: 0.248, a: 1}
     - _StarsSkyColor: {r: 0, g: 0.2, b: 0.1, a: 1}
     - _SunColor: {r: 1, g: 1, b: 1, a: 1}
-    - _SunSetColor: {r: 0, g: 0, b: 0, a: 1}
+    - _SunSetColor: {r: 0.20754719, g: 0.12457738, b: 0.0753827, a: 1}
   m_BuildTextureStacks: []
