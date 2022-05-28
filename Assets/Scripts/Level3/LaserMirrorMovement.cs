@@ -20,12 +20,12 @@ public class LaserMirrorMovement : MonoBehaviour
     {
         if(triggering)
         {
-            if (Input.GetKey(KeyCode.U))
+            if (Input.GetKey(KeyCode.LeftArrow))
             {
                 transform.Rotate(/*point,*/ Vector3.down, 20 * Time.deltaTime);
             }
 
-            if (Input.GetKey(KeyCode.I))
+            if (Input.GetKey(KeyCode.RightArrow))
             {
                 transform.Rotate(/*point,*/ -Vector3.down, 20 * Time.deltaTime);
             }
