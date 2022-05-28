@@ -14,17 +14,25 @@ public class LV4CubeSlotPlatformTilt : MonoBehaviour
 
     public GameObject textBox;
 
+    private bool tiltPlatform = false;
+
     void Update()
     {
         if(cubePairingScriptOne.cubeOneSlot && cubePairingScriptTwo.cubeTwoSlot && cubePairingScriptThree.cubeThreeSlot && cubePairingScriptFour.cubeFourSlot)
         {
             Debug.Log("Platform to tilt");
-            seesawPlatformScript.tiltPlatformBackwards();
+            seesawPlatformScript.tiltPlatformForward();
             if(textBox != null)
             {
                 textBox.SetActive(true);
             }
-            
+
+            cubePairingScriptOne.cubeOneSlot = false;
+            cubePairingScriptTwo.cubeTwoSlot = false;
+            cubePairingScriptThree.cubeThreeSlot = false;
+            cubePairingScriptFour.cubeFourSlot = false;
+
+
         }
     }
 }

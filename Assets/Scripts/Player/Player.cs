@@ -234,39 +234,44 @@ public class Player : MonoBehaviour
         {
             LV4CubeKey.SetActive(false);
         }
-        /*
-        if (LevelTowerSelection.UIElevButtonBottom)
+
+        if(LevelTowerSelection != null)
         {
-            if (Input.GetKeyDown(KeyCode.Z))
+            if (LevelTowerSelection.UIElevButtonBottom)
             {
-                LevelTowerSelection.TowerElevatorUI.SetActive(false);
-                towerMonolithMove.LowerMonolith();
-                TowerElevatorScript.chosenLevel = 1;
-                LevelTowerSelectionScript.selectedLevel = true;
+                if (Input.GetKeyDown(KeyCode.Z))
+                {
+                    LevelTowerSelection.TowerElevatorUI.SetActive(false);
+                    towerMonolithMove.LowerMonolith();
+                    TowerElevatorScript.chosenLevel = 1;
+                    LevelTowerSelectionScript.selectedLevel = true;
+                }
+            }
+
+            if (LevelTowerSelection.UIElevButtonMiddle)
+            {
+                if (Input.GetKeyDown(KeyCode.X))
+                {
+                    LevelTowerSelection.TowerElevatorUI.SetActive(false);
+                    towerMonolithMove.LowerMonolith();
+                    TowerElevatorScript.chosenLevel = 2;
+                    LevelTowerSelectionScript.selectedLevel = true;
+                }
+            }
+
+            if (LevelTowerSelection.UIElevButtonTop)
+            {
+                if (Input.GetKeyDown(KeyCode.C))
+                {
+                    LevelTowerSelection.TowerElevatorUI.SetActive(false);
+                    towerMonolithMove.LowerMonolith();
+                    TowerElevatorScript.chosenLevel = 3;
+                    LevelTowerSelectionScript.selectedLevel = true;
+                }
             }
         }
-
-        if (LevelTowerSelection.UIElevButtonMiddle)
-        {
-            if (Input.GetKeyDown(KeyCode.X))
-            {
-                LevelTowerSelection.TowerElevatorUI.SetActive(false);
-                towerMonolithMove.LowerMonolith();
-                TowerElevatorScript.chosenLevel = 2;
-                LevelTowerSelectionScript.selectedLevel = true;
-            }
-        }
-
-        if (LevelTowerSelection.UIElevButtonTop)
-        {
-            if (Input.GetKeyDown(KeyCode.C))
-            {
-                LevelTowerSelection.TowerElevatorUI.SetActive(false);
-                towerMonolithMove.LowerMonolith();
-                TowerElevatorScript.chosenLevel = 3;
-                LevelTowerSelectionScript.selectedLevel = true;
-            } 
-        }*/
+        
+        
 
 
         if (Input.GetKeyDown(KeyCode.Escape))
