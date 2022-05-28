@@ -7,6 +7,11 @@ public class puzzleSceneCubePairing : MonoBehaviour
     public string cubeName;
 
     public bool cubeOneSlot = false;
+    public bool cubeTwoSlot = false;
+    public bool cubeThreeSlot = false;
+    public bool cubeFourSlot = false;
+
+    public TiltingPlatformMove seesawPlatformScript;
 
     void OnTriggerEnter(Collider other)
     {
@@ -16,25 +21,26 @@ public class puzzleSceneCubePairing : MonoBehaviour
             {
                 cubeOneSlot = true;
             }
-            Debug.Log(cubeName + " One Inserted!");
-            Debug.Log(cubeOneSlot);
+            if(cubeName == "CubeTwo")
+            {
+                cubeTwoSlot = true;
+            }
+            if(cubeName == "CubeThree")
+            {
+                cubeThreeSlot = true;
+            }
+            if(cubeName == "CubeFour")
+            {
+                cubeFourSlot = true;
+            }
+            //Debug.Log(cubeName + " One Inserted!");
+            //Debug.Log(cubeOneSlot);
         }
 
-        /*
-
-        if (other.gameObject.name == "CubeTwo")
+        if (cubeOneSlot && cubeTwoSlot && cubeThreeSlot && cubeFourSlot)
         {
-            Debug.Log("Cube Two Inserted!");
+            Debug.Log("Platform to Tilt!");
+            seesawPlatformScript.tiltPlatformBackwards();
         }
-
-        if (other.gameObject.name == "CubeThree")
-        {
-            Debug.Log("Cube Three Inserted!");
-        }
-
-        if (other.gameObject.name == "CubeFour")
-        {
-            Debug.Log("Cube Four Inserted!");
-        } */
     }
 }

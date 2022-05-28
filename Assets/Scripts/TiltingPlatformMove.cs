@@ -10,6 +10,7 @@ public class TiltingPlatformMove : MonoBehaviour
     private const string PLATFORM_TILT_FORWARD = "TiltingPlatformForward";
     private const string PLATFORM_TILT_BACKWARD = "TiltingPlatformBackward";
 
+
     void Awake()
     {
         animatorComponent = GetComponent<Animator>();

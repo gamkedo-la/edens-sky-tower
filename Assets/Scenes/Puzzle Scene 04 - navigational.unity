@@ -681,6 +681,69 @@ Transform:
   m_Father: {fileID: 1708466337084283151}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &318452148
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 318452149}
+  - component: {fileID: 318452151}
+  - component: {fileID: 318452150}
+  m_Layer: 0
+  m_Name: CubeSlotTwo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &318452149
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 318452148}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.62, y: 6.33, z: 0.65}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4457263533287460298}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &318452150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 318452148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc0ebb58c5ac4e546a83dc8c465b9c41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cubeName: CubeTwo
+  cubeOneSlot: 0
+  cubeTwoSlot: 0
+  cubeThreeSlot: 0
+  cubeFourSlot: 0
+  seesawPlatformScript: {fileID: 403915034}
+--- !u!65 &318452151
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 318452148}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &325316914
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -802,6 +865,7 @@ GameObject:
   - component: {fileID: 403915033}
   - component: {fileID: 403915032}
   - component: {fileID: 403915034}
+  - component: {fileID: 403915035}
   m_Layer: 0
   m_Name: P_06_SeesawPlatform
   m_TagString: Untagged
@@ -873,6 +937,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87ed94a946c085d4daa25d0b833f0765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &403915035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403915030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa7a684fa7c88d746a5d164458afed52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cubePairingScriptOne: {fileID: 562607312}
+  cubePairingScriptTwo: {fileID: 318452150}
+  cubePairingScriptThree: {fileID: 1684522783}
+  cubePairingScriptFour: {fileID: 1773736890}
 --- !u!1 &422720979
 GameObject:
   m_ObjectHideFlags: 0
@@ -1006,6 +1086,69 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 4
   m_CollisionDetection: 0
+--- !u!1 &562607310
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 562607311}
+  - component: {fileID: 562607313}
+  - component: {fileID: 562607312}
+  m_Layer: 0
+  m_Name: CubeSlotOne
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &562607311
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562607310}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.62, y: -6.44, z: 0.65}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4457263533287460298}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &562607312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562607310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc0ebb58c5ac4e546a83dc8c465b9c41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cubeName: CubeOne
+  cubeOneSlot: 0
+  cubeTwoSlot: 0
+  cubeThreeSlot: 0
+  cubeFourSlot: 0
+  seesawPlatformScript: {fileID: 403915034}
+--- !u!65 &562607313
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562607310}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &619566827
 GameObject:
   m_ObjectHideFlags: 0
@@ -1188,7 +1331,7 @@ PrefabInstance:
     - target: {fileID: 3803364001986631743, guid: 01f9db5e595c4f74b8d2d5e78e6f62f2,
         type: 3}
       propertyPath: m_Name
-      value: MovablePuzzleObstacle (1)
+      value: CubeOne
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01f9db5e595c4f74b8d2d5e78e6f62f2, type: 3}
@@ -3240,7 +3383,7 @@ PrefabInstance:
     - target: {fileID: 3803364001986631743, guid: 01f9db5e595c4f74b8d2d5e78e6f62f2,
         type: 3}
       propertyPath: m_Name
-      value: MovablePuzzleObstacle (3)
+      value: CubeTwo
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01f9db5e595c4f74b8d2d5e78e6f62f2, type: 3}
@@ -3411,10 +3554,73 @@ PrefabInstance:
     - target: {fileID: 3803364001986631743, guid: 01f9db5e595c4f74b8d2d5e78e6f62f2,
         type: 3}
       propertyPath: m_Name
-      value: MovablePuzzleObstacle
+      value: CubeFour
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01f9db5e595c4f74b8d2d5e78e6f62f2, type: 3}
+--- !u!1 &1684522781
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1684522782}
+  - component: {fileID: 1684522784}
+  - component: {fileID: 1684522783}
+  m_Layer: 0
+  m_Name: CubeSlotThree
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1684522782
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684522781}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.77, y: 6.33, z: 0.65}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4457263533287460298}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1684522783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684522781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc0ebb58c5ac4e546a83dc8c465b9c41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cubeName: CubeThree
+  cubeOneSlot: 0
+  cubeTwoSlot: 0
+  cubeThreeSlot: 0
+  cubeFourSlot: 0
+  seesawPlatformScript: {fileID: 403915034}
+--- !u!65 &1684522784
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684522781}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1716047460
 GameObject:
   m_ObjectHideFlags: 0
@@ -3748,6 +3954,69 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 10, y: 0, z: 0}
+--- !u!1 &1773736888
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1773736889}
+  - component: {fileID: 1773736891}
+  - component: {fileID: 1773736890}
+  m_Layer: 0
+  m_Name: CubeSlotFour
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1773736889
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773736888}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.77, y: -6.44, z: 0.65}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4457263533287460298}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1773736890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773736888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc0ebb58c5ac4e546a83dc8c465b9c41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cubeName: CubeFour
+  cubeOneSlot: 0
+  cubeTwoSlot: 0
+  cubeThreeSlot: 0
+  cubeFourSlot: 0
+  seesawPlatformScript: {fileID: 403915034}
+--- !u!65 &1773736891
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773736888}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1774784915
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3760,6 +4029,11 @@ PrefabInstance:
       propertyPath: DM
       value: 
       objectReference: {fileID: 8305627197396359309}
+    - target: {fileID: 9012086189923028941, guid: c0da2e1183f480f4ca7dc6806c415eca,
+        type: 3}
+      propertyPath: sotryTabletUICount
+      value: 
+      objectReference: {fileID: 8305627197396359310}
     - target: {fileID: 9012086189923028941, guid: c0da2e1183f480f4ca7dc6806c415eca,
         type: 3}
       propertyPath: ThisDialog.Array.size
@@ -3830,6 +4104,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TextPromptCollider
+      objectReference: {fileID: 0}
+    - target: {fileID: 9012086189923028946, guid: c0da2e1183f480f4ca7dc6806c415eca,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0da2e1183f480f4ca7dc6806c415eca, type: 3}
@@ -4534,7 +4813,7 @@ PrefabInstance:
     - target: {fileID: 3803364001986631743, guid: 01f9db5e595c4f74b8d2d5e78e6f62f2,
         type: 3}
       propertyPath: m_Name
-      value: MovablePuzzleObstacle (2)
+      value: CubeThree
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01f9db5e595c4f74b8d2d5e78e6f62f2, type: 3}
@@ -8244,7 +8523,11 @@ Transform:
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: -0.6517334, y: 0.5750065, z: -266.50153}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 562607311}
+  - {fileID: 318452149}
+  - {fileID: 1684522782}
+  - {fileID: 1773736889}
   m_Father: {fileID: 1616311007}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12203,6 +12486,11 @@ PrefabInstance:
       propertyPath: LV4CubeKey
       value: 
       objectReference: {fileID: 1076333057}
+    - target: {fileID: 4432713663525057983, guid: 9d14710e096c8f84d813a2969a0e303c,
+        type: 3}
+      propertyPath: sotryTabletUICount
+      value: 
+      objectReference: {fileID: 8305627197396359310}
     - target: {fileID: 4513564203209977192, guid: 9d14710e096c8f84d813a2969a0e303c,
         type: 3}
       propertyPath: m_AnchorMax.y
