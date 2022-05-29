@@ -3,7 +3,12 @@ guid: e3b0c8ceacef92d4782f6650ba36794d
 ModelImporter:
   serializedVersion: 21100
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cement
+    second: {fileID: 2100000, guid: a8026bc6eecff4d41a5d2f31a7d28de3, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -85,7 +90,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
+    globalScale: 0.01
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
