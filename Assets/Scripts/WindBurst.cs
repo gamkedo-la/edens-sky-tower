@@ -17,6 +17,7 @@ public class WindBurst : MonoBehaviour
 
     private Player player;
     private Vector3 direction;
+    public float distanceBetweenFallingPointAndTrigger;
 
     private bool affectedByWind = false;
     private bool windCameraSpeedOn = false;
@@ -40,7 +41,9 @@ public class WindBurst : MonoBehaviour
             rbTarget = other.GetComponent<Rigidbody>();
             player = other.GetComponent<Player>();
 
-            direction = (originTransform.position - other.transform.position).normalized;
+            distanceBetweenFallingPointAndTrigger = Vector3.Distance(player.lastPositionBeforeJumpingOffPlatform, other.transform.position);
+            distanceBetweenFallingPointAndTrigger = distanceBetweenFallingPointAndTrigger < 3.0f ? 3.0f : distanceBetweenFallingPointAndTrigger;
+            direction = (player.lastPositionBeforeJumpingOffPlatform - other.transform.position).normalized;
             originalRotation = rbTarget.transform.rotation;
             targetRotation = Quaternion.LookRotation(-transform.forward, Vector3.up);
 
@@ -57,6 +60,7 @@ public class WindBurst : MonoBehaviour
         if (affectedByWind)
         {
             Vector3 forceDirection;
+            Vector3 ForceMagnitude;
             //If player is still in the trigger, we should just make player go upwards.
             if (!windCameraSpeedOn)
             {
@@ -67,7 +71,8 @@ public class WindBurst : MonoBehaviour
                 forceDirection = direction;
             }
             float smoothRate = 0.005f;
-            rbTarget.AddForce(forceDirection * windMagnitude);
+
+            rbTarget.AddForce(forceDirection * windMagnitude * distanceBetweenFallingPointAndTrigger, ForceMode.VelocityChange);
             rbTarget.transform.rotation = Quaternion.Lerp(rbTarget.transform.rotation, targetRotation, smoothRate * Time.deltaTime);
         }
     }
@@ -100,13 +105,13 @@ public class WindBurst : MonoBehaviour
             {
                 rbTarget.transform.position = new Vector3(0.0f, 0.0f, 0.0f);
             }
-            if( rbTarget.position.y < 0.0f && rbTarget.position.y < 1.0f) // if player is stuck on the side, push them up
-            {
-                if(rbTarget.velocity.y < 1.0f)
-                {
-                    rbTarget.AddForce(Vector3.up * 10);
-                }
-            }
+            //if( rbTarget.position.y < 0.0f && rbTarget.position.y < 1.0f) // if player is stuck on the side, push them up
+            //{
+            //    if(rbTarget.velocity.y < 1.0f)
+            //    {
+            //        rbTarget.AddForce(Vector3.up * 10);
+            //    }
+            //}
         }
         
     }

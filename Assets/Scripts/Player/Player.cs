@@ -44,6 +44,7 @@ public class Player : MonoBehaviour
     public bool isAffectedByWind = false;
     private bool isGrounded = false;
     public float jumpDelay = 0.125f;
+    public Vector3 lastPositionBeforeJumpingOffPlatform;
 
     public Collider physicsCollider;
 
@@ -201,7 +202,13 @@ public class Player : MonoBehaviour
                 transform.SetParent(null);
             }
 
+            if (isGrounded)
+            {
+                lastPositionBeforeJumpingOffPlatform = transform.position;
+            }
+
             isGrounded = false;
+            
             animator.SetTrigger("Fall");
             if(Input.GetKeyDown (KeyCode.Space)) {
                 ShowGlider(true);
