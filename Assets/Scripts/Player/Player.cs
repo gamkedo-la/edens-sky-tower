@@ -19,7 +19,10 @@ public class Player : MonoBehaviour
     public LevelTowerSelection LevelTowerSelectionScript;
     private bool pauseMenuON = false;
     public GameObject PauseMenu;
- 
+    public GameObject TowerShardLow;
+    public GameObject TowerShardMiddle;
+    public GameObject TowerShardTop;
+
 
     public LayerMask jumpFrom;
     public Transform TeleportDebugLocation;
@@ -252,6 +255,7 @@ public class Player : MonoBehaviour
                     towerMonolithMove.LowerMonolith();
                     TowerElevatorScript.chosenLevel = 1;
                     LevelTowerSelectionScript.selectedLevel = true;
+                    TowerShardLow.transform.rotation = Quaternion.Euler(transform.eulerAngles.x, 0, transform.eulerAngles.z);
                 }
             }
 
@@ -263,6 +267,7 @@ public class Player : MonoBehaviour
                     towerMonolithMove.LowerMonolith();
                     TowerElevatorScript.chosenLevel = 2;
                     LevelTowerSelectionScript.selectedLevel = true;
+                    TowerShardMiddle.transform.rotation = Quaternion.Euler(transform.eulerAngles.x, 0, transform.eulerAngles.z);
                 }
             }
 
@@ -274,6 +279,7 @@ public class Player : MonoBehaviour
                     towerMonolithMove.LowerMonolith();
                     TowerElevatorScript.chosenLevel = 3;
                     LevelTowerSelectionScript.selectedLevel = true;
+                    TowerShardTop.transform.rotation = Quaternion.Euler(transform.eulerAngles.x, 0, transform.eulerAngles.z);
                 }
             }
         }
