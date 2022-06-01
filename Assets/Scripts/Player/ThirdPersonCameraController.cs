@@ -20,7 +20,9 @@ public class ThirdPersonCameraController : MonoBehaviour
     }
 
     void LateUpdate() {
-        CamControl();
+        if(Time.timeScale > 0.0f) {
+            CamControl();
+        }        
     }
 
 
@@ -46,7 +48,8 @@ public class ThirdPersonCameraController : MonoBehaviour
         }
         mouseX += Input.GetAxis("Mouse X") * rotationSpeed;
         mouseY -= Input.GetAxis("Mouse Y") * rotationSpeed;
-        mouseY = Mathf.Clamp(mouseY, -35, 180);
+        mouseY = Mathf.Clamp(mouseY, -15, 70);
+        Debug.Log(mouseY);
         transform.position = target.position;
         transform.rotation = target.rotation;
         //transform.LookAt(target);
