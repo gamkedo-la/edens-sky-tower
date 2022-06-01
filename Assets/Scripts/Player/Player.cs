@@ -97,6 +97,31 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            pauseMenuON = !pauseMenuON;
+            Debug.Log("pause menu: " + pauseMenuON);
+            if (pauseMenuON)
+            {
+                PauseMenu.SetActive(true);
+                Cursor.lockState = CursorLockMode.None;
+                Debug.Log("Pause menu up!");
+                Time.timeScale = 0;
+            }
+            else
+            {
+                PauseMenu.SetActive(false);
+                Cursor.lockState = CursorLockMode.Locked;
+                Time.timeScale = 1;
+            }
+
+        }
+
+        if (Time.timeScale == 0.0f)
+        {
+            return;
+        }
+
         DebugFunction(); // debug
 
         if (isAffectedByWind) // if affected by wind, don't allow the player to move
@@ -287,24 +312,7 @@ public class Player : MonoBehaviour
         
 
 
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            pauseMenuON = !pauseMenuON;
-            Debug.Log("pause menu: " + pauseMenuON);
-            if (pauseMenuON)
-            {
-                PauseMenu.SetActive(true);
-                Cursor.lockState = CursorLockMode.None;
-                Debug.Log("Pause menu up!");
-                Time.timeScale = 0;
-            } else
-            {
-                PauseMenu.SetActive(false);
-                Cursor.lockState = CursorLockMode.Locked;
-                Time.timeScale = 1;
-            }
-            
-        }
+        
            
     } // end of Update
 
