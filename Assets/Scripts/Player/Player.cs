@@ -149,7 +149,7 @@ public class Player : MonoBehaviour
         animator.SetFloat("Speed", playerForwardBackwardSpeed / maximumForwardSpeed);
         animator.SetBool("Moving", Mathf.Abs(playerForwardBackwardSpeed) > 0);
 
-        var rotationAngle = 60.0f * Input.GetAxis("Horizontal");
+        var rotationAngle = 100.0f * Input.GetAxis("Horizontal"); // player rotation
         animator.SetFloat("TurnAngle", rotationAngle);
         transform.Rotate(Vector3.up, rotationAngle * Time.deltaTime); 
         
@@ -421,7 +421,7 @@ public class Player : MonoBehaviour
 
     private IEnumerator AnimCallbackJump() {
         yield return new WaitForSeconds(jumpDelay);
-        rb.AddForce (Vector3.up * 250); // player jump 350
+        rb.AddForce (Vector3.up * 280); // player jump 350
         animator.ResetTrigger("Land");
     }
 
