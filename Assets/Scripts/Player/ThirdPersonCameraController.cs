@@ -10,6 +10,7 @@ public class ThirdPersonCameraController : MonoBehaviour
     float mouseX = 0f, mouseY = 0f;
     public Transform cameraPositionOverride = null;
     public bool sharpTransition = false;
+    LayerMask ignorePlayer;
 
     void Start(){
         instance = this;
@@ -17,6 +18,7 @@ public class ThirdPersonCameraController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         transform.position = target.position;
         transform.rotation = target.rotation;
+        ignorePlayer = ~LayerMask.GetMask("PlayerCharacter");
     }
 
     void LateUpdate() {
@@ -49,8 +51,18 @@ public class ThirdPersonCameraController : MonoBehaviour
         mouseX += Input.GetAxis("Mouse X") * rotationSpeed;
         mouseY -= Input.GetAxis("Mouse Y") * rotationSpeed;
         mouseY = Mathf.Clamp(mouseY, -15, 70);
-        Debug.Log(mouseY);
-        transform.position = target.position;
+        RaycastHit rhInfo;
+        Vector3 direction =  target.position - cameraPivot.position;
+        if (Physics.Raycast(cameraPivot.position, direction, out rhInfo, direction.magnitude, ignorePlayer))
+        {
+            Debug.Log(rhInfo.collider.gameObject.name);
+            transform.position = rhInfo.point;
+        }
+        else
+        {
+            transform.position = target.position;
+        }
+        
         transform.rotation = target.rotation;
         //transform.LookAt(target);
 

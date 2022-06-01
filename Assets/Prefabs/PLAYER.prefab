@@ -118,7 +118,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4485152523981970102}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.12, y: 0.99, z: -3.14}
+  m_LocalPosition: {x: 0.12, y: 0.791, z: -3.14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1499726231940379905}
@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 2141491515793639891}
   - component: {fileID: 8748562912441662438}
   - component: {fileID: 6746695138371045753}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PLAYER
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -224,6 +224,9 @@ MonoBehaviour:
   TowerElevatorScript: {fileID: 0}
   LevelTowerSelectionScript: {fileID: 0}
   PauseMenu: {fileID: 0}
+  TowerShardLow: {fileID: 0}
+  TowerShardMiddle: {fileID: 0}
+  TowerShardTop: {fileID: 0}
   jumpFrom:
     serializedVersion: 2
     m_Bits: 0
@@ -236,6 +239,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   isAffectedByWind: 0
   jumpDelay: 0.125
+  lastPositionBeforeJumpingOffPlatform: {x: 0, y: 0, z: 0}
   physicsCollider: {fileID: 6746695138371045753}
   sotryTabletUICount: {fileID: 0}
 --- !u!114 &2141491515793639891
@@ -303,7 +307,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6166579514629672621}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.01, y: -0, z: -2.55}
+  m_LocalPosition: {x: -0, y: 0.999, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4485152523981970103}
