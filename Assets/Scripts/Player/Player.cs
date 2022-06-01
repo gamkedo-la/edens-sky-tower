@@ -294,11 +294,13 @@ public class Player : MonoBehaviour
             if (pauseMenuON)
             {
                 PauseMenu.SetActive(true);
+                Cursor.lockState = CursorLockMode.None;
                 Debug.Log("Pause menu up!");
                 Time.timeScale = 0;
             } else
             {
                 PauseMenu.SetActive(false);
+                Cursor.lockState = CursorLockMode.Locked;
                 Time.timeScale = 1;
             }
             
