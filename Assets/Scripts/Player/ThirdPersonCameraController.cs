@@ -50,7 +50,7 @@ public class ThirdPersonCameraController : MonoBehaviour
         }
         mouseX += Input.GetAxis("Mouse X") * rotationSpeed;
         mouseY -= Input.GetAxis("Mouse Y") * rotationSpeed;
-        mouseY = Mathf.Clamp(mouseY, -15, 70);
+        mouseY = Mathf.Clamp(mouseY, -50, 70);
         RaycastHit rhInfo;
         Vector3 direction =  target.position - cameraPivot.position;
         if (Physics.Raycast(cameraPivot.position, direction, out rhInfo, direction.magnitude, ignorePlayer))
