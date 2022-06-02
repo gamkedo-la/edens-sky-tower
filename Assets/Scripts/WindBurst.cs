@@ -38,19 +38,20 @@ public class WindBurst : MonoBehaviour
     {
         if(other.gameObject.tag == "Player")
         {
-            rbTarget = other.GetComponent<Rigidbody>();
+            //rbTarget = other.GetComponent<Rigidbody>();
             player = other.GetComponent<Player>();
 
-            distanceBetweenFallingPointAndTrigger = Vector3.Distance(player.lastPositionBeforeJumpingOffPlatform, other.transform.position);
-            distanceBetweenFallingPointAndTrigger = distanceBetweenFallingPointAndTrigger < 3.0f ? 3.0f : distanceBetweenFallingPointAndTrigger;
-            direction = (player.lastPositionBeforeJumpingOffPlatform - other.transform.position).normalized;
-            originalRotation = rbTarget.transform.rotation;
-            targetRotation = Quaternion.LookRotation(-transform.forward, Vector3.up);
+            //distanceBetweenFallingPointAndTrigger = Vector3.Distance(player.lastPositionBeforeJumpingOffPlatform, other.transform.position);
+            //distanceBetweenFallingPointAndTrigger = distanceBetweenFallingPointAndTrigger < 3.0f ? 3.0f : distanceBetweenFallingPointAndTrigger;
+            //direction = (player.lastPositionBeforeJumpingOffPlatform - other.transform.position).normalized;
+            //originalRotation = rbTarget.transform.rotation;
+            //targetRotation = Quaternion.LookRotation(-transform.forward, Vector3.up);
 
-            rotationAmount = UnityEngine.Random.Range(180 - 45, 180 + 45);
-            rotationPerSecond = rotationAmount / 2;
-            player.isAffectedByWind = true;
-            affectedByWind = true;
+            //rotationAmount = UnityEngine.Random.Range(180 - 45, 180 + 45);
+            //rotationPerSecond = rotationAmount / 2;
+            player.transform.position = player.lastPositionBeforeJumpingOffPlatform.position;
+            //player.isAffectedByWind = true;
+            //affectedByWind = true;
         }
         
     }

@@ -47,7 +47,8 @@ public class Player : MonoBehaviour
     public bool isAffectedByWind = false;
     private bool isGrounded = false;
     public float jumpDelay = 0.125f;
-    public Vector3 lastPositionBeforeJumpingOffPlatform;
+    public Transform lastPositionBeforeJumpingOffPlatform;
+    public Transform resetIfFallBelow;
 
     public Collider physicsCollider;
 
@@ -122,6 +123,15 @@ public class Player : MonoBehaviour
             return;
         }
 
+        if (resetIfFallBelow == null)
+        {
+            Debug.LogWarning("ResetIfFallBelow does not have position defined");
+        }
+        else if (transform.position.y < resetIfFallBelow.position.y)
+        {
+            transform.position = lastPositionBeforeJumpingOffPlatform.position;
+        }
+
         DebugFunction(); // debug
 
         if (isAffectedByWind) // if affected by wind, don't allow the player to move
@@ -180,6 +190,9 @@ public class Player : MonoBehaviour
 
             transform.SetParent(rhInfo.collider.transform);
 
+            lastPositionBeforeJumpingOffPlatform.SetParent(transform.parent);
+            lastPositionBeforeJumpingOffPlatform.position = transform.position;
+
             ShowGlider(false);
             // checking for block in front of us to pull/push
             if (Physics.Raycast(physicsCollider.bounds.center, transform.forward, out rhInfo, 3.5f, jumpFrom))
@@ -228,11 +241,6 @@ public class Player : MonoBehaviour
             if (!Physics.Raycast(physicsCollider.bounds.center, Vector3.down, out rhInfo, testDistance, jumpFrom))
             {
                 transform.SetParent(null);
-            }
-
-            if (isGrounded)
-            {
-                lastPositionBeforeJumpingOffPlatform = transform.position;
             }
 
             isGrounded = false;
