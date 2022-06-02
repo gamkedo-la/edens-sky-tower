@@ -17,7 +17,7 @@ public class Collectible : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.Rotate(0.05f, 0.05f, 0.05f, Space.Self);
     }
 
     private void OnCollisionEnter(Collision collision)
