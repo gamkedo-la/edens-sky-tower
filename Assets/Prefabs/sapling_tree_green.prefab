@@ -7,6 +7,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3182909410612427754, guid: 0feb91949a6214742b05073729ae45c6,
+        type: 3}
+      propertyPath: m_LODs.Array.data[0].screenRelativeHeight
+      value: 0.036319215
+      objectReference: {fileID: 0}
+    - target: {fileID: 3182909410612427754, guid: 0feb91949a6214742b05073729ae45c6,
+        type: 3}
+      propertyPath: m_LODs.Array.data[1].screenRelativeHeight
+      value: 0.010654184
+      objectReference: {fileID: 0}
+    - target: {fileID: 3182909410612427754, guid: 0feb91949a6214742b05073729ae45c6,
+        type: 3}
+      propertyPath: m_LODs.Array.data[2].screenRelativeHeight
+      value: 0.00016219006
+      objectReference: {fileID: 0}
+    - target: {fileID: 3182909410612427754, guid: 0feb91949a6214742b05073729ae45c6,
+        type: 3}
+      propertyPath: m_LODs.Array.data[1].renderers.Array.data[0].renderer
+      value: 
+      objectReference: {fileID: 5045969868748289436}
+    - target: {fileID: 5919544987166976878, guid: 0feb91949a6214742b05073729ae45c6,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d43fb71ce899f324aad5509f96a9c873, type: 2}
     - target: {fileID: 7901585263806469019, guid: 0feb91949a6214742b05073729ae45c6,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -74,3 +99,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0feb91949a6214742b05073729ae45c6, type: 3}
+--- !u!23 &5045969868748289436 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5919544987166976878, guid: 0feb91949a6214742b05073729ae45c6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1450317486562533106}
+  m_PrefabAsset: {fileID: 0}
