@@ -300,6 +300,7 @@ public class Player : MonoBehaviour
                     towerMonolithMove.LowerMonolith();
                     TowerElevatorScript.chosenLevel = 2;
                     LevelTowerSelectionScript.selectedLevel = true;
+                    TowerShardLow.transform.rotation = Quaternion.Euler(transform.eulerAngles.x, 0, transform.eulerAngles.z);
                     TowerShardMiddle.transform.rotation = Quaternion.Euler(transform.eulerAngles.x, 0, transform.eulerAngles.z);
                 }
             }
@@ -312,6 +313,8 @@ public class Player : MonoBehaviour
                     towerMonolithMove.LowerMonolith();
                     TowerElevatorScript.chosenLevel = 3;
                     LevelTowerSelectionScript.selectedLevel = true;
+                    TowerShardLow.transform.rotation = Quaternion.Euler(transform.eulerAngles.x, 0, transform.eulerAngles.z);
+                    TowerShardMiddle.transform.rotation = Quaternion.Euler(transform.eulerAngles.x, 0, transform.eulerAngles.z);
                     TowerShardTop.transform.rotation = Quaternion.Euler(transform.eulerAngles.x, 0, transform.eulerAngles.z);
                 }
             }
