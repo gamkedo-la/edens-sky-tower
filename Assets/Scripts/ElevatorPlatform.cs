@@ -7,7 +7,7 @@ public class ElevatorPlatform : MonoBehaviour
     public Transform cameraPositionOverride;
     public ThirdPersonCameraController cameraScript;
     public GameObject startingPoint;
-    public GameObject frontWall;
+    ////public GameObject frontWall;
     public LevelTowerSelection LevelTowerSelectionScript;
     public GameObject platformModel;
     public GameObject platformResetPoint;
@@ -29,9 +29,9 @@ public class ElevatorPlatform : MonoBehaviour
         {
             //if (cameraPositionOverride)
            // {
-                cameraScript.sharpTransition = true;
+                ////cameraScript.sharpTransition = true;
                 ThirdPersonCameraController.instance.cameraPositionOverride = cameraPositionOverride;
-                frontWall.SetActive(true);
+                ////frontWall.SetActive(true);
                 LevelTowerSelectionScript.selectedLevel = false;
            // }
         }
