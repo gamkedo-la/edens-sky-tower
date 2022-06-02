@@ -6,7 +6,7 @@ public class TowerElevator : MonoBehaviour
 {
     public Transform[] wayPointList;
     private Player playerScript;
-    bool inMotion = false;
+    public bool inMotion = false;
     float progress = 0.0f;
     float progressPace = 0.05f;
     int goToWayPoint;
@@ -58,7 +58,7 @@ public class TowerElevator : MonoBehaviour
             //playerScript.enabled = false;
             //Rigidbody playerRb = playerScript.GetComponent<Rigidbody>();
             //playerRb.useGravity = false;
-            inMotion = true;
+            ////inMotion = true;
             progress = 0.0f;
             //bool secondKey = PlayerPrefs.GetInt("usedKey2", 0) == 1;
             //bool thirdKey = PlayerPrefs.GetInt("usedKey3", 0) == 1;
@@ -72,7 +72,7 @@ public class TowerElevator : MonoBehaviour
 
         if (chosenLevel == 2 && collision.gameObject.CompareTag("Player"))
         {
-            inMotion = true;
+            ////inMotion = true;
             progress = 0.0f;
             goToWayPoint = 2;
             shardTwoElevCollider.SetActive(true);
@@ -84,7 +84,7 @@ public class TowerElevator : MonoBehaviour
 
         if (chosenLevel == 3 && collision.gameObject.CompareTag("Player"))
         {
-            inMotion = true;
+            ////inMotion = true;
             progress = 0.0f;
             goToWayPoint = 3;
             shardThreeElevCollider.SetActive(true);
