@@ -2,11 +2,12 @@ Shader "vertexcolourblend"
 {
 	Properties
 	{
-		_TextureSample0("Texture Sample 0", 2D) = "white" {}
+		_TextureSample0("Texture Sample 0 (R)", 2D) = "white" {}
 		_heightfactor("height factor", Float) = -0.5
 		_TextureSample1("Texture Sample 1", 2D) = "white" {}
 		_Clampcolourtint("Clamp colour tint", Float) = 0.2
 		_Tintcolour("Tint colour", Color) = (0.5176471,0.3490196,0.3632607,0.08627451)
+		_TextureSample2("Texture Sample 2 (B)", 2D) = "black" {}
 		[HideInInspector] _texcoord( "", 2D ) = "white" {}
 		[HideInInspector] __dirty( "", Int ) = 1
 	}
@@ -31,6 +32,9 @@ Shader "vertexcolourblend"
 		uniform sampler2D _TextureSample0;
 		uniform float4 _TextureSample0_ST;
 		uniform float4 _Tintcolour;
+		uniform sampler2D _TextureSample2;
+		uniform float4 _TextureSample2_ST;
+		
 
 		void vertexDataFunc( inout appdata_full v, out Input o )
 		{
@@ -45,11 +49,13 @@ Shader "vertexcolourblend"
 		void surf( Input i , inout SurfaceOutputStandard o )
 		{
 			float clampResult36 = clamp( i.vertexColor.b , 0.0 , _Clampcolourtint );
+			float2 uv_TextureSample2 = i.uv_texcoord * _TextureSample2_ST.xy + _TextureSample2_ST.zw;
 			float2 uv_TextureSample1 = i.uv_texcoord * _TextureSample1_ST.xy + _TextureSample1_ST.zw;
 			float2 uv_TextureSample0 = i.uv_texcoord * _TextureSample0_ST.xy + _TextureSample0_ST.zw;
 			float4 lerpResult6 = lerp( tex2D( _TextureSample1, uv_TextureSample1 ) , tex2D( _TextureSample0, uv_TextureSample0 ) , i.vertexColor.r);
+			float4 lerpResult7 = lerp( tex2D( _TextureSample2, uv_TextureSample2 ), lerpResult6, i.vertexColor.a);
 			float layeredBlendVar34 = clampResult36;
-			float4 layeredBlend34 = ( lerp( lerpResult6,_Tintcolour , layeredBlendVar34 ) );
+			float4 layeredBlend34 = ( lerp( lerpResult7, _Tintcolour , layeredBlendVar34 ) );
 			o.Albedo = layeredBlend34.rgb;
 			o.Alpha = 1;
 		}
