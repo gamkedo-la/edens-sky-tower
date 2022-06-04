@@ -54,7 +54,7 @@ public class Player : MonoBehaviour
 
     public InventoryUI sotryTabletUICount; // for debug function
 
-    bool choseAnswerZ = false;
+    public bool choseAnswerZ = false;
     bool choseAnswerX = false;
 
     void Awake() {
@@ -289,17 +289,15 @@ public class Player : MonoBehaviour
                 
                 if (Input.GetKeyDown(KeyCode.Z) && !choseAnswerX)
                 {
-                    Debug.Log("choice one");
                     LevelTowerSelectionScript.noAnswer = false;
                     LevelTowerSelectionScript.EndSceneQuestion.SetActive(false);
                     LevelTowerSelectionScript.EndSceneInputOne.SetActive(true);
-                    towerMonolithMove.LowerMonolith();
+                    towerMonolithMove.EndSceneMonolithRise();
                     choseAnswerZ = true;
                 }
 
                 if (Input.GetKeyDown(KeyCode.X) && !choseAnswerZ)
                 {
-                    Debug.Log("choice two");
                     LevelTowerSelectionScript.noAnswer = false;
                     LevelTowerSelectionScript.EndSceneQuestion.SetActive(false);
                     LevelTowerSelectionScript.EndSceneInputTwo.SetActive(true);

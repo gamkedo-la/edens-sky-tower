@@ -25,6 +25,8 @@ public class LevelTowerSelection : MonoBehaviour
     public bool selectedLevel = false;
     public bool endSceneWindow = false;
     public bool noAnswer = true;
+    public towerMonolithMove towerMonolithMove;
+    public Player playerScript;
 
 
 
@@ -97,6 +99,7 @@ public class LevelTowerSelection : MonoBehaviour
 
     }
 
+
     void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
@@ -105,7 +108,13 @@ public class LevelTowerSelection : MonoBehaviour
             if (PlayerPrefs.GetInt("usedKey4", 0) == 1)
             {
                 EndSceneWindowUI.SetActive(true);
+                if(playerScript.choseAnswerZ)
+                {
+                    towerMonolithMove.EndSceneMonolithRise();
+                }                
             }
+
+
 
 
                 if (selectedLevel == false)

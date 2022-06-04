@@ -9,8 +9,11 @@ public class towerMonolithMove : MonoBehaviour
 
     private const string TOWER_MONOLITH_RISING = "MonolithRising";
     private const string TOWER_MONOLITH_LOWERING = "MonolithLowering";
+    private const string TOWER_MONOLITH_ENDRISE = "MonolithEndSceneRising";
+    private const string TOWER_MONOLITH_ENDLOWER = "MonolithEndSceneLowering";
 
     public bool riseMonolith = false;
+    public bool lowerEndMonolith = false;
 
     // Start is called before the first frame update
     void Awake()
@@ -31,7 +34,14 @@ public class towerMonolithMove : MonoBehaviour
 
     public void EndSceneMonolithRise()
     {
-        Debug.Log("end scene monolith rises");
+        lowerEndMonolith = true;
+        animatorComponent.Play(TOWER_MONOLITH_ENDRISE);
+    }
+
+    public void EndSceneMonolithLower()
+    {
+        lowerEndMonolith = false;
+        animatorComponent.Play(TOWER_MONOLITH_ENDLOWER);
     }
 
     public void Disable() {
