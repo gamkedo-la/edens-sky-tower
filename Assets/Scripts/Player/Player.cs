@@ -54,6 +54,9 @@ public class Player : MonoBehaviour
 
     public InventoryUI sotryTabletUICount; // for debug function
 
+    bool choseAnswerZ = false;
+    bool choseAnswerX = false;
+
     void Awake() {
         instance = this;
     }
@@ -280,17 +283,27 @@ public class Player : MonoBehaviour
 
         if(LevelTowerSelection != null)
         {
-            if(LevelTowerSelection.endSceneWindow)
+            
+            if (LevelTowerSelection.endSceneWindow)
             {
-                if (Input.GetKeyDown(KeyCode.Z))
+                
+                if (Input.GetKeyDown(KeyCode.Z) && !choseAnswerX)
                 {
                     Debug.Log("choice one");
+                    LevelTowerSelectionScript.noAnswer = false;
+                    LevelTowerSelectionScript.EndSceneQuestion.SetActive(false);
+                    LevelTowerSelectionScript.EndSceneInputOne.SetActive(true);
                     towerMonolithMove.LowerMonolith();
+                    choseAnswerZ = true;
                 }
 
-                if (Input.GetKeyDown(KeyCode.X))
+                if (Input.GetKeyDown(KeyCode.X) && !choseAnswerZ)
                 {
                     Debug.Log("choice two");
+                    LevelTowerSelectionScript.noAnswer = false;
+                    LevelTowerSelectionScript.EndSceneQuestion.SetActive(false);
+                    LevelTowerSelectionScript.EndSceneInputTwo.SetActive(true);
+                    choseAnswerX = true;
                 }
 
             } 
@@ -300,7 +313,7 @@ public class Player : MonoBehaviour
             {
                 if (LevelTowerSelection.UIElevButtonBottom)
                 {
-                    if (Input.GetKeyDown(KeyCode.Z))
+                    if (Input.GetKeyDown(KeyCode.Z) )
                     {
                         LevelTowerSelection.TowerElevatorUI.SetActive(false);
                         towerMonolithMove.LowerMonolith();

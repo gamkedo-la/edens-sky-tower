@@ -19,8 +19,12 @@ public class LevelTowerSelection : MonoBehaviour
     public GameObject SelectShardText;
     public GameObject TipText;
     public GameObject EndSceneWindowUI;
+    public GameObject EndSceneQuestion;
+    public GameObject EndSceneInputOne;
+    public GameObject EndSceneInputTwo;
     public bool selectedLevel = false;
     public bool endSceneWindow = false;
+    public bool noAnswer = true;
 
 
 
@@ -34,6 +38,9 @@ public class LevelTowerSelection : MonoBehaviour
         TowerElevatorButtonThree.SetActive(false);
         SelectShardText.SetActive(false);
         EndSceneWindowUI.SetActive(false);
+        EndSceneQuestion.SetActive(false);
+        EndSceneInputOne.SetActive(false);
+        EndSceneInputTwo.SetActive(false);
 
     }
 
@@ -77,6 +84,11 @@ public class LevelTowerSelection : MonoBehaviour
             TipText.SetActive(false);
             SelectShardText.SetActive(false);
             EndSceneWindowUI.SetActive(true);
+            if(noAnswer)
+            {
+                EndSceneQuestion.SetActive(true);
+            }
+            
             endSceneWindow = true;
             //TowerElevatorButtonThree.SetActive(true);
             //UIElevButtonTop = true;
