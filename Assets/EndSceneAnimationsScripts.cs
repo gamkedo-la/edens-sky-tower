@@ -10,6 +10,7 @@ public class EndSceneAnimationsScripts : MonoBehaviour
 
     private const string ENDSCENE_FADEIN_BACKGROUND = "FadingInEndScene";
     private const string ENDSCENE_FADEIN_TEXT = "FadingIntext";
+    private const string STARTSCENE_FADEOUT_BACKGROUND = "FadeOutStartScene";
 
 
     // Start is called before the first frame update
@@ -27,6 +28,12 @@ public class EndSceneAnimationsScripts : MonoBehaviour
     public void EndSceneFadeInText()
     {
         animatorComponent.Play(ENDSCENE_FADEIN_TEXT);
+    }
+
+    public void StartSceneFadeOutBackg()
+    {
+        Debug.Log("fade out white");
+        animatorComponent.Play(STARTSCENE_FADEOUT_BACKGROUND);
     }
 
 
