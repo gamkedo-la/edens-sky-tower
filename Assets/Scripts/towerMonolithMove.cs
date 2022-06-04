@@ -29,6 +29,11 @@ public class towerMonolithMove : MonoBehaviour
         animatorComponent.Play(TOWER_MONOLITH_RISING);
     }
 
+    public void EndSceneMonolithRise()
+    {
+        Debug.Log("end scene monolith rises");
+    }
+
     public void Disable() {
         rendererComponent.enabled = false;
     }

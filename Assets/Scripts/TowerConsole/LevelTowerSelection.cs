@@ -18,6 +18,7 @@ public class LevelTowerSelection : MonoBehaviour
     public GameObject TowerElevatorButtonThree;
     public GameObject SelectShardText;
     public GameObject TipText;
+    public GameObject EndSceneWindowUI;
     public bool selectedLevel = false;
 
 
@@ -31,6 +32,7 @@ public class LevelTowerSelection : MonoBehaviour
         TowerElevatorButtonTwo.SetActive(false);
         TowerElevatorButtonThree.SetActive(false);
         SelectShardText.SetActive(false);
+        EndSceneWindowUI.SetActive(false);
 
     }
 
@@ -67,8 +69,19 @@ public class LevelTowerSelection : MonoBehaviour
             UIElevButtonTop = true;
         }
 
-
+        if (PlayerPrefs.GetInt("usedKey4", 0) == 1)
+        {
+            Debug.Log("end scene window!0");
+            TowerElevatorUI.SetActive(false);
+            TipText.SetActive(false);
+            SelectShardText.SetActive(false);
+            EndSceneWindowUI.SetActive(true);
+            //TowerElevatorButtonThree.SetActive(true);
+            //UIElevButtonTop = true;
         }
+
+
+    }
 
     void OnTriggerEnter(Collider other)
     {
