@@ -83,7 +83,7 @@ public class LevelTowerSelection : MonoBehaviour
             TowerElevatorUI.SetActive(false);
             TipText.SetActive(false);
             SelectShardText.SetActive(false);
-            EndSceneWindowUI.SetActive(true);
+            
             if(noAnswer)
             {
                 EndSceneQuestion.SetActive(true);
@@ -101,7 +101,14 @@ public class LevelTowerSelection : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            if(selectedLevel == false)
+
+            if (PlayerPrefs.GetInt("usedKey4", 0) == 1)
+            {
+                EndSceneWindowUI.SetActive(true);
+            }
+
+
+                if (selectedLevel == false)
             {
                 TowerElevatorUI.SetActive(true);
             }
@@ -154,6 +161,8 @@ public class LevelTowerSelection : MonoBehaviour
             triggering = false;
 
             TowerElevatorUI.SetActive(false);
+            EndSceneWindowUI.SetActive(false);
+            Debug.Log("end scene to turn off");
         }
     }
 
