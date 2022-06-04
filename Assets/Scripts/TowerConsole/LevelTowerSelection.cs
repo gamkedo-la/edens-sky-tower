@@ -20,6 +20,7 @@ public class LevelTowerSelection : MonoBehaviour
     public GameObject TipText;
     public GameObject EndSceneWindowUI;
     public bool selectedLevel = false;
+    public bool endSceneWindow = false;
 
 
 
@@ -76,6 +77,7 @@ public class LevelTowerSelection : MonoBehaviour
             TipText.SetActive(false);
             SelectShardText.SetActive(false);
             EndSceneWindowUI.SetActive(true);
+            endSceneWindow = true;
             //TowerElevatorButtonThree.SetActive(true);
             //UIElevButtonTop = true;
         }

@@ -280,44 +280,64 @@ public class Player : MonoBehaviour
 
         if(LevelTowerSelection != null)
         {
-            if (LevelTowerSelection.UIElevButtonBottom)
+            if(LevelTowerSelection.endSceneWindow)
             {
                 if (Input.GetKeyDown(KeyCode.Z))
                 {
-                    LevelTowerSelection.TowerElevatorUI.SetActive(false);
+                    Debug.Log("choice one");
                     towerMonolithMove.LowerMonolith();
-                    TowerElevatorScript.chosenLevel = 1;
-                    LevelTowerSelectionScript.selectedLevel = true;
-                    TowerShardLow.transform.rotation = Quaternion.Euler(transform.eulerAngles.x, 0, transform.eulerAngles.z);
                 }
-            }
 
-            if (LevelTowerSelection.UIElevButtonMiddle)
-            {
                 if (Input.GetKeyDown(KeyCode.X))
                 {
-                    LevelTowerSelection.TowerElevatorUI.SetActive(false);
-                    towerMonolithMove.LowerMonolith();
-                    TowerElevatorScript.chosenLevel = 2;
-                    LevelTowerSelectionScript.selectedLevel = true;
-                    TowerShardLow.transform.rotation = Quaternion.Euler(transform.eulerAngles.x, 0, transform.eulerAngles.z);
-                    TowerShardMiddle.transform.rotation = Quaternion.Euler(transform.eulerAngles.x, 0, transform.eulerAngles.z);
+                    Debug.Log("choice two");
                 }
-            }
 
-            if (LevelTowerSelection.UIElevButtonTop)
+            } 
+            
+            else
+
             {
-                if (Input.GetKeyDown(KeyCode.C))
+                if (LevelTowerSelection.UIElevButtonBottom)
                 {
-                    LevelTowerSelection.TowerElevatorUI.SetActive(false);
-                    towerMonolithMove.LowerMonolith();
-                    TowerElevatorScript.chosenLevel = 3;
-                    LevelTowerSelectionScript.selectedLevel = true;
-                    TowerShardLow.transform.rotation = Quaternion.Euler(transform.eulerAngles.x, 0, transform.eulerAngles.z);
-                    TowerShardMiddle.transform.rotation = Quaternion.Euler(transform.eulerAngles.x, 0, transform.eulerAngles.z);
-                    TowerShardTop.transform.rotation = Quaternion.Euler(transform.eulerAngles.x, 0, transform.eulerAngles.z);
+                    if (Input.GetKeyDown(KeyCode.Z))
+                    {
+                        LevelTowerSelection.TowerElevatorUI.SetActive(false);
+                        towerMonolithMove.LowerMonolith();
+                        TowerElevatorScript.chosenLevel = 1;
+                        LevelTowerSelectionScript.selectedLevel = true;
+                        TowerShardLow.transform.rotation = Quaternion.Euler(transform.eulerAngles.x, 0, transform.eulerAngles.z);
+                    }
+                }
+
+                if (LevelTowerSelection.UIElevButtonMiddle)
+                {
+                    if (Input.GetKeyDown(KeyCode.X))
+                    {
+                        LevelTowerSelection.TowerElevatorUI.SetActive(false);
+                        towerMonolithMove.LowerMonolith();
+                        TowerElevatorScript.chosenLevel = 2;
+                        LevelTowerSelectionScript.selectedLevel = true;
+                        TowerShardLow.transform.rotation = Quaternion.Euler(transform.eulerAngles.x, 0, transform.eulerAngles.z);
+                        TowerShardMiddle.transform.rotation = Quaternion.Euler(transform.eulerAngles.x, 0, transform.eulerAngles.z);
+                    }
+                }
+
+                if (LevelTowerSelection.UIElevButtonTop)
+                {
+                    if (Input.GetKeyDown(KeyCode.C))
+                    {
+                        LevelTowerSelection.TowerElevatorUI.SetActive(false);
+                        towerMonolithMove.LowerMonolith();
+                        TowerElevatorScript.chosenLevel = 3;
+                        LevelTowerSelectionScript.selectedLevel = true;
+                        TowerShardLow.transform.rotation = Quaternion.Euler(transform.eulerAngles.x, 0, transform.eulerAngles.z);
+                        TowerShardMiddle.transform.rotation = Quaternion.Euler(transform.eulerAngles.x, 0, transform.eulerAngles.z);
+                        TowerShardTop.transform.rotation = Quaternion.Euler(transform.eulerAngles.x, 0, transform.eulerAngles.z);
+                    }
                 }
             }
+            
         }
         
         
