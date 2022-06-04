@@ -29,8 +29,6 @@ public class LevelTowerSelection : MonoBehaviour
     public Player playerScript;
 
 
-
-
     void Start()
     {
         //toolTipText.gameObject.SetActive(false);

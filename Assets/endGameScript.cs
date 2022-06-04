@@ -5,6 +5,9 @@ using UnityEngine;
 public class endGameScript : MonoBehaviour
 {
     public towerMonolithMove towerMonolithMove;
+    public ThirdPersonCameraController ThirdPersonCameraController;
+    public Transform cameraOverrideEndScenePos;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +22,12 @@ public class endGameScript : MonoBehaviour
 
     void OnTriggerEnter ()
     {
+
+        if (cameraOverrideEndScenePos)
+        {
+            ThirdPersonCameraController.instance.cameraPositionOverride = cameraOverrideEndScenePos;
+        }
+
         Debug.Log("game ends");
         towerMonolithMove.EndSceneMonolithLower();
     }
