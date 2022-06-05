@@ -13,6 +13,13 @@ public class towerMonolithMovement : MonoBehaviour
             towerMonolithMove.RiseMonolith();
             LevelTowerSelectionScript.selectedLevel = false;
         }
+
+        if (towerMonolithMove.lowerEndMonolith)
+        {
+            towerMonolithMove.EndSceneMonolithLower();
+            LevelTowerSelectionScript.selectedLevel = false;
+            Debug.Log("end monolith animation");
+        }
     }
 }
 

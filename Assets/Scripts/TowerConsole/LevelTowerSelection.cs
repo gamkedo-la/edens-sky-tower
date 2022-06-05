@@ -18,9 +18,15 @@ public class LevelTowerSelection : MonoBehaviour
     public GameObject TowerElevatorButtonThree;
     public GameObject SelectShardText;
     public GameObject TipText;
+    public GameObject EndSceneWindowUI;
+    public GameObject EndSceneQuestion;
+    public GameObject EndSceneInputOne;
+    public GameObject EndSceneInputTwo;
     public bool selectedLevel = false;
-
-
+    public bool endSceneWindow = false;
+    public bool noAnswer = true;
+    public towerMonolithMove towerMonolithMove;
+    public Player playerScript;
 
 
     void Start()
@@ -31,6 +37,10 @@ public class LevelTowerSelection : MonoBehaviour
         TowerElevatorButtonTwo.SetActive(false);
         TowerElevatorButtonThree.SetActive(false);
         SelectShardText.SetActive(false);
+        EndSceneWindowUI.SetActive(false);
+        EndSceneQuestion.SetActive(false);
+        EndSceneInputOne.SetActive(false);
+        EndSceneInputTwo.SetActive(false);
 
     }
 
@@ -67,14 +77,45 @@ public class LevelTowerSelection : MonoBehaviour
             UIElevButtonTop = true;
         }
 
-
+        if (PlayerPrefs.GetInt("usedKey4", 0) == 1)
+        {
+            Debug.Log("end scene window!0");
+            TowerElevatorUI.SetActive(false);
+            TipText.SetActive(false);
+            SelectShardText.SetActive(false);
+            
+            if(noAnswer)
+            {
+                EndSceneQuestion.SetActive(true);
+            }
+            
+            endSceneWindow = true;
+            //TowerElevatorButtonThree.SetActive(true);
+            //UIElevButtonTop = true;
         }
+
+
+    }
+
 
     void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
         {
-            if(selectedLevel == false)
+
+            if (PlayerPrefs.GetInt("usedKey4", 0) == 1)
+            {
+                EndSceneWindowUI.SetActive(true);
+                if(playerScript.choseAnswerZ)
+                {
+                    towerMonolithMove.EndSceneMonolithRise();
+                }                
+            }
+
+
+
+
+                if (selectedLevel == false)
             {
                 TowerElevatorUI.SetActive(true);
             }
@@ -127,6 +168,8 @@ public class LevelTowerSelection : MonoBehaviour
             triggering = false;
 
             TowerElevatorUI.SetActive(false);
+            EndSceneWindowUI.SetActive(false);
+            Debug.Log("end scene to turn off");
         }
     }
 
