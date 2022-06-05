@@ -132,7 +132,14 @@ public class Player : MonoBehaviour
         }
         else if (transform.position.y < resetIfFallBelow.position.y)
         {
-            transform.position = lastPositionBeforeJumpingOffPlatform.position;
+            if (RespawnLocation == null)
+            {
+                transform.position = lastPositionBeforeJumpingOffPlatform.position;
+            }
+            else
+            {
+                playerFell = true;
+            }
         }
 
         DebugFunction(); // debug
