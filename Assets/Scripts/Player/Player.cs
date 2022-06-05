@@ -38,7 +38,6 @@ public class Player : MonoBehaviour
     [Range(1.0f, 4.0f)]
     public float runningSpeedMultiplier = 1.5f;
     private float maximumForwardSpeed;
-    public float glidingDrop = -2.8f;
 
     private Rigidbody rb;
     public Animator animator;
@@ -148,14 +147,14 @@ public class Player : MonoBehaviour
         velWithGravity = transform.forward * playerForwardBackwardSpeed;
 
         checkIfChangingToRunningOrWalkingMode();
-        if (isRunning ) //!holdingGlide
+        if (isRunning && !holdingGlide)
         {
             playerForwardBackwardSpeed *= runningSpeedMultiplier;
             velWithGravity *= runningSpeedMultiplier;
         }
 
         if(holdingGlide) {
-            velWithGravity.y = glidingDrop;//-2.8f; //gliding falling speed
+            velWithGravity.y = -2.8f; //gliding falling speed
         } else {
             velWithGravity.y = saveYV; 
         }
