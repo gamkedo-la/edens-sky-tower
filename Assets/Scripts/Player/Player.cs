@@ -198,7 +198,8 @@ public class Player : MonoBehaviour
                 rb.velocity = Vector3.zero;
             }
 
-            transform.SetParent(rhInfo.collider.transform);
+            // the next line disrupted camera rotation pivot based on transform scale of parent
+            // transform.SetParent(rhInfo.collider.transform);
 
             lastPositionBeforeJumpingOffPlatform.SetParent(transform.parent);
             lastPositionBeforeJumpingOffPlatform.position = transform.position;
