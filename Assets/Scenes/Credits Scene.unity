@@ -412,26 +412,28 @@ MonoBehaviour:
   m_text: "Simon J Hoffiz: Project lead, core gameplay, player gliding,  models (keys,
     tower), puzzle levels design and related functionality, block pushing, writing,
     tablet story system, tower elevator controls and related cinematic system, rings
-    platforms camera behavior, debug functionality, completed inventory screen, monolith,
-    progress save, tutorial area, controls screen, assorted bug fixing\n\nTyler Funk:
-    Deer model/texture, player model and animations (plus related walk/run/glide
-    movement integration), wings, clouds, tree sapling, water shaders, rock colliders,
-    river, waterfall, day and night sky effects, ground detection fix\n\nArmando
-    Navarrete: Models (ruin pillars x3, obelisk console, mirror, chalice, hammer,
-    level 3 parts), key system, level tower selection, mirror laser functionality,
+    platforms, camera behavior, debug functionality, completed inventory screen,
+    monolith, progress save, tutorial area, controls screen, ending, assorted bug
+    fixing\n\nTyler Funk: Deer model/texture, player model and animations (plus related
+    walk/run/glide movement integration), wings, clouds, tree sapling, water shaders,
+    rock colliders, river, waterfall, day and night sky effects, ground detection
+    fix\n\nArmando Navarrete: Models (ruin pillars x3, obelisk console, mirror, chalice,
+    hammer, level 3 parts), key system, level tower selection, mirror laser functionality,
     mirror controls, level 3 exit platform animation, level 3 environment\n\nChrister
     \"McFunkypants\" Kaitila: Models (crystals, obelisk stand, rune stone, rocks,
     hills, rune pillars, coffee cup, wrench, book), skyboxes, grass, rune textures,
     rune tablets, glow materials and related particles, sandstone materials, brick
     mesh, grass rendering issue fix, title screen effects, additional puzzle scene
     1 decoration\n\nIan Cherabier: Player run, models (rock, spoon, flute, pencil),
-    bush placement\n\nLuis Monta\xF1a: Stone lantern, flowers, bush, puzzle 2 environment
-    decoration\n\nWill McKay: Collectibles inventory tracker and related UI, inventory
-    animation, game pause, in-world dialog box\n\nAndy King: Path shader, nebula
-    test\n\nBar\u0131\u015F K\xF6kl\xFC: Platform smooth movement, player recovery
-    after fall\n\nMichael \"Misha\" Fewkes: Music manager\n\nRob Tunstall: Looping
-    ambient sounds\n\nBrandon Hillig: Smooth fall recovery experiments (not in release)\n\nChris
-    DeLeon: Player returns to last portal pillar used\n"
+    bush placement\n\nLuis Monta\xF1a: Stone lantern, flowers, bush, puzzle and ring
+    2 environment decoration\n\nWill McKay: Collectibles inventory tracker and related
+    UI, inventory animation, game pause, in-world dialog box\n\nAndy King: Path shader,
+    nebula skybox materials\n\nBar\u0131\u015F K\xF6kl\xFC: Platform smooth movement,
+    player recovery after fall\n\nMichael \"Misha\" Fewkes: Music manager\n\nGrygoriy
+    Kulesko: Collision fix for pushable boxes, puzzle 4 bug fixes\n\nRob Tunstall:
+    Looping ambient sounds\n\nBrandon Hillig: Smooth fall recovery experiments (not
+    in release)\n\nChris DeLeon: Player returns to last portal pillar used, minor
+    camera bug fix"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -458,7 +460,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22.6
+  m_fontSize: 26.15
   m_fontSizeBase: 130
   m_fontWeight: 400
   m_enableAutoSizing: 1
