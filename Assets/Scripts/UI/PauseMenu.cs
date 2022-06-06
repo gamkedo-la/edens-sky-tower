@@ -9,6 +9,7 @@ public class PauseMenu : MonoBehaviour
 
     public void controlsWindow ()
     {
+        Debug.Log("controls window");
         pauseMenu.SetActive(false);
         controlsMenu.SetActive(true);
     }
