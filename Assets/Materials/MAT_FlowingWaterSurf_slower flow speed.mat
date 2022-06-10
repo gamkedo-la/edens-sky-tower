@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: MAT_FlowingWaterSurf_slower flow speed
+  m_Shader: {fileID: 4800000, guid: cab20dec20f0f3f4ab227a155504edef, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _SideNoiseTex:
+        m_Texture: {fileID: 2800000, guid: 50cec78407eb5ab47871121340b2c81c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TopNoiseTex:
+        m_Texture: {fileID: 2800000, guid: 50cec78407eb5ab47871121340b2c81c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _Brightness: 1.123
+    - _Depth: 20
+    - _DepthOffset: 0.29
+    - _Distortion: 0.674
+    - _EdgeFoamWidth: 0.5
+    - _FoamSoftness: 0.307
+    - _FoamWidth: 0.731
+    - _FresnelBias: 0.56
+    - _FresnelPower: 0.2
+    - _FresnelScale: 0.99
+    - _Glossiness: 0.202
+    - _HSpeed: 0.01
+    - _Metallic: 0
+    - _SideNoiseScale: 0.017
+    - _SideNoiseStretch: 12.46
+    - _Stretch: 5
+    - _TopFoamSpread: 0.3
+    - _TopNoiseNormalStrength: 0.61
+    - _TopNoiseScale: 0.146
+    - _TopScale: 0.642
+    - _VSpeed: 1.5
+    - _WaveAmount: 2.62
+    - _WaveHeight: 0
+    - _WaveSpeed: 7.56
+    m_Colors:
+    - _Color: {r: 0.305, g: 1, b: 1, a: 0.30588236}
+    - _DeepColor: {r: 0, g: 0.415, b: 0.83, a: 0.8}
+    - _FoamColor: {r: 1, g: 1, b: 1, a: 0.72156864}
+  m_BuildTextureStacks: []
