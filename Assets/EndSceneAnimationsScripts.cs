@@ -22,6 +22,7 @@ public class EndSceneAnimationsScripts : MonoBehaviour
 
     public void EndSceneFadeInBackg()
     {
+        
         animatorComponent.Play(ENDSCENE_FADEIN_BACKGROUND);
     }
 
@@ -32,7 +33,7 @@ public class EndSceneAnimationsScripts : MonoBehaviour
 
     public void StartSceneFadeOutBackg()
     {
-        Debug.Log("fade out white");
+        Debug.Log("FadeIn animation should run");
         animatorComponent.Play(STARTSCENE_FADEOUT_BACKGROUND);
     }
 
