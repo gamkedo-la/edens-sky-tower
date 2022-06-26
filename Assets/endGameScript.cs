@@ -41,6 +41,8 @@ public class endGameScript : MonoBehaviour
 
         Debug.Log("game ends");
         towerMonolithMove.EndSceneMonolithLower();
+
+        
         
     }
 }
