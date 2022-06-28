@@ -5461,7 +5461,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &1358872458
+--- !u!1 &1257418276
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5469,57 +5469,57 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1358872461}
-  - component: {fileID: 1358872460}
-  - component: {fileID: 1358872459}
+  - component: {fileID: 1257418279}
+  - component: {fileID: 1257418278}
+  - component: {fileID: 1257418277}
   m_Layer: 0
-  m_Name: PlayMusic
+  m_Name: MusicTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1358872459
+--- !u!114 &1257418277
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1358872458}
+  m_GameObject: {fileID: 1257418276}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5255426758c60bb4c8e23e0f0b0e7125, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicFile: {fileID: 8300000, guid: e2bbd74214010e14c9c239ea935c638f, type: 3}
+  musicFile: {fileID: 8300000, guid: b02d7b586089bbe4584906337b261622, type: 3}
   volume: 1
   isBumper: 0
   playOnAwake: 1
   playOnTriggerEnter: 0
   playOnTriggerExit: 0
   triggerTag: Player
---- !u!65 &1358872460
+--- !u!65 &1257418278
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1358872458}
+  m_GameObject: {fileID: 1257418276}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!4 &1358872461
+--- !u!4 &1257418279
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1358872458}
+  m_GameObject: {fileID: 1257418276}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.2400002, y: 2.3729, z: -2.25}
+  m_LocalPosition: {x: 605.2876, y: 320.85123, z: 131.5634}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

@@ -22,7 +22,7 @@ public class PlayMusic : MonoBehaviour {
 	}
 
     void OnTriggerEnter(Collider other) {
-        if (playOnTriggerEnter && other.gameObject.tag == triggerTag) PlayMusicFile();
+		if (playOnTriggerEnter && other.gameObject.tag == triggerTag) PlayMusicFile();
 	}
 
     void OnTriggerExit(Collider other) {
