@@ -142,7 +142,7 @@ public class Player : MonoBehaviour
             }
         }
 
-        DebugFunction(); // debug
+        //DebugFunction(); // debug
 
         if (isAffectedByWind) // if affected by wind, don't allow the player to move
         {
